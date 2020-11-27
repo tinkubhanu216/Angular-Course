@@ -1,0 +1,324 @@
+0
+1
+00:00:02,870 --> 00:00:09,800
+Welcome back. In the previous step,  we made login component to make use of the authentication service . When
+1
+
+2
+00:00:09,860 --> 00:00:15,290
+a user logs in the login component would talk to the authentication service, and find out if the user
+2
+
+3
+00:00:15,500 --> 00:00:18,010
+is an authenticated user.
+3
+
+4
+00:00:18,160 --> 00:00:20,340
+For now we have hard coded logic.
+4
+
+5
+00:00:20,570 --> 00:00:26,930
+What we want to do, is we would want to enable and disable these links based on whether a user is already
+5
+
+6
+00:00:26,930 --> 00:00:34,990
+logged in or not. And to be able to do that, we need to be able to check if a user is already logged
+6
+
+7
+00:00:34,990 --> 00:00:35,390
+in.
+7
+
+8
+00:00:35,540 --> 00:00:40,410
+Each of these links I should be able to check: is the user logged in? is user logged in?
+8
+
+9
+00:00:40,460 --> 00:00:46,760
+The thing is right now, we don't really have to store the fact that the user has all logged in.
+9
+
+10
+00:00:47,150 --> 00:00:51,720
+What we do is we'll use something called session storage in that setting.
+10
+
+11
+00:00:51,740 --> 00:00:55,440
+So this is something which is associated with the browser window.
+11
+
+12
+00:00:55,550 --> 00:00:59,510
+It allows us to access the session storage object.
+12
+
+13
+00:00:59,570 --> 00:01:03,110
+It's actually very similar to something else called local storage.
+13
+
+14
+00:01:03,180 --> 00:01:09,860
+However this is just limited to this browser session. When you close and come back the session storage
+14
+
+15
+00:01:09,950 --> 00:01:17,790
+is refreshed. What we'll do is when it logs in, we'll put some content into the session storage, and for all other purposes.
+15
+
+16
+00:01:17,810 --> 00:01:22,590
+We'll keep checking if the session storage contains the authenticated user.
+16
+
+17
+00:01:22,760 --> 00:01:25,370
+Let's see how to do that in this specific step.
+17
+
+18
+00:01:25,370 --> 00:01:28,080
+Now let's go to the authenticate method and over here,
+18
+
+19
+00:01:28,370 --> 00:01:36,740
+If the logging is successful, what I would want to do is ,sessionStorage.setItem()... I want to say
+19
+
+20
+00:01:37,130 --> 00:01:48,360
+authenticatedUser, username .What would happen? Whenever the user is authenticated, the authenticated
+20
+
+21
+00:01:48,360 --> 00:01:51,710
+user is set into the session storage.
+21
+
+22
+00:01:51,710 --> 00:01:53,790
+Now let's do it again in28minutes,
+22
+
+23
+00:01:53,930 --> 00:01:58,230
+Dummy login.
+23
+
+24
+00:01:58,470 --> 00:02:03,210
+What happens now is the login... when you do it right click inspect.
+24
+
+25
+00:02:03,210 --> 00:02:08,220
+If you go to the Applications tab, you would see that there are a number of kind of storage, there is local
+25
+
+26
+00:02:08,220 --> 00:02:14,700
+storage, session storage. What we were talking about is this this is specific to this browser
+26
+
+27
+00:02:14,850 --> 00:02:19,530
+session. If you close the browser and come back, then most of the information is in here it's lost.
+27
+
+28
+00:02:19,530 --> 00:02:26,760
+If you expand this particular session storage, you'd see that for our localhost:4200,
+28
+
+29
+00:02:26,910 --> 00:02:30,580
+We have something stored in here: in28minutes.
+29
+
+30
+00:02:30,660 --> 00:02:37,770
+So you can see the value which is stored into the local storage, and based on this we would want to enable
+30
+
+31
+00:02:37,770 --> 00:02:39,450
+these menu items.
+31
+
+32
+00:02:39,450 --> 00:02:45,300
+How can we do that? What we'll do is we'll start with creating a simple method. We'll say we'll call this
+32
+
+33
+00:02:45,900 --> 00:02:48,980
+isUserLoggedin
+33
+
+34
+00:02:52,070 --> 00:02:57,110
+what we'll do, is we'll try and get the item from the session storage. So let's get the item from the
+34
+
+35
+00:02:57,110 --> 00:03:06,910
+session storage sessionstorage. getId(). After this what do we need to check? user = this.
+35
+
+36
+00:03:08,040 --> 00:03:17,020
+You say let user = this specific thing, and we will check if user
+36
+
+37
+00:03:17,020 --> 00:03:17,940
+==
+37
+
+38
+00:03:18,190 --> 00:03:23,010
+If user == null then user is not logged in.
+38
+
+39
+00:03:23,240 --> 00:03:29,910
+Well what we'll do is we'll say !(user == null).
+39
+
+40
+00:03:30,370 --> 00:03:34,730
+What I do now, is I'll go here and try and clear this out.
+40
+
+41
+00:03:34,840 --> 00:03:36,400
+So let's clear this out.
+41
+
+42
+00:03:36,410 --> 00:03:42,550
+So what we are doing is we are reading the value out for the session storage. You don't really have
+42
+
+43
+00:03:42,550 --> 00:03:44,220
+anything in there.
+43
+
+44
+00:03:44,230 --> 00:03:49,660
+What I do is I'll check this method before and after authentication.
+44
+
+45
+00:03:49,780 --> 00:03:57,160
+So what I'll do is console.log(isUserLoggedIn()). you should say this.
+45
+
+46
+00:03:57,180 --> 00:03:58,450
+What does that mean?
+46
+
+47
+00:03:58,720 --> 00:04:03,430
+And what we'll do, is we'll do the same thing after calling .so I'll call this
+47
+
+48
+00:04:07,150 --> 00:04:15,290
+before, and I'll call this after. Just leave a space here as well.
+48
+
+49
+00:04:16,300 --> 00:04:20,810
+Let's go back to the login page in28minutes,  login.
+49
+
+50
+00:04:21,070 --> 00:04:28,730
+So it says in Invalid Credential!! , because the The thing is invalid and you can see it: before false
+50
+
+51
+00:04:29,770 --> 00:04:31,810
+because it is false.
+51
+
+52
+00:04:31,810 --> 00:04:33,950
+This does not get executed.
+52
+
+53
+00:04:34,150 --> 00:04:38,430
+So the value is not set into session storage.
+53
+
+54
+00:04:38,510 --> 00:04:44,110
+So if you look at application session storage, there are no values which are present in here.
+54
+
+55
+00:04:44,160 --> 00:04:52,350
+If I said Dummy and say login, let's see the console. You can take before false and after.
+55
+
+56
+00:04:52,360 --> 00:04:53,360
+true. now!
+56
+
+57
+00:04:53,550 --> 00:04:54,960
+It's setting
+57
+
+58
+00:04:54,960 --> 00:04:59,160
+So the value is already inside the session storage.
+58
+
+59
+00:04:59,160 --> 00:05:00,320
+Let's look at it right now.
+59
+
+60
+00:05:00,550 --> 00:05:01,710
+Application
+60
+
+61
+00:05:01,890 --> 00:05:05,520
+You can see that storage has a value called in28minutes.
+61
+
+62
+00:05:05,760 --> 00:05:07,210
+So we are able to authenticate.
+62
+
+63
+00:05:07,260 --> 00:05:14,130
+We are able to set it into the session, and in the next steps we will use this information. We use this
+63
+
+64
+00:05:14,130 --> 00:05:18,080
+method to do a lot more stuff around the login.
+64
+
+65
+00:05:18,180 --> 00:05:20,200
+I'll see you in the next Video. Until then, Bye!

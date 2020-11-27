@@ -1,0 +1,364 @@
+0
+1
+00:00:00,270 --> 00:00:01,820
+Welcome back.
+1
+
+2
+00:00:01,990 --> 00:00:09,990
+As of now in the application, when you log in and enter a password to log in, this particular thing it created
+2
+
+3
+00:00:09,990 --> 00:00:18,030
+in sessions storage. However, the only way we are removing this stuff out is by doing a right-click
+3
+
+4
+00:00:18,030 --> 00:00:18,530
+remove.
+4
+
+5
+00:00:18,760 --> 00:00:21,360
+We should actually implement that functionality.
+5
+
+6
+00:00:21,400 --> 00:00:24,200
+We should implement it as part of our logic.
+6
+
+7
+00:00:24,490 --> 00:00:26,620
+Let's quickly do that in this specific step.
+7
+
+8
+00:00:26,620 --> 00:00:30,070
+We'll start off creating the logout component.
+8
+
+9
+00:00:30,100 --> 00:00:30,870
+Be very careful.
+9
+
+10
+00:00:30,880 --> 00:00:32,210
+We are not creating a service.
+10
+
+11
+00:00:32,220 --> 00:00:34,720
+What we are creating is a component.
+11
+
+12
+00:00:34,900 --> 00:00:41,310
+Actually we are going to create a logout component. So ng generate component logout... go out and do that
+12
+
+13
+00:00:44,190 --> 00:00:44,880
+and that's cool.
+13
+
+14
+00:00:44,880 --> 00:00:46,960
+So logout is done.
+14
+
+15
+00:00:46,980 --> 00:00:49,450
+If you click logout right now will it work.
+15
+
+16
+00:00:50,440 --> 00:00:51,390
+Nope not yet.
+16
+
+17
+00:00:51,400 --> 00:00:52,560
+Not so fast.
+17
+
+18
+00:00:52,570 --> 00:00:53,550
+Why?
+18
+
+19
+00:00:53,590 --> 00:00:56,930
+Because you've not done the routing right.
+19
+
+20
+00:00:56,950 --> 00:00:59,130
+So let's add the routing.
+20
+
+21
+00:00:59,530 --> 00:01:01,870
+As usual, ** should be the last one.
+21
+
+22
+00:01:01,870 --> 00:01:06,100
+Do not make the mistake of adding something after **.
+22
+
+23
+00:01:06,100 --> 00:01:14,830
+logout: and it should be logout component and refresh.
+23
+
+24
+00:01:15,400 --> 00:01:17,190
+/ out
+24
+
+25
+00:01:17,200 --> 00:01:18,000
+Logout works.!
+25
+
+26
+00:01:18,010 --> 00:01:18,970
+That's cool.
+26
+
+27
+00:01:19,000 --> 00:01:21,030
+So now logout pages is there
+27
+
+28
+00:01:21,160 --> 00:01:22,750
+Now logout.component.html
+28
+
+29
+00:01:22,830 --> 00:01:32,620
+We'll put a h1, You Are Logged Out.
+29
+
+30
+00:01:33,830 --> 00:01:38,540
+And put a div,  class =container
+30
+
+31
+00:01:41,200 --> 00:01:45,700
+and just put a simple message out saying thank you.
+31
+
+32
+00:01:47,390 --> 00:01:48,710
+For using
+32
+
+33
+00:01:52,190 --> 00:01:55,370
+our application. cool, you are logged out.
+33
+
+34
+00:01:55,370 --> 00:01:57,300
+Thank you for using our application.
+34
+
+35
+00:01:57,470 --> 00:02:04,190
+That's good, but is it all? What we want to do is actually go out to the logout.component.ts, and make
+35
+
+36
+00:02:04,190 --> 00:02:07,760
+sure that the user is logged out.
+36
+
+37
+00:02:07,790 --> 00:02:10,300
+Now let's go to the hardcoded authentication service.
+37
+
+38
+00:02:10,310 --> 00:02:17,280
+We don't really have anything to log out our user, right? So what we do is create a new method
+38
+
+39
+00:02:17,290 --> 00:02:18,680
+logout()
+39
+
+40
+00:02:21,460 --> 00:02:27,230
+and all that we need to do is say sessionStorage.removeItem()
+40
+
+41
+00:02:32,830 --> 00:02:34,220
+authenticatedUser.
+41
+
+42
+00:02:34,440 --> 00:02:40,750
+So what we are doing here, is we are removing the authenticated user from session storage and this particular
+42
+
+43
+00:02:40,900 --> 00:02:43,030
+thing hardcoded authentication service.
+43
+
+44
+00:02:43,250 --> 00:02:45,660
+You need to use it in the logout component.
+44
+
+45
+00:02:45,880 --> 00:02:47,050
+How can we use that?
+45
+
+46
+00:02:47,050 --> 00:02:49,850
+We need to inject it in a the component.
+46
+
+47
+00:02:49,870 --> 00:02:57,850
+I'll make it hard coded authentication so use it.
+47
+
+48
+00:02:57,860 --> 00:03:04,600
+Import this in, as we put it in ngOnInit().
+48
+
+49
+00:03:04,670 --> 00:03:06,680
+What do we need to do, when the component is initialized?
+49
+
+50
+00:03:06,720 --> 00:03:13,160
+To say this.hardcodedAuthenticationService.logout() . what would happen?
+50
+
+51
+00:03:13,300 --> 00:03:16,900
+The logout method would be called, and we would be logged out.
+51
+
+52
+00:03:16,950 --> 00:03:19,660
+Let's see what would happen if it we refresh.
+52
+
+53
+00:03:19,780 --> 00:03:22,970
+You'd see that you are logged out, and that's removed in sessionStorage..
+53
+
+54
+00:03:23,000 --> 00:03:27,830
+If the value is there, you can see that the value is not there.
+54
+
+55
+00:03:27,830 --> 00:03:31,320
+This is basically the search thing, and you can see that it's not there.
+55
+
+56
+00:03:31,540 --> 00:03:32,390
+Do it again.
+56
+
+57
+00:03:32,700 --> 00:03:44,870
+So give dummy log in, and you can see ... let's refresh it...  you can see that in28minutes with its values there.
+57
+
+58
+00:03:45,160 --> 00:03:48,990
+And as soon as I click logout, you can also see the menus react.
+58
+
+59
+00:03:49,000 --> 00:03:55,840
+So the menus don't appear. So we'll leave the log in menus here right now and you can see when you refresh
+59
+
+60
+00:03:55,840 --> 00:03:55,990
+it.
+60
+
+61
+00:03:56,020 --> 00:04:00,490
+It's also not showing the value in the session storage.
+61
+
+62
+00:04:00,490 --> 00:04:01,590
+Isn't this fun!
+62
+
+63
+00:04:01,690 --> 00:04:09,490
+So now we have a proper implementation of a logout and login. So you can see you are logged out... When
+63
+
+64
+00:04:09,490 --> 00:04:14,100
+you log in, and save dummy as the password and log in,
+64
+
+65
+00:04:14,200 --> 00:04:18,940
+You can go there play with it, and log out.
+65
+
+66
+00:04:19,570 --> 00:04:21,150
+This is awesome right!
+66
+
+67
+00:04:21,170 --> 00:04:27,880
+So this is much more clear application. You have login and  logout features, and all that working perfectly.
+67
+
+68
+00:04:27,880 --> 00:04:33,670
+The only thing which I don't really like about what's happening in here, is the fact that if I type in
+68
+
+69
+00:04:33,680 --> 00:04:43,720
+localhost:4200/todos, I'm still able to do the see the todos, even though I'm not logged in, and that's
+69
+
+70
+00:04:43,720 --> 00:04:44,800
+not really good right!
+70
+
+71
+00:04:44,800 --> 00:04:47,890
+I would want to be able to see that todo only when I'm logged in.
+71
+
+72
+00:04:48,130 --> 00:04:50,130
+Let's get to that in the next step.
+72
+
+73
+00:04:50,170 --> 00:04:50,510
+Bye Bye!

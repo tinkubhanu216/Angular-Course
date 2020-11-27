@@ -1,0 +1,299 @@
+0
+1
+00:00:02,120 --> 00:00:10,280
+Welcome back. We left you with an exercise. We wanted to use data binding for the password field when you left.
+1
+
+2
+00:00:10,280 --> 00:00:11,240
+It's very simple.
+2
+
+3
+00:00:11,290 --> 00:00:17,780
+I can replace the values password with ngModel  = to... this.
+3
+
+4
+00:00:17,910 --> 00:00:23,040
+It should be password and you want to replace with password.
+4
+
+5
+00:00:23,240 --> 00:00:29,540
+You see that through the data binding is now working for password field as well.
+5
+
+6
+00:00:29,570 --> 00:00:37,590
+If I go to the handleLogin and if you do console.log( this.password), it would open up the browser.
+6
+
+7
+00:00:37,640 --> 00:00:38,310
+You would see that.
+7
+
+8
+00:00:38,330 --> 00:00:45,660
+Now if I put in a login, it would also print the username and the password. If I enter the password
+8
+
+9
+00:00:45,660 --> 00:00:46,530
+as dummy.
+9
+
+10
+00:00:46,590 --> 00:00:54,060
+It's printing username and password. One of the important things that you need to remember
+10
+
+11
+00:00:54,060 --> 00:00:56,160
+is this is not really a secure thing to do.
+11
+
+12
+00:00:56,160 --> 00:00:58,850
+You would never want to print passwords out.
+12
+
+13
+00:00:58,860 --> 00:01:03,840
+So what I would do is immediately remove this console.log() for password.
+13
+
+14
+00:01:03,900 --> 00:01:09,530
+Let's quickly review some of the important data binding element that we have used until now.
+14
+
+15
+00:01:10,050 --> 00:01:15,180
+If you're already familiar with data binding, then all the three things that we have discussed and then
+15
+
+16
+00:01:15,180 --> 00:01:19,410
+you can skip this video, but if you want to have a quick review of whatever we have. Until now, you
+16
+
+17
+00:01:19,980 --> 00:01:25,630
+had gone the first data binding element that we had discussed was something called interpellation.
+17
+
+18
+00:01:25,650 --> 00:01:26,760
+So username.
+18
+
+19
+00:01:27,060 --> 00:01:32,760
+And what we did was this is called interpolation, right? So be able to say user name.
+19
+
+20
+00:01:33,180 --> 00:01:34,220
+And what does it do.
+20
+
+21
+00:01:34,230 --> 00:01:38,370
+It just takes the user name and shows it in here.
+21
+
+22
+00:01:38,550 --> 00:01:46,640
+So here's one way data binding is taking data from a component property and showing it on The View.
+22
+
+23
+00:01:46,890 --> 00:01:52,620
+So the second kind of data binding that we did was event binding, which was basically binding event on
+23
+
+24
+00:01:52,620 --> 00:02:03,060
+The View. A click of the button a user action or event method on the component.
+24
+
+25
+00:02:03,210 --> 00:02:08,290
+So the two terminology that we made use of until enough is this is a component property.
+25
+
+26
+00:02:08,490 --> 00:02:12,460
+And this is a component event event binding.
+26
+
+27
+00:02:12,570 --> 00:02:19,280
+Helps us to bind a view event to component event method.
+27
+
+28
+00:02:19,350 --> 00:02:24,320
+The third one which we made use of was a data binding.
+28
+
+29
+00:02:24,480 --> 00:02:26,430
+We just need to do.
+29
+
+30
+00:02:26,700 --> 00:02:35,770
+a "banana-in-a-box" kind of structure, and we need to put in the property name from the component
+30
+
+31
+00:02:35,970 --> 00:02:42,570
+So from the component into what it is the property name, we need to put it in here and we saw that this
+31
+
+32
+00:02:42,620 --> 00:02:50,160
+enables 2-way data binding. What is happening is when the view was loaded, the initial data was coming
+32
+
+33
+00:02:50,250 --> 00:02:53,700
+in from the component property.
+33
+
+34
+00:02:54,030 --> 00:03:00,990
+And whenever we change the user name, whenever user enters a new username in28minutesOne or something
+34
+
+35
+00:03:00,990 --> 00:03:03,140
+of that kind, what would happen?
+35
+
+36
+00:03:03,360 --> 00:03:10,840
+What happens is the modified data gets binded back to the component property.
+36
+
+37
+00:03:10,860 --> 00:03:16,800
+You can see that as soon as I type in 123, it's the user name is also getting updated.
+37
+
+38
+00:03:16,800 --> 00:03:24,570
+This is because what is happening here is this value is bound to the component property user name.
+38
+
+39
+00:03:24,810 --> 00:03:32,360
+And this is the display of that specific value you look at how it's tied to this anymore.
+39
+
+40
+00:03:32,520 --> 00:03:41,190
+Ties up whatever data is entered in it, ties up directly to the component property username. What you
+40
+
+41
+00:03:41,200 --> 00:03:42,470
+think interpolation will do?
+41
+
+42
+00:03:42,510 --> 00:03:48,240
+It ties up the view to the value of this property.
+42
+
+43
+00:03:48,450 --> 00:03:51,180
+So what is happening here is as I keep changing this.
+43
+
+44
+00:03:51,180 --> 00:03:55,630
+You can see the user name value added in here. In this quick video,
+44
+
+45
+00:03:55,680 --> 00:04:01,830
+what we did was get a quick overview of the three kinds of data binding that we used.
+45
+
+46
+00:04:01,830 --> 00:04:08,640
+The first one was Interpolation, where we bind in property to view element.
+46
+
+47
+00:04:08,640 --> 00:04:17,310
+The second one was even binding, where we tie up a user event a click of a button to event which is defined
+47
+
+48
+00:04:17,460 --> 00:04:18,600
+inside the component.
+48
+
+49
+00:04:18,630 --> 00:04:25,980
+The component event. The third one was to where data binding implemented using in the ngModel.
+49
+
+50
+00:04:26,000 --> 00:04:33,450
+They make sure that whatever value which is present for the component property, is tied to the view element
+50
+
+51
+00:04:33,750 --> 00:04:41,490
+and whatever data which is entered in the view element is automatically tied back to the component property
+51
+
+52
+00:04:41,490 --> 00:04:42,530
+as well.
+52
+
+53
+00:04:42,660 --> 00:04:48,940
+One of the interesting things is this ngModel over here is called an Angular directive.
+53
+
+54
+00:04:49,230 --> 00:04:54,410
+Angular Directive adds additional meaning on top of the typical HTML.
+54
+
+55
+00:04:54,480 --> 00:04:58,060
+So we know in HTML, type  means this, name means this.
+55
+
+56
+00:04:58,070 --> 00:05:05,760
+So we do that and let directives and specific things, which add extended meaning to whatever is already
+56
+
+57
+00:05:05,760 --> 00:05:07,040
+present in HTML.
+57
+
+58
+00:05:07,040 --> 00:05:14,660
+So this kind of adding on top of whatever is possible using HTML. We look at a lot of Angular
+58
+
+59
+00:05:14,660 --> 00:05:16,220
+directives a little later.
+59
+
+60
+00:05:16,380 --> 00:05:18,770
+Let's take a break and I'll see you in the next step.

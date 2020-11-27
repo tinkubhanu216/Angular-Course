@@ -1,0 +1,529 @@
+0
+1
+00:00:01,860 --> 00:00:07,490
+Welcome back.  If you are a Java developer, who's coming into the front-end world,
+1
+
+2
+00:00:07,650 --> 00:00:13,460
+One of the most important things to get used to is the syntax of typescript.
+2
+
+3
+00:00:13,560 --> 00:00:18,950
+You would see that this looks similar to a Java class, but there are quite a number of things that you
+3
+
+4
+00:00:18,950 --> 00:00:20,920
+would need to get used to.
+4
+
+5
+00:00:21,060 --> 00:00:24,830
+You might be wondering if I would want to create a new component.
+5
+
+6
+00:00:24,930 --> 00:00:27,100
+It might be a lot of effort.
+6
+
+7
+00:00:27,170 --> 00:00:31,280
+I need to create 4 files manually link them up.
+7
+
+8
+00:00:31,280 --> 00:00:34,910
+There is a lot of effort which is involved in doing that.
+8
+
+9
+00:00:34,920 --> 00:00:42,060
+The thing is  Angular CLI makes it very easy to create components. In this step,
+9
+
+10
+00:00:42,060 --> 00:00:45,490
+Let's create a component and see how easy it is to do that.
+10
+
+11
+00:00:45,630 --> 00:00:51,390
+Typically we have one window where we have the ng serve running.
+11
+
+12
+00:00:51,540 --> 00:00:59,610
+I have all my code in this todo folder, and I cd to this folder in here, and we have done ng serve
+12
+
+13
+00:01:00,060 --> 00:01:03,860
+to launch up the application and that what we are seeing in here.
+13
+
+14
+00:01:04,020 --> 00:01:11,040
+What I would typically do is, I would open up another terminal window or another command prompt ceding
+14
+
+15
+00:01:11,310 --> 00:01:13,220
+to the same folder.
+15
+
+16
+00:01:13,380 --> 00:01:15,580
+So I am opening up the folder.
+16
+
+17
+00:01:15,620 --> 00:01:22,430
+If you do the present working directory, it's exactly the same as what I have in here.
+17
+
+18
+00:01:22,430 --> 00:01:29,090
+So I have two command line windows. One of them is running ng serve, and the other one we would typically
+18
+
+19
+00:01:29,090 --> 00:01:35,220
+use to create the component, to create modules, to create services.
+19
+
+20
+00:01:35,280 --> 00:01:39,160
+What I would want to create, you use the other window to create it.
+20
+
+21
+00:01:39,350 --> 00:01:45,900
+So the advantage of doing this is as soon as new code is generated, my code would automatically be picked
+21
+
+22
+00:01:45,920 --> 00:01:51,120
+up. I need to stop, and after I create a component and then start ng serve again.
+22
+
+23
+00:01:51,200 --> 00:01:53,770
+If you see that, new code you are writing is not picked up.
+23
+
+24
+00:01:53,780 --> 00:01:59,610
+Make sure that you are inside the same working directly in these folders.
+24
+
+25
+00:01:59,850 --> 00:02:02,420
+Now let's get saddled with creating a component.
+25
+
+26
+00:02:02,420 --> 00:02:03,500
+How do I create a component?
+26
+
+27
+00:02:03,500 --> 00:02:07,730
+It's very simple indeed! ng generate, and what you want to create.
+27
+
+28
+00:02:07,730 --> 00:02:10,590
+We want to create a component, and ng generate component.
+28
+
+29
+00:02:10,730 --> 00:02:16,410
+Actually you can also run it as in ng g c .
+29
+
+30
+00:02:16,460 --> 00:02:18,260
+So this is kind of a shortcut.
+30
+
+31
+00:02:18,610 --> 00:02:22,380
+Once you are more familiar with Angular, maybe you can use that! For now,
+31
+
+32
+00:02:22,580 --> 00:02:29,450
+Let's stick with the usual one: ng generate component. And we would need to specify the name of the
+32
+
+33
+00:02:29,450 --> 00:02:32,060
+component, that we would want to create.
+33
+
+34
+00:02:32,060 --> 00:02:36,450
+Let's say we would want to start with creating the welcome page.
+34
+
+35
+00:02:36,800 --> 00:02:43,790
+So I would want to start creating the welcomeComponent. So: ng generate component welcomeComponent
+35
+
+36
+00:02:43,790 --> 00:02:45,590
+The most important things that you need to understand.
+36
+
+37
+00:02:45,590 --> 00:02:46,480
+with ng generate, is
+37
+
+38
+00:02:46,540 --> 00:02:47,960
+There is no rollback.
+38
+
+39
+00:02:48,050 --> 00:02:52,830
+Once the component is created, once it's added, you'll not be able to roll it back.
+39
+
+40
+00:02:53,000 --> 00:02:58,700
+So it's very important to make sure that you get the names right first time. So Welcome to check the
+40
+
+41
+00:02:58,700 --> 00:03:00,530
+name before you press enter.
+41
+
+42
+00:03:00,530 --> 00:03:03,700
+The other thing is I'm not saying welcome component.
+42
+
+43
+00:03:03,700 --> 00:03:09,860
+I'm saying just welcome and you would see that it would create a welcome component for us.
+43
+
+44
+00:03:09,860 --> 00:03:18,740
+So you didn't need component. for welcome, you'd see that there are four files which I created and one file
+44
+
+45
+00:03:18,920 --> 00:03:22,640
+which is updated on what's happening before.
+45
+
+46
+00:03:22,640 --> 00:03:25,180
+Files that I created, that we would expect right!
+46
+
+47
+00:03:25,200 --> 00:03:32,160
+We have the component.html, which is the template, the .css which is the style.
+47
+
+48
+00:03:32,510 --> 00:03:36,340
+The .ts file which would contain the code,  the typescript code.
+48
+
+49
+00:03:36,410 --> 00:03:41,220
+This is the test file which is typically generated, and we would keep ignoring it.
+49
+
+50
+00:03:41,240 --> 00:03:45,490
+The interesting change is what is done to app.module.js
+50
+
+51
+00:03:45,500 --> 00:03:49,160
+This is an update is done to app.module.js.
+51
+
+52
+00:03:49,310 --> 00:03:51,370
+Let's look at what update is done.
+52
+
+53
+00:03:51,380 --> 00:03:53,180
+They open up the app.module.js
+53
+
+54
+00:03:53,240 --> 00:04:00,170
+Yes let's do a control-B, or command-B,  to make sure that we are seeing it in full screen.
+54
+
+55
+00:04:00,170 --> 00:04:08,620
+If you do that, you'd see that there is a WelcomeComponent is added in in the declaration.
+55
+
+56
+00:04:08,810 --> 00:04:15,950
+We'll talk about NgModule a little later. This stands for Angular Module. Every component that we create as
+56
+
+57
+00:04:15,950 --> 00:04:25,100
+part of an Angular application should be associated with Angular module, and the declarations indicate
+57
+
+58
+00:04:25,430 --> 00:04:32,280
+what are the different things, the different components that are part of this particular NgModule.
+58
+
+59
+00:04:32,290 --> 00:04:40,930
+You'll see that the WelcomeComponent is automatically added in, as part of these particular declarations.
+59
+
+60
+00:04:41,090 --> 00:04:46,880
+This particular module contains two components AppComponent and WelcomeComponent.
+60
+
+61
+00:04:46,880 --> 00:04:53,140
+Now let's go onto the explorer, and look at where the welcome component is created.
+61
+
+62
+00:04:53,150 --> 00:04:57,590
+So in the app folder, there is a folder called welcome, and inside the welcome.
+62
+
+63
+00:04:57,590 --> 00:04:59,770
+All these four files are created.
+63
+
+64
+00:04:59,770 --> 00:05:02,040
+You can see that it says the HTML says welcome.
+64
+
+65
+00:05:02,040 --> 00:05:04,370
+Looks the .spec file and things.
+65
+
+66
+00:05:04,390 --> 00:05:11,930
+and see the default test, and the .ts files contains the basic component.
+66
+
+67
+00:05:11,960 --> 00:05:15,660
+You can see that the name of the component is a WelcomeComponent.
+67
+
+68
+00:05:15,660 --> 00:05:16,820
+It's very important.
+68
+
+69
+00:05:16,820 --> 00:05:21,890
+We just specified welcome in here, but the component we just created is WelcomeComponent. So we don't really
+69
+
+70
+00:05:21,890 --> 00:05:25,040
+need to say WelcomeComponent when we are creating the component.
+70
+
+71
+00:05:25,220 --> 00:05:28,220
+That's kind of a typical mistake which a lot of beginners make.
+71
+
+72
+00:05:28,220 --> 00:05:34,060
+You would see that the default selector or the default tag name which is for this specific thing, is
+72
+
+73
+00:05:34,140 --> 00:05:35,290
+app-welcome
+73
+
+74
+00:05:35,450 --> 00:05:40,280
+And you would see that the templateUrl and the styleUrl  are appropriately matched.
+74
+
+75
+00:05:40,280 --> 00:05:46,430
+The interesting fact to note is the use of implements on it which is present in here.
+75
+
+76
+00:05:46,440 --> 00:05:51,620
+The thing is modern Javascript does not really have the concept of interfaces.
+76
+
+77
+00:05:51,620 --> 00:05:57,440
+This is something which is a typescript concept, which we are making use of in here.
+77
+
+78
+00:05:57,440 --> 00:06:00,960
+So we have an interface called on it.
+78
+
+79
+00:06:01,040 --> 00:06:05,240
+The interface defines a method called ngOnInit().
+79
+
+80
+00:06:05,300 --> 00:06:11,200
+So what you are doing is, in the WelcomeComponent we are implementing the method ngOnInit().
+80
+
+81
+00:06:11,210 --> 00:06:15,310
+You would see that if I remove this, there is a compilation error.
+81
+
+82
+00:06:15,650 --> 00:06:21,760
+You see that it says: "I'm not implementing the interface". so this is very similar to interfaces in Java
+82
+
+83
+00:06:21,850 --> 00:06:27,020
+when you implement an interface, you have to implement all the method to represent them.
+83
+
+84
+00:06:27,230 --> 00:06:28,910
+Or you can make it abstract.
+84
+
+85
+00:06:28,990 --> 00:06:30,630
+Let's not worry about it right now.
+85
+
+86
+00:06:30,690 --> 00:06:38,280
+So the ngOninit():  what would happen is this method would run, then this component is initialized.
+86
+
+87
+00:06:38,440 --> 00:06:39,460
+Let's save this.
+87
+
+88
+00:06:39,640 --> 00:06:45,100
+Let's look at the application. You'd see that there is no change because we have not used this component
+88
+
+89
+00:06:45,390 --> 00:06:47,260
+anywhere.
+89
+
+90
+00:06:47,380 --> 00:06:50,290
+I would want to include this component.
+90
+
+91
+00:06:50,290 --> 00:06:51,790
+I would want to show this component.
+91
+
+92
+00:06:51,790 --> 00:06:52,920
+How can I do that?
+92
+
+93
+00:06:52,920 --> 00:06:58,750
+One of the ways I can do that is I can go to the app.component.html, and I can include
+93
+
+94
+00:06:58,750 --> 00:07:01,420
+the tag
+94
+
+95
+00:07:01,490 --> 00:07:07,790
+<app-welcome>, and save it. that's what would happen.
+95
+
+96
+00:07:07,950 --> 00:07:09,660
+And it loads up, as you see.
+96
+
+97
+00:07:10,000 --> 00:07:12,460
+Welcome works!
+97
+
+98
+00:07:12,480 --> 00:07:13,740
+Isn't this awesome!
+98
+
+99
+00:07:13,970 --> 00:07:21,500
+So what we did is we have included the component that we have created, inside the app component.
+99
+
+100
+00:07:21,630 --> 00:07:28,830
+So the WelcomeComponent is enough included as part of the AppComponent. In the step,
+100
+
+101
+00:07:28,950 --> 00:07:35,410
+We created the WelcomeComponent and we have loaded it as part of the AppComponent.
+101
+
+102
+00:07:35,910 --> 00:07:42,290
+I would like you to do an exercise: Create another component, and include it as part of the
+102
+
+103
+00:07:42,350 --> 00:07:42,800
+app.component.html
+103
+
+104
+00:07:42,830 --> 00:07:44,770
+as well.
+104
+
+105
+00:07:45,210 --> 00:07:50,070
+I would recommend you to play around with it as much as possible to understand a little bit more about
+105
+
+106
+00:07:50,070 --> 00:07:52,450
+component. I'll see you in the next step.

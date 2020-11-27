@@ -1,0 +1,349 @@
+0
+1
+00:00:02,300 --> 00:00:11,300
+Welcome back. In this course, we initially created the page we created this kind of an object structure.
+1
+
+2
+00:00:11,300 --> 00:00:17,700
+The important thing here is we don't really have any class to represent the todo structure.
+2
+
+3
+00:00:17,720 --> 00:00:23,360
+The best practice is to create two classes to represent the structure, and do that to create the todo.
+3
+
+4
+00:00:23,540 --> 00:00:26,500
+Let's start doing that in this specific step.
+4
+
+5
+00:00:26,570 --> 00:00:32,940
+Let's create a class called Todo, as you discussed earlier Javascript module file.
+5
+
+6
+00:00:32,950 --> 00:00:40,180
+So this file... each file... each typescript file is javascript module, and in this file, you can have any
+6
+
+7
+00:00:40,180 --> 00:00:42,050
+number of classes created.
+7
+
+8
+00:00:42,040 --> 00:00:46,020
+So let's create one more class export class.
+8
+
+9
+00:00:46,120 --> 00:00:49,220
+Let's call this Todo.
+9
+
+10
+00:00:49,410 --> 00:00:53,480
+And in this class I would want to create a.
+10
+
+11
+00:00:53,960 --> 00:01:00,930
+So you could have a constructor created with a few parameters, allright. With these parameters must be
+11
+
+12
+00:01:01,680 --> 00:01:11,730
+public. Let's start with creating the ID, so id:number it has public description, description is the string
+12
+
+13
+00:01:12,210 --> 00:01:17,750
+next for each todo,  you would want to maintain when it's completed or not.
+13
+
+14
+00:01:17,780 --> 00:01:21,990
+You call this done, and the type of this is boolean.
+14
+
+15
+00:01:22,410 --> 00:01:24,210
+And the last one which I would want to happen.
+15
+
+16
+00:01:24,210 --> 00:01:26,040
+Each todo has a target date.
+16
+
+17
+00:01:26,070 --> 00:01:33,850
+When do you want a completed by the date, and the target date will have it as a date.
+17
+
+18
+00:01:33,870 --> 00:01:37,090
+Now the constructor is already one of the important typescript.
+18
+
+19
+00:01:37,350 --> 00:01:44,270
+Each of these constructor arguments becomes a member when you create the object of this piece.
+19
+
+20
+00:01:44,280 --> 00:01:46,540
+So let's see what would happen here.
+20
+
+21
+00:01:46,620 --> 00:01:56,830
+I can do now instead of this new todo of 1, the next one is the description so I can copy into
+21
+
+22
+00:01:56,850 --> 00:01:57,430
+learn to dance
+22
+
+23
+00:02:00,090 --> 00:02:04,840
+have the id, we have the description and the next one is is it done or not.
+23
+
+24
+00:02:04,840 --> 00:02:06,350
+No it's not done yet.
+24
+
+25
+00:02:06,410 --> 00:02:07,950
+I would still need to do it.
+25
+
+26
+00:02:08,080 --> 00:02:14,560
+And new Date... I created a new date and I copy this again.
+26
+
+27
+00:02:14,860 --> 00:02:22,150
+Now let's say the next todo is 2, and let's say the next one is to 'become an expert at English'.
+27
+
+28
+00:02:22,240 --> 00:02:24,200
+I'm not sure if it's true or false.
+28
+
+29
+00:02:24,910 --> 00:02:26,860
+Let's leave it at false.
+29
+
+30
+00:02:26,860 --> 00:02:33,140
+And the last one is 3, 'visit your favorite country'.
+30
+
+31
+00:02:33,180 --> 00:02:36,570
+You can decide whether you have completed the visit or not.
+31
+
+32
+00:02:36,640 --> 00:02:39,870
+I'll comment this out, and learn what is coming down here.
+32
+
+33
+00:02:40,050 --> 00:02:45,610
+What we are doing is moving away from an unstructured format to being structure.
+33
+
+34
+00:02:45,630 --> 00:02:47,610
+We are creating a class to represent that todo.
+34
+
+35
+00:02:47,700 --> 00:02:53,280
+And let's update the todos competent so that we have to do. What I need to that description that
+35
+
+36
+00:02:53,340 --> 00:02:55,420
+does not really need to change.
+36
+
+37
+00:02:55,920 --> 00:02:56,880
+Let's see what would happen.
+37
+
+38
+00:02:57,060 --> 00:03:01,740
+You'd see that when you press refresh, things are still working what I would want to do is I would
+38
+
+39
+00:03:01,740 --> 00:03:05,460
+want to update the field to which we are showing right now.
+39
+
+40
+00:03:05,730 --> 00:03:13,110
+I don't think anybody would care about the ID, so let's throw the id out, and what we add in is description.
+40
+
+41
+00:03:13,560 --> 00:03:18,760
+And let's make it a capital D,  the let's add target date
+41
+
+42
+00:03:21,640 --> 00:03:23,620
+and let's add in another one
+42
+
+43
+00:03:26,820 --> 00:03:37,200
+is Completed, and let's add them in to the description todo.targetDate.
+43
+
+44
+00:03:37,960 --> 00:03:38,540
+todo.
+44
+
+45
+00:03:41,690 --> 00:03:43,590
+let's see what happens.
+45
+
+46
+00:03:43,670 --> 00:03:48,730
+You can see now my todos: description, target date and is completed.
+46
+
+47
+00:03:48,850 --> 00:03:53,990
+And now you can see that this is not really well formatted especially the target date.
+47
+
+48
+00:03:53,990 --> 00:03:54,960
+Target date.
+48
+
+49
+00:03:55,330 --> 00:03:56,720
+We will want to format it for that.
+49
+
+50
+00:03:56,720 --> 00:04:00,180
+So we use something called a pipe.
+50
+
+51
+00:04:00,210 --> 00:04:01,600
+So what we have is a field.
+51
+
+52
+00:04:01,820 --> 00:04:06,870
+So this field value you would want to format it as a normal date.
+52
+
+53
+00:04:08,010 --> 00:04:14,410
+What would happen now? let's do a refresh, and you can see that this is the default format of date.
+53
+
+54
+00:04:14,430 --> 00:04:20,280
+There are a number of things that you can use pipe for. pipe is basically a way you convert one value
+54
+
+55
+00:04:20,370 --> 00:04:21,860
+into another format.
+55
+
+56
+00:04:21,960 --> 00:04:27,900
+Here we are saying we want to convert it into a normal date format. If you would want to have everything
+56
+
+57
+00:04:27,900 --> 00:04:31,340
+in uppercase, you can say uppercase again. You would see that everything.
+57
+
+58
+00:04:31,560 --> 00:04:37,650
+So nov eight now appears in, NOV is in caps. Or if you'd want everything it would be in lowercase
+58
+
+59
+00:04:37,680 --> 00:04:39,530
+you can do lowercase.
+59
+
+60
+00:04:39,540 --> 00:04:45,640
+So these are all called pipes, and pipes are used to convert one field in one format to another format
+60
+
+61
+00:04:45,650 --> 00:04:50,340
+and you'd want to do to lowercase with the field, you would use a pipe so you can see that everything
+61
+
+62
+00:04:50,340 --> 00:04:52,070
+is in lowercase.
+62
+
+63
+00:04:52,190 --> 00:04:54,460
+Don't worry about the lowercase, I'll remove it.
+63
+
+64
+00:04:54,480 --> 00:05:02,150
+What we have now is a relatively well designed todo page In this step, we created the class constructor
+64
+
+65
+00:05:02,380 --> 00:05:03,490
+and.
+65
+
+66
+00:05:03,600 --> 00:05:08,250
+We created a number of todos, and we used the component to display them.
+66
+
+67
+00:05:08,430 --> 00:05:16,110
+We used a couple of pipes to convert the target date into a more visually appealing format.
+67
+
+68
+00:05:16,110 --> 00:05:17,680
+I'm sure you are having a lot of fun.
+68
+
+69
+00:05:17,690 --> 00:05:22,110
+We are taking a lot of rapid strides in the last few steps, and I'll see you in the next step.
+69
+
+70
+00:05:22,150 --> 00:05:22,420
+Until then, bye bye.

@@ -1,0 +1,479 @@
+0
+1
+00:00:01,820 --> 00:00:07,670
+Welcome back. In the previous step, we stored the  user on  authentication into session storage, and we created
+1
+
+2
+00:00:07,670 --> 00:00:14,700
+a method to check for users logged in or not. What we have also done is we made a couple of logs.
+2
+
+3
+00:00:14,970 --> 00:00:20,810
+It's not really good, so let's comment these out, so that the logs don't disturb us.
+3
+
+4
+00:00:20,900 --> 00:00:24,600
+We make sure that everything is working fine, so the logs are not really needed anymore.
+4
+
+5
+00:00:24,830 --> 00:00:26,250
+Now what do you want to do?
+5
+
+6
+00:00:26,280 --> 00:00:28,860
+You would want to enable and disable menu items.
+6
+
+7
+00:00:28,920 --> 00:00:32,030
+Based on is user logged in or not.
+7
+
+8
+00:00:32,030 --> 00:00:36,060
+So I want to enable these links based on user logging in.
+8
+
+9
+00:00:36,080 --> 00:00:37,400
+How can I do that?
+9
+
+10
+00:00:37,400 --> 00:00:42,700
+Think about it. If user has logged in, I would want to show different links if a user is not logged in,
+10
+
+11
+00:00:42,830 --> 00:00:46,220
+I would want to show different things to be done here.
+11
+
+12
+00:00:46,350 --> 00:00:50,700
+And think about it, before you would proceed to look at the solution.
+12
+
+13
+00:00:50,780 --> 00:00:59,790
+What we have in here is the menu component. menu component defined so  menu.component.html.
+13
+
+14
+00:00:59,930 --> 00:01:00,760
+HTML
+14
+
+15
+00:01:01,070 --> 00:01:08,120
+So before we show these links, I would need to check if user logged in or not.
+15
+
+16
+00:01:08,120 --> 00:01:09,010
+How can I do that?
+16
+
+17
+00:01:10,070 --> 00:01:10,960
+Think about it.
+17
+
+18
+00:01:11,000 --> 00:01:12,410
+It should be easy right?
+18
+
+19
+00:01:12,460 --> 00:01:14,700
+So let's go to another component.
+19
+
+20
+00:01:14,960 --> 00:01:20,400
+And first add in our authentication service. We need to check whether somebody is logged in are not.
+20
+
+21
+00:01:20,420 --> 00:01:22,380
+We need the authentication service right?
+21
+
+22
+00:01:22,380 --> 00:01:30,500
+So let's inject it in and say private authentication hardcoded authentication service.
+22
+
+23
+00:01:30,820 --> 00:01:36,640
+Actually I'll copy this again and paste it here, and take :. with them.
+23
+
+24
+00:01:36,700 --> 00:01:38,050
+Let's make it small h.
+24
+
+25
+00:01:39,260 --> 00:01:43,310
+So we have the hardcodedAuthenticationService very long!
+25
+
+26
+00:01:43,350 --> 00:01:49,380
+Now what we want to do is on the initialization of this component, will want to check hardcoded authentication
+26
+
+27
+00:01:49,380 --> 00:01:57,290
+service. For this, you need to say this.hardcodedAuthenticationService
+27
+
+28
+00:01:57,330 --> 00:02:00,420
+What we would want to find out, what you want to find out.
+28
+
+29
+00:02:00,490 --> 00:02:01,790
+is the user logged in?
+29
+
+30
+00:02:02,380 --> 00:02:10,830
+We need to find out if this user has logged in, and let's put this into a variable isUserLoggedIn.
+30
+
+31
+00:02:11,040 --> 00:02:15,990
+And this would be a boolean, and let's initialize it to false.
+31
+
+32
+00:02:16,710 --> 00:02:22,310
+And if user is logged in then I would initialize.
+32
+
+33
+00:02:22,340 --> 00:02:24,340
+What's the error? this.
+33
+
+34
+00:02:24,480 --> 00:02:27,460
+this.isUserLoggedIn = ...
+34
+
+35
+00:02:27,480 --> 00:02:32,780
+So now I can do this component property in the view.
+35
+
+36
+00:02:32,790 --> 00:02:39,690
+So let's go to the menu.component.html, and over here I can say display this, only og user has
+36
+
+37
+00:02:39,690 --> 00:02:41,550
+logged in. How can I say that?
+37
+
+38
+00:02:41,550 --> 00:02:43,270
+Think about it, how can I say that?
+38
+
+39
+00:02:43,470 --> 00:02:44,790
+use ngIf..
+39
+
+40
+00:02:44,820 --> 00:02:53,790
+If it's equal to ...... so show this only if user is logged in. is logged in ... show this if show only if you
+40
+
+41
+00:02:53,880 --> 00:02:56,210
+just logged in ... log out.
+41
+
+42
+00:02:56,220 --> 00:02:59,360
+Show it if user is logged in and log in.
+42
+
+43
+00:02:59,380 --> 00:03:02,840
+show it if user has not logged in.
+43
+
+44
+00:03:02,920 --> 00:03:03,260
+Right.
+44
+
+45
+00:03:03,280 --> 00:03:05,500
+I'm putting a not in here.
+45
+
+46
+00:03:05,500 --> 00:03:06,560
+Isn't that interesting.
+46
+
+47
+00:03:06,610 --> 00:03:16,240
+Let's see what would happen. if we refresh page if you see it now three links are shown: home, todos 
+47
+
+48
+00:03:16,380 --> 00:03:17,890
+and log out.
+48
+
+49
+00:03:18,180 --> 00:03:19,590
+That's cool right!
+49
+
+50
+00:03:19,590 --> 00:03:22,790
+We are able to see all these three links.
+50
+
+51
+00:03:22,980 --> 00:03:24,580
+Let's remove this.
+51
+
+52
+00:03:24,600 --> 00:03:33,540
+Let's clear this out and let's go back to the homepage. you would see that these three links remain here.
+52
+
+53
+00:03:33,540 --> 00:03:40,490
+So even though it's not they're in session storage, it's still visible. what's happening?
+53
+
+54
+00:03:40,490 --> 00:03:46,100
+Why are we able to see the links, even though I have deleted this from station storage?
+54
+
+55
+00:03:46,130 --> 00:03:51,070
+The reason is because this menu component is initialized only once.
+55
+
+56
+00:03:51,070 --> 00:03:52,880
+Right at the end of the page.
+56
+
+57
+00:03:52,880 --> 00:04:00,220
+So once we leave the page we're not refreshing the content of this menu component, so ngOnInit()
+57
+
+58
+00:04:00,220 --> 00:04:02,230
+will not be called.
+58
+
+59
+00:04:02,360 --> 00:04:07,450
+So whatever value was initially stored that remained as it is.
+59
+
+60
+00:04:07,460 --> 00:04:13,640
+So if I completely refresh the page, so I'm not just clicking the link but I'm refreshing the page you'd
+60
+
+61
+00:04:13,670 --> 00:04:15,620
+see that the links would go away.
+61
+
+62
+00:04:15,780 --> 00:04:22,250
+So you would see that login is the only one which is shown because, in session storage the user name
+62
+
+63
+00:04:22,250 --> 00:04:22,850
+is not there.
+63
+
+64
+00:04:22,850 --> 00:04:23,780
+So you login.
+64
+
+65
+00:04:23,780 --> 00:04:24,460
+Sure.
+65
+
+66
+00:04:24,770 --> 00:04:32,020
+And even if now in28minutes, dummy and I login, I would see that only login menu item is shown. Remeaning
+66
+
+67
+00:04:32,030 --> 00:04:36,560
+are not shown because even though the item is there in the session.
+67
+
+68
+00:04:36,560 --> 00:04:42,410
+So if you refresh the session storage, you'd see that the item is there, but it's not picked up by the menu
+68
+
+69
+00:04:42,410 --> 00:04:45,770
+because the menu is not being refreshed at all.
+69
+
+70
+00:04:45,770 --> 00:04:51,190
+The ngOnInit() on the menu component gets called only when the page gets refreshed.
+70
+
+71
+00:04:51,320 --> 00:04:59,770
+And the way we can avoid this is by calling the service. So we can go into the menu and the stuff thing
+71
+
+72
+00:04:59,830 --> 00:05:02,230
+we would say this
+72
+
+73
+00:05:07,820 --> 00:05:09,230
+now let's see what would happen if
+73
+
+74
+00:05:12,420 --> 00:05:13,340
+menu gets refreshed.
+74
+
+75
+00:05:13,410 --> 00:05:21,120
+And you would see that you see the links, and when you delete this clear and when you go back to the
+75
+
+76
+00:05:21,770 --> 00:05:28,880
+page immediately, you only see the login page because it's thinking that there is nothing in the section.
+76
+
+77
+00:05:28,950 --> 00:05:31,300
+So the user has logged out.
+77
+
+78
+00:05:31,470 --> 00:05:35,610
+One of the things you would have observed upto now, is even though it is logged out, we are still showing it on the 
+78
+
+79
+00:05:35,610 --> 00:05:36,250
+page.
+79
+
+80
+00:05:36,270 --> 00:05:39,000
+We are still showing the welcome page and things like that.
+80
+
+81
+00:05:39,060 --> 00:05:41,280
+That's something which we would fix very soon.
+81
+
+82
+00:05:41,280 --> 00:05:45,270
+But the important thing for us is to make sure, that the menu items are displayed according to whether
+82
+
+83
+00:05:45,270 --> 00:05:47,410
+the user is logged in or not.
+83
+
+84
+00:05:47,640 --> 00:05:51,300
+And that's what we were able to accomplish in this specific step.
+84
+
+85
+00:05:51,320 --> 00:05:58,110
+One of the things I will do, is I'll quickly comment out the stuff which we did in here, which is not
+85
+
+86
+00:05:58,110 --> 00:05:59,250
+being used at all.
+86
+
+87
+00:05:59,300 --> 00:06:02,200
+This specific thing in here is not being used.
+87
+
+88
+00:06:02,230 --> 00:06:05,230
+These two things are not, so I'll just comment it out.
+88
+
+89
+00:06:05,260 --> 00:06:11,190
+So it's there for your future reference. In this step, we enabled the menu items.
+89
+
+90
+00:06:11,280 --> 00:06:17,130
+We enable the top menu items based on what our users log in or not.
+90
+
+91
+00:06:17,240 --> 00:06:22,140
+One of the important things we keep doing throughout this course, is if we make mistakes that's the only
+91
+
+92
+00:06:22,140 --> 00:06:24,660
+way we can improvise things.
+92
+
+93
+00:06:24,660 --> 00:06:28,290
+Once you make a mistake and learn from it, you'll never do it again.
+93
+
+94
+00:06:28,350 --> 00:06:30,230
+And that's the best way to learn.
+94
+
+95
+00:06:30,390 --> 00:06:31,940
+And that's exactly what we keep doing.
+95
+
+96
+00:06:32,000 --> 00:06:33,950
+I'll see you in the next step . Bye!

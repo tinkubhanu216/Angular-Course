@@ -1,0 +1,304 @@
+0
+1
+00:00:02,050 --> 00:00:08,050
+Welcome back. In the previous step, we're able to take data from the component view logic, the component
+1
+
+2
+00:00:08,140 --> 00:00:11,290
+typescript code, and show it in the view in the template.
+2
+
+3
+00:00:11,500 --> 00:00:16,740
+We were able to show in28minutes, when we refresh the page you'd see in28minutes as the user name. What
+3
+
+4
+00:00:16,810 --> 00:00:22,900
+what we saw is when I typed in in28minutesExtended or changed, and clicked login, I was still seeing
+4
+
+5
+00:00:22,900 --> 00:00:29,110
+in28minutes printed in the console. I was not able to get the value from the form element and tied
+5
+
+6
+00:00:29,110 --> 00:00:34,690
+back to the business logic. That that's what we should be focusing on in this specific step.
+6
+
+7
+00:00:34,840 --> 00:00:37,960
+Until now, we looked at 2 kinds of data.
+7
+
+8
+00:00:38,080 --> 00:00:39,400
+First one uses interplolation.
+8
+
+9
+00:00:39,400 --> 00:00:42,390
+The second one was event binding.
+9
+
+10
+00:00:42,700 --> 00:00:48,370
+What we want to do now, is talk about the third kind which is a mix of both of these.
+10
+
+11
+00:00:48,550 --> 00:00:52,150
+This is called "banana-in-a-box-approach".
+11
+
+12
+00:00:52,150 --> 00:00:54,490
+So the syntax for this would look something like this.
+12
+
+13
+00:00:54,490 --> 00:00:57,920
+And that's the reason why it's called "banana-in-a-box".
+13
+
+14
+00:00:57,920 --> 00:01:01,070
+So think of it like you're putting a banana within a box.
+14
+
+15
+00:01:01,120 --> 00:01:02,590
+That's basically the syntax
+15
+
+16
+00:01:02,800 --> 00:01:07,570
+And there is a specific Angular feature we need to use to enable this.
+16
+
+17
+00:01:07,590 --> 00:01:16,030
+This is called ngModel. Then what we are doing is we are trying to bing this value to a model element
+17
+
+18
+00:01:16,330 --> 00:01:20,280
+and there is that model element present in username.
+18
+
+19
+00:01:20,320 --> 00:01:25,570
+What we need to say is in ngModel = username.
+19
+
+20
+00:01:25,900 --> 00:01:32,440
+I'm removing the value because we don't really need this anymore, because the ngModel would do binding
+20
+
+21
+00:01:32,440 --> 00:01:33,730
+on both the sides.
+21
+
+22
+00:01:33,760 --> 00:01:40,780
+It would take data from the login component, and tied down to the template and when data is changing
+22
+
+23
+00:01:40,780 --> 00:01:46,360
+on the template, it would automatically update the value inside the component.
+23
+
+24
+00:01:46,600 --> 00:01:52,960
+Let's save this and let's go to the browser.
+24
+
+25
+00:01:53,040 --> 00:01:55,000
+There is a compilation error.
+25
+
+26
+00:01:55,190 --> 00:02:00,630
+It says cannot bind in the model, because it's not really a known property of input.
+26
+
+27
+00:02:00,640 --> 00:02:06,470
+So what we're trying to do is we're trying to make use of a feature called in ngModel.
+27
+
+28
+00:02:06,490 --> 00:02:08,170
+Think of it like a class.
+28
+
+29
+00:02:08,200 --> 00:02:11,200
+So this is a class from another module.
+29
+
+30
+00:02:11,350 --> 00:02:14,440
+I'm trying to make use of it in here.
+30
+
+31
+00:02:14,440 --> 00:02:20,920
+Which model does a component belong to? The login component where is it declared it's declared inside
+31
+
+32
+00:02:21,310 --> 00:02:22,670
+the module.
+32
+
+33
+00:02:22,680 --> 00:02:27,050
+So the logging component belongs to the app module.
+33
+
+34
+00:02:27,160 --> 00:02:34,000
+This model really I would want to make use of a feature called ngModule.
+34
+
+35
+00:02:34,030 --> 00:02:40,560
+What I would need to do, is I would need to import that module into the module.
+35
+
+36
+00:02:40,590 --> 00:02:45,050
+I wanted to tell app module wants to make use of a specific module.
+36
+
+37
+00:02:45,070 --> 00:02:53,380
+How can I do that? The way Ican do that by importing the forms module so that the ngModel is defined
+37
+
+38
+00:02:53,410 --> 00:02:56,850
+as part of something called form module.
+38
+
+39
+00:02:56,920 --> 00:03:01,240
+So you need to import form module into the component.
+39
+
+40
+00:03:01,240 --> 00:03:06,980
+I'm now saying manually add the import, so I'll copy this one.
+40
+
+41
+00:03:07,290 --> 00:03:17,610
+So I'll say import forms module, and it's defined in module called angular/forms.
+41
+
+42
+00:03:17,630 --> 00:03:23,180
+So once you do this import, now you could go to the browser and wait for it to refresh.
+42
+
+43
+00:03:23,180 --> 00:03:27,290
+You'd see that now in28 minutes, what the screen is shown.
+43
+
+44
+00:03:27,350 --> 00:03:32,650
+And when I click login, it would print in28minutes, and it's right. When I change the data and print
+44
+
+45
+00:03:32,650 --> 00:03:34,090
+login.
+45
+
+46
+00:03:34,820 --> 00:03:37,560
+Interesting! we see the change to data!
+46
+
+47
+00:03:37,750 --> 00:03:46,050
+So what is happening now, is this data is now having something called directional binding.
+47
+
+48
+00:03:46,060 --> 00:03:49,440
+These are also called two way data binding.
+48
+
+49
+00:03:49,630 --> 00:03:56,810
+We're able to take the data from the view logic of the logging component and right down to a template
+49
+
+50
+00:03:57,260 --> 00:03:58,860
+to the HTML.
+50
+
+51
+00:03:59,000 --> 00:04:02,580
+So we were able to show the default value as in28minutes.
+51
+
+52
+00:04:02,680 --> 00:04:08,540
+Where is this, and when it is coming from? It's coming from the view logic from the component, and then
+52
+
+53
+00:04:08,780 --> 00:04:12,690
+we changed it, and we change it and click login. What is happening?
+53
+
+54
+00:04:12,800 --> 00:04:15,380
+This data is getting printed.
+54
+
+55
+00:04:15,470 --> 00:04:16,830
+Where is it getting it from?
+55
+
+56
+00:04:16,970 --> 00:04:19,080
+It's getting printed from user name.
+56
+
+57
+00:04:19,130 --> 00:04:21,070
+And how did it get to the user name?
+57
+
+58
+00:04:21,080 --> 00:04:24,300
+How was the user name element updated with the latest value?
+58
+
+59
+00:04:24,440 --> 00:04:28,620
+It's because of this feature called data binding.
+59
+
+60
+00:04:28,790 --> 00:04:33,780
+I'll recommend you to implement the data binding for password as an exercise.
+60
+
+61
+00:04:33,780 --> 00:04:35,220
+I'll see you in the next step.

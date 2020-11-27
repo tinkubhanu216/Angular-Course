@@ -1,0 +1,319 @@
+0
+1
+00:00:01,960 --> 00:00:06,650
+Welcome back. In the previous step, we implemented the RouteGuardService.
+1
+
+2
+00:00:06,730 --> 00:00:07,820
+Let's use it.
+2
+
+3
+00:00:07,820 --> 00:00:10,290
+In this step. A lot of it is actually very very easy.
+3
+
+4
+00:00:10,290 --> 00:00:19,720
+All you need to do is go to the routing module,  and add attribute called canActivate. Where you want to add this
+4
+
+5
+00:00:19,840 --> 00:00:29,780
+over here canActivate, and say call and say : this. canActivate can accept an array.
+5
+
+6
+00:00:29,970 --> 00:00:36,540
+So you need to put this within an array []. So this can actually have multiple Guard services. You can find multiple
+6
+
+7
+00:00:36,540 --> 00:00:42,200
+guards. That facility which is provided in here and these guards are executed one after the other.
+7
+
+8
+00:00:42,530 --> 00:00:50,880
+So now what we want to do is, this can be activated only when the routeguard service returns true.
+8
+
+9
+00:00:51,090 --> 00:00:53,750
+Let's check this out.
+9
+
+10
+00:00:53,880 --> 00:00:57,410
+One of the things you can make sure, is to make sure that you replace the entire page.
+10
+
+11
+00:00:57,420 --> 00:00:58,830
+Again I had a few problems with that.
+11
+
+12
+00:00:58,830 --> 00:01:03,320
+routeguardservice... then and was automatically picking up the change.
+12
+
+13
+00:01:03,540 --> 00:01:07,680
+But when I completely refreshed it, It stopped having problems.
+13
+
+14
+00:01:07,680 --> 00:01:10,500
+Make sure to refresh the page or wait for a little while.
+14
+
+15
+00:01:10,650 --> 00:01:16,580
+If you have any problems, you need to type in the username and password and click logging.
+15
+
+16
+00:01:17,960 --> 00:01:19,160
+Now we are logged in.
+16
+
+17
+00:01:19,160 --> 00:01:21,270
+So we be able to go to todos right.
+17
+
+18
+00:01:21,280 --> 00:01:24,430
+localhost:4200/todos.
+18
+
+19
+00:01:24,560 --> 00:01:27,200
+That works... /welcome in28minutes.
+19
+
+20
+00:01:27,200 --> 00:01:28,100
+That works.
+20
+
+21
+00:01:28,100 --> 00:01:29,450
+Now let's logout.
+21
+
+22
+00:01:29,850 --> 00:01:38,040
+So the user is logged out, but we are trying to access todos. Will this work?
+22
+
+23
+00:01:38,140 --> 00:01:39,690
+No it doesn't work.
+23
+
+24
+00:01:39,690 --> 00:01:41,010
+You are getting an empty page.
+24
+
+25
+00:01:41,010 --> 00:01:41,760
+That's good.
+25
+
+26
+00:01:41,760 --> 00:01:44,080
+So your routeguard is in action.
+26
+
+27
+00:01:44,160 --> 00:01:49,890
+If you have any problems with routeguard,  what I would recommend you to do is to try and print something
+27
+
+28
+00:01:49,890 --> 00:01:54,500
+so try and log something into your console, and see if it's getting called or not.
+28
+
+29
+00:01:54,500 --> 00:02:01,230
+So just before this, just put a log and check whether your  target is getting fired at all.
+29
+
+30
+00:02:01,230 --> 00:02:06,530
+If it's not then, check whether you have a property at it in the specific code.
+30
+
+31
+00:02:06,520 --> 00:02:09,640
+I hope so. When I say it is it showing an empty page.
+31
+
+32
+00:02:09,660 --> 00:02:12,590
+It's not really taking me to the log in page.
+32
+
+33
+00:02:12,720 --> 00:02:20,220
+Ideally when I type in invalid URL, not something ...I would really love it if the page if the application
+33
+
+34
+00:02:20,220 --> 00:02:23,200
+automatically takes me back to the login page.
+34
+
+35
+00:02:23,200 --> 00:02:28,440
+Right! Then I can go in and log in details, and again check if everything is fine.
+35
+
+36
+00:02:28,470 --> 00:02:30,320
+So let's do that right now.
+36
+
+37
+00:02:30,600 --> 00:02:37,240
+RouteGuardsService, as we said, if this.hardcodedAuthenticationService.isUserLoggedIn() return true... else
+37
+
+38
+00:02:37,270 --> 00:02:39,160
+we are returning false.
+38
+
+39
+00:02:39,170 --> 00:02:43,080
+What I would need to do is, I would want to allow the user to the log in page.
+39
+
+40
+00:02:43,200 --> 00:02:44,710
+How can I do that?
+40
+
+41
+00:02:44,730 --> 00:02:51,290
+Think about it how can I do that? The way I can do that is by adding on the by injecting one of the parameters.
+41
+
+42
+00:02:51,360 --> 00:02:52,200
+What do we need?
+42
+
+43
+00:02:52,200 --> 00:02:53,250
+We need the router.
+43
+
+44
+00:02:53,370 --> 00:02:53,700
+Right!
+44
+
+45
+00:02:53,730 --> 00:02:58,240
+Public or private router...
+45
+
+46
+00:03:00,140 --> 00:03:01,400
+So I'm going to take the router
+46
+
+47
+00:03:04,740 --> 00:03:09,110
+and over here's what we need to
+47
+
+48
+00:03:09,630 --> 00:03:16,850
+router. oops.. this.router.navigate 
+48
+
+49
+00:03:16,850 --> 00:03:18,350
+Which page do you want to go to?
+49
+
+50
+00:03:21,550 --> 00:03:32,650
+So if I say /todos,  I'm not logged in, so I'm send back to the login page. dummy log in.
+50
+
+51
+00:03:32,860 --> 00:03:37,630
+You now I can go and look at my todos. In this specific step,
+51
+
+52
+00:03:37,940 --> 00:03:43,400
+We took the routeguard which was implemented in the previous step, and we tied it up with the menu items and
+52
+
+53
+00:03:43,400 --> 00:03:47,100
+now we see that we have a cool looking app.
+53
+
+54
+00:03:47,480 --> 00:03:51,250
+We see that logout, login and everything works fine.
+54
+
+55
+00:03:51,320 --> 00:03:53,690
+We're able to click the links in the menu.
+55
+
+56
+00:03:53,930 --> 00:04:00,080
+We are able to logout, and once you are logged out, you would see that the welcome screen does not work
+56
+
+57
+00:04:00,080 --> 00:04:00,680
+anymore.
+57
+
+58
+00:04:00,800 --> 00:04:02,500
+It will take you to the log in page.
+58
+
+59
+00:04:02,510 --> 00:04:05,360
+The same is the case with the todos screen.
+59
+
+60
+00:04:05,360 --> 00:04:09,720
+This is a nice application that we have built over the last few steps.
+60
+
+61
+00:04:09,860 --> 00:04:15,710
+And this is the first time this looks like a real world application. It might not be really perfect yet,
+61
+
+62
+00:04:15,920 --> 00:04:18,680
+because there a lot of stuff is hardcoded.
+62
+
+63
+00:04:18,680 --> 00:04:21,790
+I know that, but still you deserve a pat on your back.
+63
+
+64
+00:04:21,840 --> 00:04:27,150
+So time to celebrate go have a party and come back and I'll see you in the next step. Bye Bye!

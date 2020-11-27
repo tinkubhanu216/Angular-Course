@@ -1,0 +1,219 @@
+0
+1
+00:00:02,480 --> 00:00:07,520
+Welcome back. In the previous step we created an Angular application using Angular CLI.
+1
+
+2
+00:00:07,690 --> 00:00:14,560
+And we have launched it up, and we saw a plain UI coming up. In the step, what we'll do is we'll import
+2
+
+3
+00:00:14,560 --> 00:00:20,210
+the project into our favorite IDE, which is a visual studio code. Let's get started now.
+3
+
+4
+00:00:20,440 --> 00:00:24,140
+I'm sure you would have the visual studio code installed.
+4
+
+5
+00:00:24,190 --> 00:00:28,870
+We had it as part of our installation section when you launch up your code.
+5
+
+6
+00:00:28,870 --> 00:00:35,290
+This is the screen you would see. This is the welcome screen and you would be able to see a few help
+6
+
+7
+00:00:35,290 --> 00:00:41,830
+documentation. You can see the recent projects I had worked on a lot, to make sure that this course is perfect and
+7
+
+8
+00:00:42,010 --> 00:00:47,770
+you can see other stuff about how you can customize and learn about the visual studio code. If you
+8
+
+9
+00:00:47,770 --> 00:00:48,350
+have some time,
+9
+
+10
+00:00:48,370 --> 00:00:51,550
+I would recommend you to spend some time exploring the IDE.
+10
+
+11
+00:00:51,650 --> 00:00:58,540
+One of the things that I have done is I'm using a specific visual studio theme. So if you go to code ->
+11
+
+12
+00:00:58,540 --> 00:01:01,380
+preferences... if you're on Windows it's file preferences.
+12
+
+13
+00:01:01,600 --> 00:01:04,090
+You can change the color theme.
+13
+
+14
+00:01:04,090 --> 00:01:10,330
+What I've done is I'm using a light Visual Studio Theme. I like very light so that it appears clear on
+14
+
+15
+00:01:10,330 --> 00:01:13,850
+the video, and you can also see this very well on your mobiles.
+15
+
+16
+00:01:13,990 --> 00:01:18,420
+But if you like dark then you can leave it...the default does this.
+16
+
+17
+00:01:18,420 --> 00:01:23,620
+Now let's get to the first task of this step, which is to import the project in.
+17
+
+18
+00:01:23,840 --> 00:01:29,000
+The thing is, in code, importing a project is very easy.
+18
+
+19
+00:01:29,100 --> 00:01:33,260
+Either you can say open for later, or an even more lazy way of doing it.
+19
+
+20
+00:01:33,280 --> 00:01:34,530
+Just go to the folder where 
+20
+
+21
+00:01:34,630 --> 00:01:40,920
+we have the project, in todo the project ,and just drag and drop it in.
+21
+
+22
+00:01:41,170 --> 00:01:47,160
+And that's that the project would launch up. When the project launches up, you would see the Explorer
+22
+
+23
+00:01:47,170 --> 00:01:47,420
+view.
+23
+
+24
+00:01:47,420 --> 00:01:53,200
+So this view which we are seeing in here, is the Explorer view. You can toggle it, and toggle it down by  clicking
+24
+
+25
+00:01:53,650 --> 00:01:55,820
+this icon which just is in here.
+25
+
+26
+00:01:56,080 --> 00:02:01,110
+Let's open up the files which is present in here: README.md. README.md contain certain
+26
+
+27
+00:02:01,110 --> 00:02:04,100
+amount of documentation about the project that we have created.
+27
+
+28
+00:02:04,180 --> 00:02:06,450
+So it says it was generated using AngularCLI.
+28
+
+29
+00:02:06,470 --> 00:02:08,010
+version 7.0.3.
+29
+
+30
+00:02:08,110 --> 00:02:10,160
+It says you can do ng serve.
+30
+
+31
+00:02:10,200 --> 00:02:11,570
+That's what we're doing right now.
+31
+
+32
+00:02:11,770 --> 00:02:14,240
+And you can use this, you are ready to launch it.
+32
+
+33
+00:02:14,260 --> 00:02:15,410
+And that's what we did.
+33
+
+34
+00:02:15,450 --> 00:02:17,850
+Well yes, well there's lot of documentation in here.
+34
+
+35
+00:02:17,860 --> 00:02:22,470
+You might want to check that out if you want to see this in full screen.
+35
+
+36
+00:02:22,480 --> 00:02:28,130
+So README is now taking part of the screen, and the Explorer is taking some of the part of the screen.
+36
+
+37
+00:02:28,180 --> 00:02:34,060
+So you can tell by clicking this, or the other option is to use control-B, or command-B.
+37
+
+38
+00:02:34,120 --> 00:02:35,970
+So control-B /  command-B.
+38
+
+39
+00:02:35,980 --> 00:02:41,860
+So if you're on Mac it's command-B, if you are on Windows or Linux it's going to be control-B. So use that and you
+39
+
+40
+00:02:41,860 --> 00:02:44,260
+you'd be able to see the entire thing in full screen.
+40
+
+41
+00:02:44,260 --> 00:02:46,210
+So this is something that would be using frequently.
+41
+
+42
+00:02:46,210 --> 00:02:48,940
+So I just wanted to make sure that you are aware of that.
+42
+
+43
+00:02:48,940 --> 00:02:52,540
+We'll explain more about your code as we go forward in this course.
+43
+
+44
+00:02:52,540 --> 00:02:53,940
+I'll see you in the next step.

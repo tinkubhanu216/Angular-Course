@@ -1,0 +1,134 @@
+0
+1
+00:00:01,930 --> 00:00:07,130
+Welcome back. In the previous step, we worked on the todos,  we created todos page,
+1
+
+2
+00:00:07,570 --> 00:00:13,940
+As of now we don't really have a route from the welcome page to the todos page.
+2
+
+3
+00:00:14,200 --> 00:00:17,970
+Let's create a simple route between them, using a link.
+3
+
+4
+00:00:17,980 --> 00:00:24,370
+Let's open up the welcome.component.html, and what we want to do here is we said Welcome welcome to our
+4
+
+5
+00:00:24,370 --> 00:00:25,960
+awesome App.
+5
+
+6
+00:00:25,960 --> 00:00:32,550
+And after that what do you want to do, is you can manage your todos here.
+6
+
+7
+00:00:32,680 --> 00:00:42,230
+And I would want to make it here as a link. So over here, we would want to link to the news page.
+7
+
+8
+00:00:42,390 --> 00:00:48,040
+Welcome to this page, What I'll do is use something called routerLink.
+8
+
+9
+00:00:48,120 --> 00:00:51,800
+There is one of the routing directives. So let's see what will happen.
+9
+
+10
+00:00:51,810 --> 00:00:55,790
+So I said routerLink = /todo.
+10
+
+11
+00:00:56,170 --> 00:01:00,290
+Let's refresh the page and you can see you can manage your todos here.
+11
+
+12
+00:01:00,430 --> 00:01:07,690
+Let's put a br out here, just so that it comes in the next line. Or the other option would have been
+12
+
+13
+00:01:07,690 --> 00:01:20,750
+to just say a div here, put the welcome text within the div, and create another div to have the link
+13
+
+14
+00:01:22,070 --> 00:01:24,330
+when you wait for the page to refresh.
+14
+
+15
+00:01:24,340 --> 00:01:27,370
+You would see a welcome page like this, and now I can click here.
+15
+
+16
+00:01:27,500 --> 00:01:30,690
+And when you go there you see that there is an error.
+16
+
+17
+00:01:30,860 --> 00:01:34,950
+The reason is because I would have I should have used this slash.
+17
+
+18
+00:01:35,240 --> 00:01:41,830
+Let's see what would happen let's go back to the welcome page and click here.
+18
+
+19
+00:01:41,840 --> 00:01:49,190
+Now you see that be able to go to this page, to know what we have is the complete navigation to login
+19
+
+20
+00:01:49,190 --> 00:01:53,270
+page: in28minutes, dummy.
+20
+
+21
+00:01:53,450 --> 00:01:59,810
+Once you login, you would go to the welcome page, and in the welcome page you can click here to go to
+21
+
+22
+00:01:59,810 --> 00:02:01,550
+the todos page.
+22
+
+23
+00:02:01,640 --> 00:02:06,780
+So we have the navigation built in between the login page,
+23
+
+24
+00:02:06,860 --> 00:02:12,800
+the welcome page, and the todos page. In this quick step we added a router link so that we
+24
+
+25
+00:02:12,800 --> 00:02:16,380
+can navigate from welcome page to the todos page.
+25
+
+26
+00:02:16,410 --> 00:02:17,730
+I'll see you in the next step.
+26
+
+27
+00:02:17,890 --> 00:02:18,360
+Bye bye.

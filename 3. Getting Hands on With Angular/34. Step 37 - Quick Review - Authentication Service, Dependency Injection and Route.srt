@@ -1,0 +1,204 @@
+0
+1
+00:00:02,440 --> 00:00:03,710
+Welcome back.
+1
+
+2
+00:00:03,870 --> 00:00:10,580
+Let's do a quick review of what we have done and set up the stage for the next section.
+2
+
+3
+00:00:10,590 --> 00:00:16,410
+The most important though is that we have created in the last few steps is the hardcoded authentication
+3
+
+4
+00:00:16,410 --> 00:00:23,200
+service. This hardcoded authentication service is having the features to authenticate for now,  users with
+4
+
+5
+00:00:23,250 --> 00:00:30,420
+hard coding, and when it is authenticated it puts the user details into session storage.
+5
+
+6
+00:00:30,420 --> 00:00:37,130
+And it also has a method to enable us to check if a user is logged in, or if a user wants to log out.
+6
+
+7
+00:00:37,140 --> 00:00:38,940
+So this is complete authentication.
+7
+
+8
+00:00:38,940 --> 00:00:47,120
+So this authentication service is made use of by the logon and the logout component, as well as the menu
+8
+
+9
+00:00:47,130 --> 00:00:48,570
+component.
+9
+
+10
+00:00:48,570 --> 00:00:53,570
+You can see that this is used across multiple components.
+10
+
+11
+00:00:53,790 --> 00:00:57,460
+And how are we providing the service to those components.
+11
+
+12
+00:00:57,610 --> 00:01:04,290
+We are using dependency injection. As soon as you put this annotation @injectable and provided in
+12
+
+13
+00:01:04,290 --> 00:01:06,990
+the scope in any class.
+13
+
+14
+00:01:07,200 --> 00:01:12,180
+It's available for dependency injection, and whenever it is needed, all that you need to do is you need
+14
+
+15
+00:01:12,180 --> 00:01:16,170
+to inject it in in the constructor.
+15
+
+16
+00:01:16,170 --> 00:01:22,080
+So what we did in here is we injected this into the constructors. So it becomes constructor we added
+16
+
+17
+00:01:22,080 --> 00:01:25,680
+in a parameter and that's it, we're here!
+17
+
+18
+00:01:25,710 --> 00:01:30,190
+I can start using the hardcoded authentication service
+18
+
+19
+00:01:30,270 --> 00:01:37,830
+Injection is an awesome feature in Angular, and implementing dependency injection is really really easy.
+19
+
+20
+00:01:37,830 --> 00:01:42,810
+The other thing which we implemented was the router guard servies. we implemented an interface it 
+20
+
+21
+00:01:42,850 --> 00:01:43,920
+CanActivate
+21
+
+22
+00:01:43,980 --> 00:01:46,490
+We had to define a method called canActivate.
+22
+
+23
+00:01:46,500 --> 00:01:51,890
+And what we did is: we check if a user is logged in. If the user has logged in, return true, and false if the user is not
+23
+
+24
+00:01:51,890 --> 00:01:52,650
+really logged in.
+24
+
+25
+00:01:52,650 --> 00:01:56,940
+What we did is we navigate to the login page.
+25
+
+26
+00:01:56,970 --> 00:02:06,930
+So for menu items which need a logged user, we placed this guard in front of the menu route.
+26
+
+27
+00:02:06,960 --> 00:02:15,990
+So in the routing model for all the links, all the route which need a logged in user, We activated the
+27
+
+28
+00:02:16,140 --> 00:02:17,230
+router guard service.
+28
+
+29
+00:02:17,430 --> 00:02:22,380
+So this would make sure that only logged in users would be able to reach these parts.
+29
+
+30
+00:02:22,550 --> 00:02:26,400
+One of the things you would have already observed, is the fact that and that makes it very very easy
+30
+
+31
+00:02:26,760 --> 00:02:29,690
+to develop front end applications.
+31
+
+32
+00:02:30,030 --> 00:02:36,500
+A lot of features are built into the framework, and its all about making the right use of those features.
+32
+
+33
+00:02:36,590 --> 00:02:39,030
+What will we be doing in the next few steps.
+33
+
+34
+00:02:39,090 --> 00:02:46,400
+We will switch our attention to building the backend. We'll start building a service in the back end
+34
+
+35
+00:02:46,410 --> 00:02:47,680
+using spring boot.
+35
+
+36
+00:02:47,790 --> 00:02:52,420
+We would start with writing a little bit of hard coded business logic, to get some data out.
+36
+
+37
+00:02:52,440 --> 00:02:54,360
+we'll try and connect the front end in angular,
+37
+
+38
+00:02:54,480 --> 00:02:56,260
+and the back-end in springboot.
+38
+
+39
+00:02:56,400 --> 00:02:59,000
+That's what we will be doing over the next few steps.
+39
+
+40
+00:02:59,010 --> 00:03:02,720
+I'm excited to bring all this to you and I'll see you in the next step.
+40
+
+41
+00:03:02,750 --> 00:03:03,580
+Until then, bye bye!

@@ -1,0 +1,339 @@
+0
+1
+00:00:02,530 --> 00:00:07,190
+Welcome back! When we discussed the architecture of the application that we are going to build,
+1
+
+2
+00:00:07,340 --> 00:00:09,050
+we said we would develop the front-end
+2
+
+3
+00:00:09,050 --> 00:00:15,650
+as an Angular application, using typescript as the language. We discussed the fact that typescript is
+3
+
+4
+00:00:15,650 --> 00:00:19,240
+nothing more than Javascript + types.
+4
+
+5
+00:00:19,270 --> 00:00:20,170
+Now in this video,
+5
+
+6
+00:00:20,180 --> 00:00:23,840
+Let's understand what is more than javascript,  what is typescript.
+6
+
+7
+00:00:23,840 --> 00:00:30,030
+If you built web applications a few years back, you would have written a lot of javascript.
+7
+
+8
+00:00:30,100 --> 00:00:33,650
+You would have played with the DOM,  which is the Document Object Model.
+8
+
+9
+00:00:33,650 --> 00:00:38,820
+I'm sure the javascript you wrote would not have looked something like this.
+9
+
+10
+00:00:38,870 --> 00:00:46,030
+A number of developers are surprised with the evolution of javascript in the last few years.
+10
+
+11
+00:00:46,130 --> 00:00:50,100
+Modern Javascript support features like classes,
+11
+
+12
+00:00:50,150 --> 00:00:55,720
+You even have annotations. However these annotations in Javascript are called decorators.
+12
+
+13
+00:00:55,820 --> 00:01:05,330
+You can import classes from modules. So modern Javascript has all the features that are typically present
+13
+
+14
+00:01:05,480 --> 00:01:09,210
+in object oriented programming languages like Java.
+14
+
+15
+00:01:09,350 --> 00:01:13,700
+Let's look at a quick history of the versions of javascript.
+15
+
+16
+00:01:13,850 --> 00:01:19,910
+You can see that the javascript versions are ES3, ES5, ES6, ES7 and ES8.
+16
+
+17
+00:01:19,910 --> 00:01:23,330
+What does ES stand for? ES stands for ECMAScript.
+17
+
+18
+00:01:23,350 --> 00:01:27,050
+ECMAScript is nothing but a standard.
+18
+
+19
+00:01:27,170 --> 00:01:31,100
+And javascript is the implementation of that standard.
+19
+
+20
+00:01:31,140 --> 00:01:36,680
+It's like the interface and the class. A class is an implementation of the interface. Similar to that
+20
+
+21
+00:01:37,060 --> 00:01:42,550
+what is specified in ECMAScript is implemented by Javascript. Javascript's
+21
+
+22
+00:01:42,590 --> 00:01:46,670
+version are specified as ES3, ES5,  6, 7 and 8.
+22
+
+23
+00:01:46,760 --> 00:01:55,230
+You can see that there is a huge time gap between ES3 and ES5, as well as ES5 and ES6. All the
+23
+
+24
+00:01:55,270 --> 00:01:58,000
+versions which are after ES6.
+24
+
+25
+00:01:58,070 --> 00:02:05,120
+So ES 6 and the versions after that are what I would typically call as Modern Javascript, because these
+25
+
+26
+00:02:05,210 --> 00:02:14,660
+are the versions which support classes and modules, and they help you to write modularized, well-organized Javascript
+26
+
+27
+00:02:14,660 --> 00:02:15,980
+code. Of late,
+27
+
+28
+00:02:16,160 --> 00:02:23,290
+The year in which ECMAScript standard has been released is also being used to represent the version.
+28
+
+29
+00:02:23,420 --> 00:02:31,170
+So E6 was released in 2015, so this is also called ES2015. ES2016 is nothing but ES7.
+29
+
+30
+00:02:31,220 --> 00:02:33,930
+ES2017 is nothing but ES8.
+30
+
+31
+00:02:33,940 --> 00:02:35,540
+Now what is typescript?
+31
+
+32
+00:02:35,540 --> 00:02:36,680
+Why do we need it?
+32
+
+33
+00:02:36,690 --> 00:02:38,900
+Typescript is nothing but Javascript +
+33
+
+34
+00:02:39,040 --> 00:02:41,760
+typing... what does that mean?
+34
+
+35
+00:02:41,780 --> 00:02:46,560
+Thing is Javascript is a loosely type language.
+35
+
+36
+00:02:46,940 --> 00:02:52,120
+When you declare a variable you cannot not really define the type of the variable.
+36
+
+37
+00:02:52,210 --> 00:02:58,490
+Ok here we are saying there value... we are saying value is a variable.
+37
+
+38
+00:02:58,540 --> 00:03:01,650
+We can not say value is an integer variable.
+38
+
+39
+00:03:01,670 --> 00:03:08,460
+But what happens because of this is, you can assign a number 5, or you can assign a string.
+39
+
+40
+00:03:08,630 --> 00:03:12,250
+Or you can even assign an object.
+40
+
+41
+00:03:12,260 --> 00:03:17,320
+This is a little different from a strongly typed language like Java.
+41
+
+42
+00:03:17,510 --> 00:03:25,850
+In Java you can say int value;,  which means value is an  integer variable, and you can only have integer numbers in
+42
+
+43
+00:03:25,850 --> 00:03:26,620
+value.
+43
+
+44
+00:03:26,720 --> 00:03:34,280
+If you say value = "Five", it gives you a compilation error.  The reason why typing is important, is because it
+44
+
+45
+00:03:34,280 --> 00:03:36,900
+helps us to write maintainable code.
+45
+
+46
+00:03:36,900 --> 00:03:41,590
+Errors will be caught directly at compile time.
+46
+
+47
+00:03:41,600 --> 00:03:44,920
+When you write code with typescript it would look something like this.
+47
+
+48
+00:03:44,960 --> 00:03:51,080
+Over here, we are saying value is a number, and when we assign a numeric value to value,
+48
+
+49
+00:03:51,080 --> 00:03:52,000
+This is fine.
+49
+
+50
+00:03:52,040 --> 00:03:54,040
+However if you assign a text value,
+50
+
+51
+00:03:54,080 --> 00:03:56,210
+This would give you a compilation error.
+51
+
+52
+00:03:56,640 --> 00:04:03,800
+The syntax is a little different, but essentially it exactly represents the same. Typescript also has features
+52
+
+53
+00:04:04,040 --> 00:04:08,080
+like: you can define types on method parameters.
+53
+
+54
+00:04:08,270 --> 00:04:12,760
+So over here in this method, this parameter number1 I'm saying is a number,
+54
+
+55
+00:04:12,800 --> 00:04:15,150
+This number2 is a number.
+55
+
+56
+00:04:15,350 --> 00:04:22,580
+You can also define the return type of a method. Over here, before the colon and declared the return type.
+56
+
+57
+00:04:22,580 --> 00:04:25,220
+The other thing typescript adds, is
+57
+
+58
+00:04:25,370 --> 00:04:33,260
+the concept of interface, and having the class implement the interfaces. In this course, we will use
+58
+
+59
+00:04:33,290 --> 00:04:38,130
+learn-as-we-go-approach to learn more on javascript and typescript.
+59
+
+60
+00:04:38,130 --> 00:04:43,580
+We don't need features like a class, a constructor, a decorator, or an import.
+60
+
+61
+00:04:43,700 --> 00:04:50,220
+We will take a pause and discuss it to ensure that you have a good understanding before we use the feature.
+61
+
+62
+00:04:50,320 --> 00:04:56,830
+In this quick video, we discussed the fact that Javascript has evolved a lot in the last few years
+62
+
+63
+00:04:57,230 --> 00:05:05,450
+Javascript helps us to write maintainable javascript code using classes, modules, imports, decorators
+63
+
+64
+00:05:05,630 --> 00:05:13,040
+and a wide variety of other features. Typescript helps us write even safer code than javascript by
+64
+
+65
+00:05:13,040 --> 00:05:19,880
+adding type-safety, with which you can identify errors at compile-time itself.
+65
+
+66
+00:05:19,880 --> 00:05:26,480
+This video was just to give you a quick overview around typescript and modern javascript.
+66
+
+67
+00:05:26,480 --> 00:05:32,100
+We will look at a lot of hands-on examples as we go on forward with this course.
+67
+
+68
+00:05:32,120 --> 00:05:33,710
+I'll see you in the next step.

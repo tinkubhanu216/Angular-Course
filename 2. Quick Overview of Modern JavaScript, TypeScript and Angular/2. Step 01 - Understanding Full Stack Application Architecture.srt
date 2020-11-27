@@ -1,0 +1,254 @@
+0
+1
+00:00:00,180 --> 00:00:01,640
+Welcome back.
+1
+
+2
+00:00:01,710 --> 00:00:08,540
+I'm excited to help you learn full stack application development with Angular and Spring Boot, and I'm
+2
+
+3
+00:00:08,550 --> 00:00:12,500
+sure you are as excited as I am. In this step,
+3
+
+4
+00:00:12,600 --> 00:00:16,500
+let's discuss the high level architecture of the application, 
+4
+
+5
+00:00:16,520 --> 00:00:18,940
+we are going to build in this specific course.
+5
+
+6
+00:00:19,170 --> 00:00:24,870
+Let's start with understanding the basic functionality of the application that we are going to build.
+6
+
+7
+00:00:25,050 --> 00:00:28,640
+We're going to build a TODO management application.
+7
+
+8
+00:00:28,770 --> 00:00:31,430
+Everyone has things you would want to do.
+8
+
+9
+00:00:31,450 --> 00:00:32,630
+, you'd want to learn.
+9
+
+10
+00:00:32,850 --> 00:00:36,610
+You can manage them in this specific TODO management application.
+10
+
+11
+00:00:36,690 --> 00:00:39,620
+You can add TODO, delete TODO, and update TODO.
+11
+
+12
+00:00:39,710 --> 00:00:45,940
+Other than that you, also have authentication and authorization features, typically login and logout
+12
+
+13
+00:00:46,020 --> 00:00:47,130
+capabilities.
+13
+
+14
+00:00:47,280 --> 00:00:52,280
+Let's now shift our attention towards the high level architecture of this application.
+14
+
+15
+00:00:52,470 --> 00:00:55,970
+What we are going to develop is a full stack application.
+15
+
+16
+00:00:56,070 --> 00:01:02,250
+When we talk about a full stack application, we are talking about a front end application, which is talking
+16
+
+17
+00:01:02,670 --> 00:01:11,890
+to a backend API or a web service. We'll be using Angular to build the front-end application. Angular is 
+17
+
+18
+00:01:11,910 --> 00:01:18,900
+One of the most popular frameworks to build front-ends. Angular has a variety of features like components, 
+18
+
+19
+00:01:18,960 --> 00:01:23,930
+modules, forms, HTTP communication to talk with the web services.
+19
+
+20
+00:01:24,090 --> 00:01:32,600
+It makes it easy to develop front-end applications, and gives the users a language called Typescript.
+20
+
+21
+00:01:32,600 --> 00:01:39,010
+If you're new to typescript, then typescript is nothing but modern Javascript +  typing
+21
+
+22
+00:01:39,270 --> 00:01:44,760
+We'll discuss a little bit more about typescript in a subsequent video. For now, it's sufficient to understand
+22
+
+23
+00:01:45,090 --> 00:01:50,370
+that the front-end application will be developed using the Angular framework, which would be based on a
+23
+
+24
+00:01:50,370 --> 00:01:56,750
+language called typescript. To build a RESTful API or the RESTful services in the back-end, 
+24
+
+25
+00:01:56,850 --> 00:02:00,110
+we would be using the Spring SpringBoot framework.
+25
+
+26
+00:02:00,330 --> 00:02:06,180
+We would be using Java as the language. SpringBoot is the number one Java framework to build RESTful
+26
+
+27
+00:02:06,240 --> 00:02:13,980
+APIs and microservices. We will create multiple RESTful services for authentication, as well as
+27
+
+28
+00:02:14,160 --> 00:02:20,640
+to do management. As far as authentication is concerned, we will start with basic authentication and
+28
+
+29
+00:02:20,640 --> 00:02:28,320
+also discuss about how to use JWTs,  or JSON Web Tokens, for authentication.
+29
+
+30
+00:02:28,320 --> 00:02:35,690
+We will be using the spring security framework to build authentication around this API. Before we move
+30
+
+31
+00:02:35,690 --> 00:02:36,660
+on to the next step,
+31
+
+32
+00:02:36,660 --> 00:02:38,810
+let's discuss an important question.
+32
+
+33
+00:02:38,890 --> 00:02:41,170
+We're talking about full stack application.
+33
+
+34
+00:02:41,220 --> 00:02:44,430
+Why should you really build a full stack application?
+34
+
+35
+00:02:44,430 --> 00:02:47,610
+Why should you create a separate back-end, and a separate front-end?
+35
+
+36
+00:02:47,610 --> 00:02:51,910
+And there is a lot of complexity associated with building separate back-end.
+36
+
+37
+00:02:51,930 --> 00:02:55,710
+For instance, you need to understand multiple languages.
+37
+
+38
+00:02:55,830 --> 00:02:59,960
+You need to understand multiple frameworks, like SpringBoot and Angular.
+38
+
+39
+00:02:59,970 --> 00:03:00,990
+Why should you do that?
+39
+
+40
+00:03:00,990 --> 00:03:07,710
+The most important reason is to create a flexible architecture, which can be extended to meet the future
+40
+
+41
+00:03:07,710 --> 00:03:08,510
+needs.
+41
+
+42
+00:03:08,660 --> 00:03:14,310
+Let's imagine that you would want to develop a native mobile application in future, that you would want
+42
+
+43
+00:03:14,310 --> 00:03:19,360
+to develop an iPhone app, or you would want to develop an Android application.
+43
+
+44
+00:03:19,410 --> 00:03:26,720
+Maybe you would want to connect with the Internet of Things devices. In such kind of situations,
+44
+
+45
+00:03:26,730 --> 00:03:33,960
+You can completely reuse the backend API that is being exposed. The full-stack application with a separate
+45
+
+46
+00:03:34,170 --> 00:03:42,330
+backend API or the RESTful API, and a front-end will give you more options to extend your architecture
+46
+
+47
+00:03:42,630 --> 00:03:46,490
+and create applications for different devices.
+47
+
+48
+00:03:46,650 --> 00:03:53,150
+In this quick video, we looked at the architecture of the application that we are going to create, create
+48
+
+49
+00:03:53,170 --> 00:03:58,390
+an angular application, talking to a RESTful API built on top of SpringBoot.
+49
+
+50
+00:03:58,500 --> 00:04:02,430
+We discussed why we build full stack applications.
+50
+
+51
+00:04:02,430 --> 00:04:04,220
+I'll see you in the next video. Until then, Bye-bye!

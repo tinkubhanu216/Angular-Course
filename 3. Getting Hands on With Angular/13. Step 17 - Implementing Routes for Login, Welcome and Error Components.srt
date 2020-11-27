@@ -1,0 +1,514 @@
+0
+1
+00:00:00,130 --> 00:00:06,570
+Welcome back. In the previous step, we implemented a little bit of logic and around authentication for
+1
+
+2
+00:00:06,570 --> 00:00:08,200
+the user name and password.
+2
+
+3
+00:00:08,280 --> 00:00:15,670
+But instead of a massage saying valid user id and password, what should happen typically I should go to a welcome page.
+3
+
+4
+00:00:15,730 --> 00:00:16,000
+Right.
+4
+
+5
+00:00:16,020 --> 00:00:17,630
+But that's not really happening in here.
+5
+
+6
+00:00:17,700 --> 00:00:21,020
+So when I enter the property user id and password what would happen.
+6
+
+7
+00:00:21,150 --> 00:00:23,880
+right now we are inside the login component.
+7
+
+8
+00:00:23,880 --> 00:00:30,010
+What we want to do, is go from the login component to the welcome component.
+8
+
+9
+00:00:30,090 --> 00:00:31,430
+How do we do that?
+9
+
+10
+00:00:31,440 --> 00:00:35,300
+That's basically where the routing comes into picture.
+10
+
+11
+00:00:35,510 --> 00:00:41,790
+You would want to be routed from the login component to the welcome component.
+11
+
+12
+00:00:41,790 --> 00:00:48,290
+Let's look at the basics of routing, and try and implement a little bit of routing, in this specific video.
+12
+
+13
+00:00:48,300 --> 00:00:53,760
+When we were creating the Angular application using ng new, one of the questions which we were asked
+13
+
+14
+00:00:54,210 --> 00:00:56,080
+was do we need routing.
+14
+
+15
+00:00:56,250 --> 00:01:04,890
+And we said yes, we need routing, and that's where we got a specific file call app routing module.
+15
+
+16
+00:01:05,070 --> 00:01:13,230
+So this is the module which would handle all the routing for us here out there.
+16
+
+17
+00:01:13,230 --> 00:01:19,440
+We can define all the routes which we want to use in this specific application.
+17
+
+18
+00:01:19,440 --> 00:01:25,930
+Let's take an example for the welcome component. I'd want to create a new route.
+18
+
+19
+00:01:26,050 --> 00:01:31,310
+Welcome. The way you can do that is by defining an object in here.
+19
+
+20
+00:01:31,320 --> 00:01:32,700
+So I'll def. object.
+20
+
+21
+00:01:32,760 --> 00:01:34,560
+The first attribute is something called path.
+21
+
+22
+00:01:34,770 --> 00:01:37,920
+So what is the path, at which you would want be export?
+22
+
+23
+00:01:37,930 --> 00:01:45,690
+This path is welcome. And which component defines that? The component which defines that is LoginComponent
+23
+
+24
+00:01:46,130 --> 00:01:49,620
+what you can do is type in LoginComponent, and press enter.
+24
+
+25
+00:01:49,680 --> 00:01:55,110
+So what it does is, it automatically import the login.component, so that as soon as I press enter.
+25
+
+26
+00:01:55,140 --> 00:02:02,460
+what would happen is an import is present in here. As we discussed earlier about importing classes from
+26
+
+27
+00:02:02,550 --> 00:02:03,580
+other modules.
+27
+
+28
+00:02:03,720 --> 00:02:08,600
+This login.component contains the information for this specific class.
+28
+
+29
+00:02:08,610 --> 00:02:15,930
+So if ApproutingModule wants to make use of that this specific class... wants to make use of another class, it
+29
+
+30
+00:02:15,930 --> 00:02:17,830
+needs to be imported.
+30
+
+31
+00:02:18,150 --> 00:02:24,570
+Actually what we'll do is we'll map the path login to the logging component, and for the welcome component
+31
+
+32
+00:02:24,700 --> 00:02:26,460
+will map welcome.
+32
+
+33
+00:02:26,820 --> 00:02:32,400
+So I'm copying these into an array, so you can see that this is within square brackets is an area so I can have
+33
+
+34
+00:02:32,400 --> 00:02:36,020
+multiple objects separated by a comma.
+34
+
+35
+00:02:36,040 --> 00:02:42,670
+So now, we are defining a path to the login component as well as to the welcome component.
+35
+
+36
+00:02:42,690 --> 00:02:43,900
+So what would happen now?
+36
+
+37
+00:02:44,010 --> 00:02:51,430
+Let's see. If I type in localhost:4200/welcome, what would happen.
+37
+
+38
+00:02:51,450 --> 00:02:56,980
+You'd see that there are no errors which are being shown but, component just not really shown.
+38
+
+39
+00:02:57,220 --> 00:02:59,060
+And then say login? the same thing.
+39
+
+40
+00:02:59,190 --> 00:03:04,170
+The second page has not been shown, the logon page is being shown by default, but there are no errors.
+40
+
+41
+00:03:04,200 --> 00:03:09,360
+If I say login123, you'll see that there are errors which are shown, because login123 is
+41
+
+42
+00:03:09,360 --> 00:03:12,360
+not something which we have defined in here.
+42
+
+43
+00:03:12,510 --> 00:03:16,820
+So it says I cannot match login123, I don't know what is login123
+43
+
+44
+00:03:16,830 --> 00:03:22,230
+The cool thing is no we see that router is in play, but we were not able to use it yet.
+44
+
+45
+00:03:22,260 --> 00:03:27,470
+The thing is there is a tag for a router, which you need to use to enable the routing.
+45
+
+46
+00:03:27,630 --> 00:03:32,910
+Let's go to the app component instead.
+46
+
+47
+00:03:33,200 --> 00:03:37,050
+That's the first component which is loaded inside here.
+47
+
+48
+00:03:37,140 --> 00:03:40,980
+Earlier we had commented something called a router-outlet.
+48
+
+49
+00:03:40,980 --> 00:03:48,770
+What I'll do is just remove this comment,  and just comment out the app-login part right now.
+49
+
+50
+00:03:49,200 --> 00:03:52,920
+So what we have in here, active is just the router outlet.
+50
+
+51
+00:03:52,920 --> 00:03:59,740
+So this is the tag which enables the display of whatever output router-outlet is producing.
+51
+
+52
+00:03:59,790 --> 00:04:06,210
+So you would see when I say localhost:4200 you are not seeing anything because we have not
+52
+
+53
+00:04:06,220 --> 00:04:14,700
+defined the route for it, but when I say localhost:4200/login, what will you see the login page
+53
+
+54
+00:04:15,090 --> 00:04:18,750
+and then say localhost:4200/welcome.
+54
+
+55
+00:04:18,850 --> 00:04:26,610
+You see the welcome page. It says: Welcome works. Another thing I would like to do is inside that routing
+55
+
+56
+00:04:26,660 --> 00:04:27,290
+module.
+56
+
+57
+00:04:27,460 --> 00:04:37,050
+Let's add another route for the login component, to path  the default path goes to the login component
+57
+
+58
+00:04:37,180 --> 00:04:37,470
+right.
+58
+
+59
+00:04:37,490 --> 00:04:39,000
+So that's what you would want to do.
+59
+
+60
+00:04:39,000 --> 00:04:45,130
+So even when you type in localhost:4200, it would go to the log in page.
+60
+
+61
+00:04:45,210 --> 00:04:46,320
+Isn't that cool.
+61
+
+62
+00:04:46,470 --> 00:04:54,250
+The other thing is when you type in localhost:4200/login and
+62
+
+63
+00:04:54,330 --> 00:04:56,280
+some garbage.
+63
+
+64
+00:04:56,280 --> 00:04:57,020
+What is happening?
+64
+
+65
+00:04:57,960 --> 00:05:02,840
+Oops! You are getting an error! Do you want to this kind of address to your user?
+65
+
+66
+00:05:03,170 --> 00:05:03,890
+No.
+66
+
+67
+00:05:03,990 --> 00:05:07,500
+So what we do is we create a component.
+67
+
+68
+00:05:07,500 --> 00:05:14,310
+Let's go back to a command prompt on the terminal where we are using the ng that command.
+68
+
+69
+00:05:14,580 --> 00:05:17,920
+Make sure that you are inside the current folder.
+69
+
+70
+00:05:17,930 --> 00:05:20,840
+So this is a todo project that we are working with.
+70
+
+71
+00:05:21,360 --> 00:05:28,430
+And I would want to generate and add component to this component would be used as the display page.
+71
+
+72
+00:05:28,470 --> 00:05:35,870
+When something wrong happens, let's open up error.component.html
+72
+
+73
+00:05:35,880 --> 00:05:40,050
+It says error works! Some error happens
+73
+
+74
+00:05:42,790 --> 00:05:47,900
+typically instead of hard coding the text in here, what would we do with that component.
+74
+
+75
+00:05:47,950 --> 00:05:48,570
+Yes.
+75
+
+76
+00:05:48,820 --> 00:05:52,040
+And have an errormessage errormessage
+76
+
+77
+00:05:55,200 --> 00:05:56,400
+an error Occurred
+77
+
+78
+00:05:59,490 --> 00:06:04,350
+contacts support at ***
+78
+
+79
+00:06:07,150 --> 00:06:13,960
+and what we'll do is all here use interpolation, interpolation to show the message
+79
+
+80
+00:06:17,380 --> 00:06:22,840
+if you go here, and type in /garbage.
+80
+
+81
+00:06:23,080 --> 00:06:24,270
+Error!
+81
+
+82
+00:06:24,690 --> 00:06:25,800
+What should you do?
+82
+
+83
+00:06:26,210 --> 00:06:29,720
+We have not really added that component into the routing!
+83
+
+84
+00:06:29,810 --> 00:06:38,250
+Let's add that to the routing
+84
+
+85
+00:06:38,320 --> 00:06:44,180
+How do you add it? what we are saying is these are the parts which I defined.
+85
+
+86
+00:06:44,200 --> 00:06:54,010
+Anything else about it to be a component, but standard component is not important in a need to have a
+86
+
+87
+00:06:54,160 --> 00:07:00,460
+comma, and say this: command-B and right-click Format.
+87
+
+88
+00:07:00,660 --> 00:07:02,520
+OK this looks good enough.
+88
+
+89
+00:07:03,220 --> 00:07:03,990
+Let's go ahead.
+89
+
+90
+00:07:05,190 --> 00:07:06,210
+And try it again
+90
+
+91
+00:07:09,070 --> 00:07:09,660
+awesome!
+91
+
+92
+00:07:09,670 --> 00:07:11,880
+It says Error, contact support.
+92
+
+93
+00:07:12,250 --> 00:07:15,330
+This page can be further enhanced a little later. In this step.
+93
+
+94
+00:07:15,400 --> 00:07:16,930
+We implemented routing.
+94
+
+95
+00:07:16,960 --> 00:07:23,350
+We added routes to all the component to the logging component, at the welcome component, and we also created
+95
+
+96
+00:07:23,380 --> 00:07:26,310
+an component just in case a user types in garbage.
+96
+
+97
+00:07:26,390 --> 00:07:32,500
+In reality,  the model you are looking at the app routing module, is responsible for initialization
+97
+
+98
+00:07:32,500 --> 00:07:33,580
+of the routes.
+98
+
+99
+00:07:33,610 --> 00:07:38,250
+The other thing which we looked at, was the fact that we needed to add a tag called router-outlet.
+99
+
+100
+00:07:38,570 --> 00:07:43,940
+This make sure that the traffic control is in the hand of the application.
+100
+
+101
+00:07:43,980 --> 00:07:45,120
+routing module
+101
+
+102
+00:07:45,160 --> 00:07:47,890
+We'll talk more about routing as we go on.
+102
+
+103
+00:07:48,100 --> 00:07:49,420
+I'll see you in the next step.

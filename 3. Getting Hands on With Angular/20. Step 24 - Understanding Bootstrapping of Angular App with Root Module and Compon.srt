@@ -1,0 +1,284 @@
+0
+1
+00:00:02,390 --> 00:00:06,460
+Welcome back. In the previous few steps we created a few components.
+1
+
+2
+00:00:06,490 --> 00:00:11,690
+One of the things we did, was we did not really discuss in depth is what is happening when you load a page
+2
+
+3
+00:00:12,010 --> 00:00:17,780
+how we use this specific component getting around. let's discuss that in this video.
+3
+
+4
+00:00:17,810 --> 00:00:24,880
+In this specific step what we're discussing is called bootstrapping. Often angular application and the
+4
+
+5
+00:00:24,950 --> 00:00:31,370
+bootstrapping of an angler application, there are two things which play a crucial role the root Module
+5
+
+6
+00:00:31,640 --> 00:00:33,440
+and the root component.
+6
+
+7
+00:00:33,680 --> 00:00:37,730
+Let's understand what is bootstrapping, root model and root component.
+7
+
+8
+00:00:37,730 --> 00:00:44,270
+If you do right-click View page, on this page you see this index.html, which is being loaded
+8
+
+9
+00:00:44,510 --> 00:00:47,190
+you can see app-root present in here.
+9
+
+10
+00:00:47,330 --> 00:00:51,400
+So what is happening here is the first file is index.html.
+10
+
+11
+00:00:51,860 --> 00:00:55,540
+And in parallel to that, there is a file called 
+11
+
+12
+00:00:55,670 --> 00:00:56,420
+main.ts.
+12
+
+13
+00:00:56,690 --> 00:01:04,060
+If you look at this main.ts, what we are doing in here is we are loading up app module.
+13
+
+14
+00:01:04,070 --> 00:01:10,610
+So we're importing the app module in, and we are bootstrapping it, which ever module is the one which
+14
+
+15
+00:01:10,610 --> 00:01:15,620
+is first bootstrapped in an angler application is called the root Module.
+15
+
+16
+00:01:15,620 --> 00:01:23,160
+That's the reason why we call app module the module when root module gets initialized.
+16
+
+17
+00:01:23,300 --> 00:01:27,350
+If you look at the module, you would see that along with the module that are we in...
+17
+
+18
+00:01:27,370 --> 00:01:34,250
+we are initializing the app component in the bootstrap. we are finding that it's the app component
+18
+
+19
+00:01:34,580 --> 00:01:41,160
+and therefore the app component also get bootstrapped, it get ready to be loaded.
+19
+
+20
+00:01:41,360 --> 00:01:48,020
+And what we are doing in index.html is loading up the app component.
+20
+
+21
+00:01:48,020 --> 00:01:55,370
+If you look at the app component, you would see that the tag associated with it is app-root, and that
+21
+
+22
+00:01:55,380 --> 00:01:58,670
+what is present in index.html
+22
+
+23
+00:01:58,820 --> 00:02:04,990
+What is going on here is that module is getting initialized one, app module is initialize the app component
+23
+
+24
+00:02:05,030 --> 00:02:10,330
+gets initialized and index.html the app-root.
+24
+
+25
+00:02:10,370 --> 00:02:16,250
+That's basically the tag of the app component, is getting initialized once we go there.
+25
+
+26
+00:02:16,400 --> 00:02:23,390
+We get the app.component.ts for whatever it is in the app.component.html, it becomes the
+26
+
+27
+00:02:23,660 --> 00:02:24,990
+view source.
+27
+
+28
+00:02:25,050 --> 00:02:32,480
+What we see here is rendered. But what is in app.component.html, becomes the main part of the
+28
+
+29
+00:02:32,480 --> 00:02:32,810
+screen.
+29
+
+30
+00:02:32,810 --> 00:02:40,140
+So what I do here is, say todo application and I'll put a few br.
+30
+
+31
+00:02:40,210 --> 00:02:46,110
+After this you can see that the todo application and below that is the router-outlet.
+31
+
+32
+00:02:46,380 --> 00:02:52,990
+And if I type in in28 minutes, dummy, right...  and password you'd see that the application header will
+32
+
+33
+00:02:52,990 --> 00:02:54,370
+remain right there.
+33
+
+34
+00:02:54,550 --> 00:03:01,510
+The rest of the content is changing but the application remains as it is in there, because that one which
+34
+
+35
+00:03:01,510 --> 00:03:03,970
+is loaded by the app component.
+35
+
+36
+00:03:04,100 --> 00:03:10,720
+app.component.html is loading up this, as well as the router-outlet so if I would have something
+36
+
+37
+00:03:10,720 --> 00:03:23,060
+like todo application header here, and if I have todo application footer in here, it can actually be
+37
+
+38
+00:03:23,060 --> 00:03:23,660
+a header.
+38
+
+39
+00:03:23,690 --> 00:03:27,250
+or a menu, right... I can have some aspect of it as well.
+39
+
+40
+00:03:27,440 --> 00:03:28,230
+What would happen?
+40
+
+41
+00:03:28,450 --> 00:03:34,040
+You would see that you would have the header, footer, and you would have the content in between.
+41
+
+42
+00:03:34,070 --> 00:03:38,390
+Go back and let's type in in28minutes, and dummy, so you'll have a header.
+42
+
+43
+00:03:38,430 --> 00:03:42,490
+The content of the page, and the footer. header, content of the page.
+43
+
+44
+00:03:42,520 --> 00:03:46,880
+footer! You can see that the header and footer are not changing at all, they are constant.
+44
+
+45
+00:03:46,890 --> 00:03:51,040
+The only things which are changing the content of the page.
+45
+
+46
+00:03:51,050 --> 00:03:56,630
+So in summary, what is happening is the app module is the module which gets looked at first, app module which
+46
+
+47
+00:03:56,780 --> 00:04:02,750
+would load the app component. When the app component is loaded in the end, HTML because of this
+47
+
+48
+00:04:02,770 --> 00:04:03,530
+app root.
+48
+
+49
+00:04:03,590 --> 00:04:11,060
+The app.component.html is what is rendered.And we  see router-outlet because of the router-outlet
+49
+
+50
+00:04:11,120 --> 00:04:17,920
+and the fact that in the app-routing.mosule.ts, we said the default path matched to log in component.
+50
+
+51
+00:04:17,990 --> 00:04:25,590
+What happens, is inside the router, the login component is first initialized and that's why when you
+51
+
+52
+00:04:25,590 --> 00:04:33,120
+do this for localhost:4200, you would see the login component first. In this video, we focused on the
+52
+
+53
+00:04:33,140 --> 00:04:35,130
+bootstrapping of an angular application.
+53
+
+54
+00:04:35,140 --> 00:04:42,240
+We looked at the root module, is getting loaded that did have the root component is getting loaded, and
+54
+
+55
+00:04:42,360 --> 00:04:47,490
+we saw how the content inside the component plays a important role.
+55
+
+56
+00:04:47,490 --> 00:04:48,510
+I'll see you in the next step.
+56
+
+57
+00:04:48,510 --> 00:04:49,280
+Until then, bye bye.

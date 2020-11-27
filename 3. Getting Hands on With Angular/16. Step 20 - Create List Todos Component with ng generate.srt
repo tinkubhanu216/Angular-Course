@@ -1,0 +1,499 @@
+0
+1
+00:00:02,260 --> 00:00:04,140
+Welcome back.
+1
+
+2
+00:00:04,190 --> 00:00:10,220
+We had created the login component, the welcome component, and for the first time, let's move towards  creating the
+2
+
+3
+00:00:10,220 --> 00:00:17,840
+list todo component. login  and welcome components are not really perfect yet but let's start with the
+3
+
+4
+00:00:17,840 --> 00:00:21,910
+list todo component, and after that let's review the work that would be done.
+4
+
+5
+00:00:22,040 --> 00:00:24,820
+So let's get started with the list todo component.
+5
+
+6
+00:00:24,830 --> 00:00:30,270
+Obviously the way you would create It is by saying listtodo
+6
+
+7
+00:00:30,450 --> 00:00:38,620
+And because these are two different words, I would typically capitalize the set list recaps to do this.
+7
+
+8
+00:00:38,810 --> 00:00:42,980
+So the component ListTodo, and pressing Enter now.
+8
+
+9
+00:00:43,100 --> 00:00:44,840
+And the component is created.
+9
+
+10
+00:00:44,990 --> 00:00:47,310
+As usual it's added to the app module.
+10
+
+11
+00:00:47,570 --> 00:00:54,370
+What it can do, is add a simple link in here which would help us to go to the todos page.
+11
+
+12
+00:00:54,410 --> 00:00:59,150
+Typically what we would do is as soon as we can get a component, is add a route. else, we will not
+12
+
+13
+00:00:59,150 --> 00:01:00,740
+be able to get to the component.
+13
+
+14
+00:01:01,050 --> 00:01:03,610
+Let's open up the AppRoutingModule
+14
+
+15
+00:01:03,650 --> 00:01:10,280
+Let's add a route. Make sure that you are adding the route about the **.
+15
+
+16
+00:01:10,400 --> 00:01:15,170
+One of the important things is the order of these routes is really really important.
+16
+
+17
+00:01:15,350 --> 00:01:23,390
+If you put **above, and you put the new route down below it, what would happen is this ** would
+17
+
+18
+00:01:23,390 --> 00:01:30,040
+match the component route so because that would match anything, it's a regular expression to match anything.
+18
+
+19
+00:01:30,260 --> 00:01:34,850
+So this is what I would match and always the error component would be selected. to even if you type
+19
+
+20
+00:01:34,850 --> 00:01:39,080
+in /listtodos, it might show the error component and that would not be really good.
+20
+
+21
+00:01:39,110 --> 00:01:39,350
+Right.
+21
+
+22
+00:01:39,350 --> 00:01:49,730
+What we want to show is the listtodos component. To show listtodos component, import it in, and over
+22
+
+23
+00:01:49,730 --> 00:01:51,500
+here.
+23
+
+24
+00:01:51,950 --> 00:01:58,280
+path of todo. So todos redirects to the listtodos component.
+24
+
+25
+00:01:58,420 --> 00:02:04,900
+We can test that quickly by typing in /todos. could sort of works.
+25
+
+26
+00:02:04,910 --> 00:02:06,200
+That's good.
+26
+
+27
+00:02:06,440 --> 00:02:12,210
+Let's open up the list-todos.component.ts
+27
+
+28
+00:02:12,530 --> 00:02:21,580
+And let's open up the list-todos.component.html.
+28
+
+29
+00:02:22,040 --> 00:02:23,010
+How do we create objects?
+29
+
+30
+00:02:23,010 --> 00:02:29,960
+Let's say I want create a simple todo object. The way I can do that is by thing todo = and
+30
+
+31
+00:02:30,110 --> 00:02:32,770
+type in the content of the todo.
+31
+
+32
+00:02:32,870 --> 00:02:37,070
+I can say ID is 1.
+32
+
+33
+00:02:39,970 --> 00:02:45,870
+description is learn to dance.
+33
+
+34
+00:02:46,680 --> 00:02:52,680
+And so on and so forth. So that you can add an object attribute, and now what I can do, is  that I can take
+34
+
+35
+00:02:52,680 --> 00:02:57,390
+this, we can display it as part of our list todos. component.
+35
+
+36
+00:02:57,670 --> 00:03:07,170
+So what I would do, is I would create a simple table. Inside the table,  let's add a caption saying my
+36
+
+37
+00:03:07,230 --> 00:03:11,370
+todos. we don't really have a lot todos as of now.
+37
+
+38
+00:03:11,410 --> 00:03:14,260
+But don't worry we will fix that little later.
+38
+
+39
+00:03:14,300 --> 00:03:24,380
+Add a thead, and typically you have the body inside the thead. In the body, you would have the table.
+39
+
+40
+00:03:24,400 --> 00:03:30,910
+That's kind of the structure of any table. And you would have a th over here, th. Let's say is the
+40
+
+41
+00:03:30,910 --> 00:03:35,610
+ID in let's call it this again, and this would be the description
+41
+
+42
+00:03:38,150 --> 00:03:46,490
+and over here down below, we'll copy the same thing like over here tr's would be used.
+42
+
+43
+00:03:46,530 --> 00:03:52,620
+So we just have one row for now. That's OK. And tr over here.
+43
+
+44
+00:03:53,120 --> 00:03:57,810
+So let's do it right click on my document.
+44
+
+45
+00:03:57,920 --> 00:04:01,160
+Actually I should have done a td down here.
+45
+
+46
+00:04:01,570 --> 00:04:04,850
+Am forgetting my syntax
+46
+
+47
+00:04:04,940 --> 00:04:05,790
+That's interesting.
+47
+
+48
+00:04:05,900 --> 00:04:08,560
+Now we have the tr-td stuff already.
+48
+
+49
+00:04:08,690 --> 00:04:11,330
+We have a simple id, description : id, description.
+49
+
+50
+00:04:11,330 --> 00:04:13,580
+If you go to the page.
+50
+
+51
+00:04:13,670 --> 00:04:14,010
+Yes.
+51
+
+52
+00:04:14,090 --> 00:04:15,730
+The table is here.
+52
+
+53
+00:04:15,820 --> 00:04:17,300
+And let's add a border
+53
+
+54
+00:04:20,270 --> 00:04:26,420
+so we can actually see it. Here instead of the id I would want todo.
+54
+
+55
+00:04:26,520 --> 00:04:30,600
+How can I do that? I can use interpolation to do that.
+55
+
+56
+00:04:31,800 --> 00:04:36,010
+Well we're here todo.description
+56
+
+57
+00:04:38,620 --> 00:04:42,140
+that good. The page.
+57
+
+58
+00:04:42,440 --> 00:04:45,150
+It says  ID 1 , description learn to dance.
+58
+
+59
+00:04:45,180 --> 00:04:46,120
+That's cool!
+59
+
+60
+00:04:46,160 --> 00:04:52,850
+Right so we are able to get the todo data which is present in here, and use it and displayed on the screen.
+60
+
+61
+00:04:53,040 --> 00:04:56,340
+What we want to do, is we would want to use a list of todos, right.
+61
+
+62
+00:04:56,340 --> 00:04:58,780
+We want to show a list of todos, not just one to two.
+62
+
+63
+00:04:58,830 --> 00:05:00,760
+So how do we create a list of todos
+63
+
+64
+00:05:00,850 --> 00:05:08,000
+todos =  [] array of... todos would be created as an array?
+64
+
+65
+00:05:08,170 --> 00:05:08,480
+Right?
+65
+
+66
+00:05:08,490 --> 00:05:13,110
+And this would be one of the todos, which would be part of it. So what we'll do, is we'll define it in
+66
+
+67
+00:05:13,110 --> 00:05:13,380
+here.
+67
+
+68
+00:05:13,380 --> 00:05:19,790
+So what the typical way we would do that, is by saying Id:1 : description:
+68
+
+69
+00:05:23,500 --> 00:05:29,590
+learn to dance. Add another one "to
+69
+
+70
+00:05:33,340 --> 00:05:40,820
+become an expert at Angular", and maybe another one
+70
+
+71
+00:05:44,710 --> 00:05:49,460
+"visit India" or whichever country you would want to visit.
+71
+
+72
+00:05:49,530 --> 00:05:49,970
+OK.
+72
+
+73
+00:05:49,990 --> 00:05:54,480
+So instead of one todo, we have a list of todos. Comment
+73
+
+74
+00:05:54,480 --> 00:05:59,220
+This one out, because I don't really want to use this to be anymore. control-/.
+74
+
+75
+00:05:59,310 --> 00:06:07,560
+How do we map this list of todos to the HTML? So we would want to show here a list of todos. The way you can
+75
+
+76
+00:06:07,560 --> 00:06:11,190
+do that is by using an ng directive.
+76
+
+77
+00:06:11,340 --> 00:06:16,350
+So we would want to loop around all the todos. What we would typically use for loop right.
+77
+
+78
+00:06:16,350 --> 00:06:23,580
+It's called ngFor = what we would want to loop around the todos.
+78
+
+79
+00:06:23,820 --> 00:06:29,550
+And what we want to do is we would want to create a variable called todo of.
+79
+
+80
+00:06:29,990 --> 00:06:37,580
+So if I would want to put in the component Java code, then it would be something like for ... it would look
+80
+
+81
+00:06:37,580 --> 00:06:41,550
+at look something like this: Todo todo: todos
+81
+
+82
+00:06:41,570 --> 00:06:45,210
+So we are declaring a variable called todo of the type Todo
+82
+
+83
+00:06:45,320 --> 00:06:51,770
+So the important thing is to use the keyword 'of'. A lot of times people put it 'in', and that would give you
+83
+
+84
+00:06:51,770 --> 00:06:52,310
+an error.
+84
+
+85
+00:06:52,310 --> 00:06:56,060
+So it's let space todo of todos
+85
+
+86
+00:06:56,060 --> 00:07:03,460
+todo is the variable name which we can use inside this template, let and of are keywords
+86
+
+87
+00:07:03,710 --> 00:07:08,880
+And if you go back to the todos page, you would see that all the todos are populated.
+87
+
+88
+00:07:08,950 --> 00:07:13,820
+So we see myTodos,  ID, description, 1 to 3, and all that fun stuff.
+88
+
+89
+00:07:13,910 --> 00:07:17,470
+In this quick video, we added in a list of todos.
+89
+
+90
+00:07:17,570 --> 00:07:19,130
+We create a competent called todos.
+90
+
+91
+00:07:19,130 --> 00:07:26,240
+We added a list of to todos, and we enhance our view to show the list of todos. We use a new directive
+91
+
+92
+00:07:26,330 --> 00:07:29,150
+called ngFor, which is used to loop around.
+92
+
+93
+00:07:29,150 --> 00:07:34,440
+So what would happen is almost like there is a for loop around this.
+93
+
+94
+00:07:34,640 --> 00:07:40,860
+So you can almost imagine as if there's a for loop todo: todos around this and that.
+94
+
+95
+00:07:41,390 --> 00:07:43,890
+So that's exactly what that is.
+95
+
+96
+00:07:44,000 --> 00:07:49,520
+So you can imagine it as if this is the code which is written so inside the for loop, you have these
+96
+
+97
+00:07:49,920 --> 00:07:50,710
+there.
+97
+
+98
+00:07:51,020 --> 00:07:58,340
+And each loop is executed, for each of the todo which is present inside the list of todos.
+98
+
+99
+00:07:58,420 --> 00:08:01,560
+In the next step, let's enhance this list a little bit more.
+99
+
+100
+00:08:01,760 --> 00:08:05,930
+Let's bring a few of the best practices into it. And I'll see  you in the next step.

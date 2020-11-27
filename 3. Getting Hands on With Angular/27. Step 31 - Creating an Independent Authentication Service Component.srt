@@ -1,0 +1,489 @@
+0
+1
+00:00:02,220 --> 00:00:09,340
+Welcome back. As of now, all the authentication logic is present in this specific component.
+1
+
+2
+00:00:09,390 --> 00:00:11,040
+Within the login component.
+2
+
+3
+00:00:11,040 --> 00:00:14,820
+It does the authentication, and it leads to the welcome page.
+3
+
+4
+00:00:14,820 --> 00:00:20,250
+The other thing which we see, is the links appear .. the same links appear on all the pages irrespective
+4
+
+5
+00:00:20,250 --> 00:00:22,730
+of whether somebody is logged in or not.
+5
+
+6
+00:00:23,040 --> 00:00:25,650
+Our aim in the next few steps is to fix this.
+6
+
+7
+00:00:25,650 --> 00:00:33,300
+We would want a proper menu, where when a user is logged out, I don't want to see the login menu item
+7
+
+8
+00:00:33,810 --> 00:00:35,460
+and nothing else.
+8
+
+9
+00:00:35,460 --> 00:00:43,800
+When he logs in, I would want to see all the menu items except for login, and I would only want to be
+9
+
+10
+00:00:43,800 --> 00:00:47,520
+able to click the todos or home page links.
+10
+
+11
+00:00:47,520 --> 00:00:49,810
+Then the user is logged in.
+11
+
+12
+00:00:49,920 --> 00:00:56,220
+If somebody comes in and typed this URL without logging in, then I don't really want them to log
+12
+
+13
+00:00:56,220 --> 00:00:59,110
+in, and to make that journey happen.
+13
+
+14
+00:00:59,280 --> 00:01:04,740
+What you need to do, is you need to have a little bit more authentication logic. We should be able to
+14
+
+15
+00:01:05,490 --> 00:01:11,400
+authenticate the user, identify that somebody is authenticated, and show the appropriate links and things
+15
+
+16
+00:01:11,400 --> 00:01:12,040
+like that.
+16
+
+17
+00:01:12,150 --> 00:01:18,480
+And to help us do that, we would need to have a separate authentication. That is one of the things that
+17
+
+18
+00:01:18,480 --> 00:01:23,130
+we really focus on in this case, is having good maintainable code.
+18
+
+19
+00:01:23,220 --> 00:01:29,790
+If I write every piece of hard-coded logic in the same component, then it becomes unmaintainable over a period
+19
+
+20
+00:01:29,790 --> 00:01:32,060
+of time, and authentication anyway.
+20
+
+21
+00:01:32,100 --> 00:01:36,110
+is something which is common to all these things.
+21
+
+22
+00:01:36,120 --> 00:01:39,990
+So what would start doing now is we would create a service.
+22
+
+23
+00:01:40,290 --> 00:01:44,900
+When do you want to create some logic, which is common across multiple components.
+23
+
+24
+00:01:44,940 --> 00:01:50,760
+What we would do is we would create a service, that gets started creating authentication. So easy right?
+24
+
+25
+00:01:50,820 --> 00:01:56,100
+Now we have been creating a number of components ng component.
+25
+
+26
+00:01:56,400 --> 00:02:04,410
+The way you could create a servies is by typing  ng generate service,  for now, we would use hard coded authentication
+26
+
+27
+00:02:04,410 --> 00:02:09,550
+to call this in general, so it is hard coded authentication.
+27
+
+28
+00:02:09,720 --> 00:02:15,810
+Later we would switch to other forms of authentication like basic authentication,  JWT authentication.
+28
+
+29
+00:02:15,960 --> 00:02:22,660
+So I would really want to be specific about naming service as hardcoded authentication, that's present.
+29
+
+30
+00:02:23,010 --> 00:02:25,080
+Be careful about how you name the service.
+30
+
+31
+00:02:25,080 --> 00:02:31,660
+I don't really need to put the word service in there. So now what's happening here, is it created a service
+31
+
+32
+00:02:31,730 --> 00:02:36,910
+it created a service directly in the app folder, hardcoded authentication.service.ts.
+32
+
+33
+00:02:36,930 --> 00:02:45,360
+So if you open this file up, it's just a simple class except for the fact that there is an @Injectable
+33
+
+34
+00:02:45,540 --> 00:02:46,710
+tag on it.
+34
+
+35
+00:02:46,710 --> 00:02:52,410
+Before we go any further with this one of the things, I would want to fix is the fact that both these
+35
+
+36
+00:02:52,410 --> 00:02:55,540
+classes are created directly in the root.
+36
+
+37
+00:02:55,890 --> 00:02:58,790
+So these are directly created in this src folder.
+37
+
+38
+00:02:58,800 --> 00:03:04,660
+Over a period of time, this makes it really difficult to maintain that kind of stuff.
+38
+
+39
+00:03:04,720 --> 00:03:09,880
+So be careful, don't really create anything directly in the source folder or look for enough.
+39
+
+40
+00:03:09,920 --> 00:03:13,360
+I'll delete these.
+40
+
+41
+00:03:13,580 --> 00:03:18,030
+The way we can create this service folder is by saying service/.
+41
+
+42
+00:03:18,140 --> 00:03:20,780
+So be careful of which / you should be using.
+42
+
+43
+00:03:20,930 --> 00:03:22,700
+This is the / you should be using.
+43
+
+44
+00:03:22,850 --> 00:03:24,510
+The other \ will not work.
+44
+
+45
+00:03:24,590 --> 00:03:32,450
+So we /hardcoded authentication. You'd see that this is created in the service folder.
+45
+
+46
+00:03:32,450 --> 00:03:37,750
+So now you have had hardcoded authentication so this created the down here.
+46
+
+47
+00:03:37,910 --> 00:03:47,090
+When I open it in, you would see that this is a usual normal class except for the @Injectable.
+47
+
+48
+00:03:47,210 --> 00:03:50,580
+The injectable is what makes this a service.
+48
+
+49
+00:03:50,840 --> 00:03:57,810
+What happens is, I can use this and I can inject this in any place I would want to use.
+49
+
+50
+00:03:57,860 --> 00:04:05,000
+Before we discuss this any further, let's create a simple method in here, and let you use that to authenticate
+50
+
+51
+00:04:05,000 --> 00:04:10,260
+let's say authenticate and say username,  password
+51
+
+52
+00:04:13,120 --> 00:04:15,090
+and go to login.component.ts.
+52
+
+53
+00:04:15,160 --> 00:04:18,250
+Yes and get the logic from there.
+53
+
+54
+00:04:18,630 --> 00:04:23,530
+So it says the logic of authentication is right in here.
+54
+
+55
+00:04:23,530 --> 00:04:26,980
+So what I would want to do is, I would want a more specific thing.
+55
+
+56
+00:04:27,160 --> 00:04:32,130
+So it should not be if user, let's use username.
+56
+
+57
+00:04:32,240 --> 00:04:33,150
+Let's be consistent.
+57
+
+58
+00:04:33,140 --> 00:04:39,630
+Everywhere it should have the  same name. So the username is in28minutes, and password == dummy.
+58
+
+59
+00:04:39,660 --> 00:04:40,940
+What we want to do.
+59
+
+60
+00:04:40,950 --> 00:04:49,550
+Return true. This is authenticated, else then false.
+60
+
+61
+00:04:49,680 --> 00:04:50,110
+Right.
+61
+
+62
+00:04:50,250 --> 00:04:51,770
+So this is a service.
+62
+
+63
+00:04:51,780 --> 00:04:56,700
+What is this service doing? It would provide the authentication logic to you.
+63
+
+64
+00:04:56,760 --> 00:04:59,880
+So this is where doing the authentication logic.
+64
+
+65
+00:05:00,150 --> 00:05:06,900
+Now if I want to make use of the service in another component, I would need to make use of dependency
+65
+
+66
+00:05:06,900 --> 00:05:08,450
+injection.
+66
+
+67
+00:05:08,500 --> 00:05:15,720
+What injectable does is make this component available for dependency injection.
+67
+
+68
+00:05:15,780 --> 00:05:22,080
+So this component would be ready, and wherever we find it in the constructor it would be injected in
+68
+
+69
+00:05:22,090 --> 00:05:29,610
+this would be taken care of by the angular dependency injection framework. For us to tell that this class
+69
+
+70
+00:05:29,610 --> 00:05:35,230
+needs a specific dependency, we need to add it to the constructor. What do we need to do?
+70
+
+71
+00:05:35,330 --> 00:05:41,820
+LoginComponent needs to hard-code that authentication service, because we would want to do the authentication
+71
+
+72
+00:05:41,820 --> 00:05:43,760
+using this specific method now.
+72
+
+73
+00:05:43,980 --> 00:05:46,850
+So let's go ahead and say private
+73
+
+74
+00:05:49,650 --> 00:06:01,810
+hardcodedAuthentication and we use :HardcodedAuthentication , so compilation error because I
+74
+
+75
+00:06:01,810 --> 00:06:05,610
+have to import it in. control-space, and import it in.
+75
+
+76
+00:06:05,640 --> 00:06:11,630
+Now if you'd see that it's important at the top, you can see that it lets you access that specific
+76
+
+77
+00:06:11,630 --> 00:06:12,230
+thing.
+77
+
+78
+00:06:12,280 --> 00:06:13,390
+Cool.
+78
+
+79
+00:06:13,500 --> 00:06:23,960
+Now we have injected the hardcodedAuthentication, are we use in this line after making a copy of it.
+79
+
+80
+00:06:24,500 --> 00:06:29,580
+And over here what we want to do is, now I would want to make use of the hardcoded authentication
+80
+
+81
+00:06:29,580 --> 00:06:31,390
+service.
+81
+
+82
+00:06:31,650 --> 00:06:41,340
+Actually for that,  try out hardcoded authentication service that authenticates,  and pass in these
+82
+
+83
+00:06:41,360 --> 00:06:41,700
+parameters
+83
+
+84
+00:06:41,700 --> 00:06:45,420
+What are the parameters that we need to pass in the store to use that? name.
+84
+
+85
+00:06:46,590 --> 00:06:51,260
+, this.username ,
+85
+
+86
+00:06:51,560 --> 00:06:55,640
+this.password.
+86
+
+87
+00:06:55,650 --> 00:07:03,570
+So what we are doing is moving the logic. We are moving the authentication logic out to HardcodedAuthentication
+87
+
+88
+00:07:03,570 --> 00:07:04,740
+service.
+88
+
+89
+00:07:05,040 --> 00:07:12,000
+So if it's authenticated properly, then the route,  or the ways in when they log in is equal to true.
+89
+
+90
+00:07:12,410 --> 00:07:17,580
+Let's see what would happen if I go to the login page and enter an invalid password: invalid credentials!
+90
+
+91
+00:07:17,590 --> 00:07:21,880
+That's cool! in28minutes, dummy, login.
+91
+
+92
+00:07:21,900 --> 00:07:23,320
+That's cool!
+92
+
+93
+00:07:23,340 --> 00:07:30,630
+This is working perfectly. What we did in this step is, we created a service the hardcoded authentication
+93
+
+94
+00:07:30,630 --> 00:07:37,150
+so we use the hardcoded authentication, so we have enhanced it with an authenticate method.
+94
+
+95
+00:07:37,230 --> 00:07:41,060
+We saw that this is available at the root level.
+95
+
+96
+00:07:41,160 --> 00:07:46,280
+Therefore wherever this dependency is defined inside the constructor.
+96
+
+97
+00:07:46,330 --> 00:07:55,470
+And would inject it in, and we use that to authenticate the user and for that and look at a wide variety
+97
+
+98
+00:07:55,470 --> 00:07:57,460
+of stuff. I'll see you  in the next step. Bye bye!

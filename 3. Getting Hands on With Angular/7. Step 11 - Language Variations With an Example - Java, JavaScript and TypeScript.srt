@@ -1,0 +1,579 @@
+0
+1
+00:00:00,160 --> 00:00:09,010
+Welcome back. In the step, let's focus on understanding the syntax of the typescript that we see.
+1
+
+2
+00:00:09,010 --> 00:00:14,940
+We will look at this in-depth, we will identify which part are coming from javascript, and which are added in
+2
+
+3
+00:00:15,060 --> 00:00:16,280
+by typescript.
+3
+
+4
+00:00:16,290 --> 00:00:23,830
+And how do they compare against your Java code! What I have done is taken up the WelcomeComponent so
+4
+
+5
+00:00:24,090 --> 00:00:29,420
+the Welcome Component I have added in Java code,  in comments.
+5
+
+6
+00:00:29,430 --> 00:00:36,210
+So each line of commented code that you'll see in here is a piece of Java code. As you would know in
+6
+
+7
+00:00:36,210 --> 00:00:41,910
+Java, we would write classes and group them into packages.
+7
+
+8
+00:00:42,000 --> 00:00:49,230
+So at the top of every Java class, you would see something called package. Or, if you don't put up an
+8
+
+9
+00:00:49,230 --> 00:00:53,090
+package declaration, it becomes part of the default package. In javascript,
+9
+
+10
+00:00:53,120 --> 00:01:00,690
+we write classes, and all the classes in a single file are considered to be part of a module.
+10
+
+11
+00:01:00,770 --> 00:01:07,680
+You'll find we only have one class, but the thing is you can create other classes as well. So I can say export
+11
+
+12
+00:01:07,680 --> 00:01:15,810
+class Class1, and also create a number of classes in here.
+12
+
+13
+00:01:15,810 --> 00:01:22,980
+This combined thing is called a module. A module in javascript represents one file which contains
+13
+
+14
+00:01:22,980 --> 00:01:25,910
+class and function definitions.
+14
+
+15
+00:01:26,060 --> 00:01:32,880
+So if you don't remember it, it's one file per module, and one module per file, and modules is how you would
+15
+
+16
+00:01:32,880 --> 00:01:36,050
+organize classes in Javascript.
+16
+
+17
+00:01:36,320 --> 00:01:44,700
+Now let's say I would want to use a class from another module. The way you do that in Javascript is by
+17
+
+18
+00:01:44,700 --> 00:01:47,930
+using an import statement here.
+18
+
+19
+00:01:48,060 --> 00:01:51,190
+This is a built in Angular package.
+19
+
+20
+00:01:51,430 --> 00:01:56,070
+Let's say I would want to use AppComponent, so I would want to use.
+20
+
+21
+00:01:56,250 --> 00:01:58,330
+Let's go to the loader.
+21
+
+22
+00:01:58,500 --> 00:02:01,670
+So let's I would want to use the AppComponent.
+22
+
+23
+00:02:01,790 --> 00:02:03,660
+This class in here.
+23
+
+24
+00:02:04,500 --> 00:02:06,620
+This AppComponent which is present in here.
+24
+
+25
+00:02:06,720 --> 00:02:16,600
+How can I do that? The way I can do that is by saying import component from you need to say the path
+25
+
+26
+00:02:16,920 --> 00:02:24,460
+to that particular module. You'll find it is that the model for the path ../
+26
+
+27
+00:02:24,550 --> 00:02:27,290
+So I'm going to the root,
+27
+
+28
+00:02:27,330 --> 00:02:36,560
+Now I'm here in app. In ../app.component. and you don't need to specify the
+28
+
+29
+00:02:36,600 --> 00:02:37,560
+.ts.
+29
+
+30
+00:02:37,640 --> 00:02:46,120
+So this is how you would specify it, and you would put this at this.
+30
+
+31
+00:02:46,130 --> 00:02:53,300
+So if I want to use the AppComponent,  this is how you would import it in. Because it's not used in the code
+31
+
+32
+00:02:53,300 --> 00:02:58,290
+of the specific class, it's highlighted in a kind of like the shade.
+32
+
+33
+00:02:58,410 --> 00:03:05,180
+This is how you would import a class which is defined in one of the more or one of the files, which is
+33
+
+34
+00:03:05,180 --> 00:03:07,440
+present inside out own package.
+34
+
+35
+00:03:07,460 --> 00:03:13,150
+The concept of modules as we see in here was introduced in javascript.
+35
+
+36
+00:03:13,290 --> 00:03:13,860
+ES
+36
+
+37
+00:03:13,980 --> 00:03:14,930
+6.
+37
+
+38
+00:03:14,940 --> 00:03:22,700
+Now let's move on to the definition of a class. The definition of a class is very similar to how we do
+38
+
+39
+00:03:22,700 --> 00:03:29,780
+it in Java. class and class name, making the class implement the interface, implements on and it is more
+39
+
+40
+00:03:29,780 --> 00:03:35,670
+of a typescript feature, and this is exactly the same as how we would do that in Java.
+40
+
+41
+00:03:35,900 --> 00:03:37,870
+The important difference comes,
+41
+
+42
+00:03:38,060 --> 00:03:46,520
+when you would want to use this class outside this module, or outside this particular file in Java
+42
+
+43
+00:03:46,640 --> 00:03:49,320
+one of the options which is present is public.
+43
+
+44
+00:03:49,340 --> 00:03:55,430
+So if I want to use a class outside the package, I can make it public and it can be used everywhere else
+44
+
+45
+00:03:55,790 --> 00:04:03,080
+in Javascript, the option you need to use something called export. export here indicates that I would
+45
+
+46
+00:04:03,080 --> 00:04:08,960
+want to use this class outside the boundary of this particular module, outside the boundary of this particular
+46
+
+47
+00:04:08,990 --> 00:04:09,640
+file.
+47
+
+48
+00:04:09,920 --> 00:04:18,080
+So if I do a control-X,  and remove the import and saving it, you would see that we would have a few compilation
+48
+
+49
+00:04:18,110 --> 00:04:18,430
+errors.
+49
+
+50
+00:04:18,440 --> 00:04:24,280
+If I open up the app, that is what you'd see is: a compilation error.
+50
+
+51
+00:04:24,440 --> 00:04:28,930
+I cannot use a WelcomeComponent, because it is not exported.
+51
+
+52
+00:04:28,940 --> 00:04:36,840
+So if you want to use a class outside the boundary of it's module, you would need to explore it.
+52
+
+53
+00:04:36,920 --> 00:04:42,740
+So the concept is very simple: If you want to use a class from outside the module, you would have to import
+53
+
+54
+00:04:42,860 --> 00:04:46,530
+it. If you'd want to expose a class outside the boundary of this model,
+54
+
+55
+00:04:46,580 --> 00:04:48,570
+Then you need to export it.
+55
+
+56
+00:04:48,590 --> 00:04:57,410
+Now let's shift our attention to the way we define a constructor. It is by using a keyword called constructor
+56
+
+57
+00:04:57,950 --> 00:05:02,800
+in Java, would have done something like this: we would have said public class name and typical method
+57
+
+58
+00:05:02,810 --> 00:05:03,680
+syntax.
+58
+
+59
+00:05:03,680 --> 00:05:05,370
+Now moving on to the normal method.
+59
+
+60
+00:05:05,520 --> 00:05:11,720
+Typically if it was Java, then you would do something like this wide in it or something like that. In
+60
+
+61
+00:05:11,720 --> 00:05:16,480
+Javascript, you don't really need to worry about the return type,  because you cannot declare it. Typescript
+61
+
+62
+00:05:16,490 --> 00:05:17,800
+It makes it safer,
+62
+
+63
+00:05:17,870 --> 00:05:20,580
+And in typescript you can say :void.
+63
+
+64
+00:05:21,010 --> 00:05:26,630
+This says this particular method will not return anything back. If it if you would want to return a string,
+64
+
+65
+00:05:26,630 --> 00:05:28,370
+You can put string in here.
+65
+
+66
+00:05:28,470 --> 00:05:34,540
+So if you see code anywhere in your colon and declaring it type, then it's basically the return type.
+66
+
+67
+00:05:34,550 --> 00:05:38,120
+Now let's move on to member variables.
+67
+
+68
+00:05:38,400 --> 00:05:40,690
+Let's say I would want declared a variable in here.
+68
+
+69
+00:05:40,700 --> 00:05:51,150
+The way I can do that in Javascript would be to say OK message = ... and some welcome message.
+69
+
+70
+00:05:52,970 --> 00:06:00,400
+and I can use this in say the method, by saying this.message. so I can say console.log(
+70
+
+71
+00:06:03,450 --> 00:06:05,410
+message).
+71
+
+72
+00:06:05,560 --> 00:06:10,390
+If I did the same thing in Java, it would have looked something like String message =  ...  I have
+72
+
+73
+00:06:10,390 --> 00:06:12,960
+to use double quote in Java for strings, right.
+73
+
+74
+00:06:12,980 --> 00:06:18,770
+So that's basically the way you would do it in Javascript. in Javascript, you don't really need to worry
+74
+
+75
+00:06:18,770 --> 00:06:21,940
+about the single quote or double quote, both of them would work.
+75
+
+76
+00:06:21,980 --> 00:06:25,700
+Typically I prefer using single quote
+76
+
+77
+00:06:25,890 --> 00:06:28,360
+So I do this kind of stuff.
+77
+
+78
+00:06:28,410 --> 00:06:30,990
+This is how you do it in Javascript, in typescript.
+78
+
+79
+00:06:30,990 --> 00:06:34,370
+You can also add a type. so you can do message.
+79
+
+80
+00:06:34,540 --> 00:06:37,620
+:string =  ...
+80
+
+81
+00:06:37,640 --> 00:06:41,350
+So if you see code of this type, and then it says message is a string.
+81
+
+82
+00:06:41,370 --> 00:06:44,370
+And I would want to have this default value for it.
+82
+
+83
+00:06:44,370 --> 00:06:47,130
+The thing is typescript is intelligent.
+83
+
+84
+00:06:47,310 --> 00:06:51,690
+So even if you remove this, it knows that message is a string value.
+84
+
+85
+00:06:51,900 --> 00:06:59,160
+So if I say a message = 5 in here, it would start complaining.
+85
+
+86
+00:06:59,210 --> 00:07:02,810
+Actually I should say this.message,  and I just said message.
+86
+
+87
+00:07:02,870 --> 00:07:04,780
+If I said this, this is what messages go to.
+87
+
+88
+00:07:05,120 --> 00:07:07,430
+Then  I could assign 5 to it.
+88
+
+89
+00:07:07,430 --> 00:07:08,970
+It's a string type.
+89
+
+90
+00:07:09,110 --> 00:07:10,340
+So typescript is intelligent.
+90
+
+91
+00:07:10,340 --> 00:07:12,770
+It knows the value assigned to it.
+91
+
+92
+00:07:12,770 --> 00:07:13,890
+What is the type of it?
+92
+
+93
+00:07:13,920 --> 00:07:18,840
+And it can recognize that.
+93
+
+94
+00:07:18,930 --> 00:07:23,990
+So this would give us a compilation error.
+94
+
+95
+00:07:24,660 --> 00:07:28,470
+The last thing we would want to look at is the decorator.
+95
+
+96
+00:07:28,470 --> 00:07:29,620
+So what do you see in here.
+96
+
+97
+00:07:29,740 --> 00:07:36,960
+A decorator! In Java, you would call it annotation, you would have annotation and different attributes
+97
+
+98
+00:07:37,220 --> 00:07:39,040
+similar to that in typescript.
+98
+
+99
+00:07:39,060 --> 00:07:46,710
+This is called a decorator. In a decorator, we are passing an object, so over here, we apply it in object and
+99
+
+100
+00:07:46,710 --> 00:07:53,230
+we are setting the attributes of that. It's just similar to how we would do attribute in Java.
+100
+
+101
+00:07:53,610 --> 00:07:57,610
+OK we have discussed a lot of things in this specific video.
+101
+
+102
+00:07:57,810 --> 00:08:02,950
+The idea is to give you a quick overview of how things are different between typescript and Java.
+102
+
+103
+00:08:03,300 --> 00:08:09,490
+So we started talking about the fact that in Java we use packages to organize classes, whereas in javascript
+103
+
+104
+00:08:09,930 --> 00:08:15,120
+all the classes which are present in a single file and all the other functions which happens in here
+104
+
+105
+00:08:15,180 --> 00:08:17,730
+are part of a module.
+105
+
+106
+00:08:17,730 --> 00:08:25,260
+And if you want to use class from external module,  you'd need to import it in if you want to.
+106
+
+107
+00:08:25,260 --> 00:08:28,480
+allow usage of this class outside this specific module.
+107
+
+108
+00:08:28,650 --> 00:08:31,050
+You need to export it a little bit.
+108
+
+109
+00:08:31,080 --> 00:08:37,570
+The syntax of classes, constructors, methods and member variables.
+109
+
+110
+00:08:37,800 --> 00:08:40,830
+As I said before this is just to give you a quick overview.
+110
+
+111
+00:08:40,930 --> 00:08:44,160
+We did not really cover every nook and corner as we go along.
+111
+
+112
+00:08:44,190 --> 00:08:46,900
+You learn more about javascript and typescript.
+112
+
+113
+00:08:46,940 --> 00:08:51,100
+I like you to watch the lecture again and focus on every word of it.
+113
+
+114
+00:08:51,120 --> 00:08:54,570
+Being comfortable with the syntax is very important.
+114
+
+115
+00:08:54,590 --> 00:08:58,590
+Make a backup of the class, remove each word from it, and see what happens.
+115
+
+116
+00:08:58,590 --> 00:08:59,990
+Good luck, and I'll see you.

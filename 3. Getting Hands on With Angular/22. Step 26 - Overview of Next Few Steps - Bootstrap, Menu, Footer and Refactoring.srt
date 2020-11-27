@@ -1,0 +1,49 @@
+0
+1
+00:00:02,690 --> 00:00:08,960
+Welcome back. In the previous two steps, the focus was on getting things working.
+1
+
+2
+00:00:09,020 --> 00:00:14,150
+We were able to quickly get started with creating a simple login page, a welcome page, and mytodos
+2
+
+3
+00:00:14,160 --> 00:00:15,030
+page.
+3
+
+4
+00:00:15,070 --> 00:00:21,860
+The focus of the next few steps is on building up on what we already have, and giving it a nice look
+4
+
+5
+00:00:21,860 --> 00:00:22,870
+and feel.
+5
+
+6
+00:00:22,880 --> 00:00:25,580
+Have a nice navigation menu and footer.
+6
+
+7
+00:00:25,700 --> 00:00:28,000
+Use bootstrap to style everything out.
+7
+
+8
+00:00:28,100 --> 00:00:33,680
+Have proper security systems so that not everybody would be able to get into todos without logging
+8
+
+9
+00:00:33,680 --> 00:00:39,270
+in, and to refactor some of the stuff that we did to separate some of these components.
+9
+
+10
+00:00:39,500 --> 00:00:44,400
+I'm sure this would be an interesting refactoring journey and I'll see you in the next step. Bye bye!

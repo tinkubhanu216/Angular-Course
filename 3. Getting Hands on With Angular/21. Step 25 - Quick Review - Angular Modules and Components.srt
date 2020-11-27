@@ -1,0 +1,214 @@
+0
+1
+00:00:02,610 --> 00:00:04,270
+Welcome back.
+1
+
+2
+00:00:04,290 --> 00:00:11,190
+Before we go any further, let's review all the concepts that we have learned during the last few steps.
+2
+
+3
+00:00:11,290 --> 00:00:16,420
+Angular applications are built using a number of angular modules.
+3
+
+4
+00:00:16,560 --> 00:00:20,990
+There would be a custom built angular modules, which I built as part of your application as well as in
+4
+
+5
+00:00:21,030 --> 00:00:27,720
+built Angular modules. Which you make use of. If you want to reuse a component, you would need to import
+5
+
+6
+00:00:27,960 --> 00:00:30,200
+these specific Angular Modules
+6
+
+7
+00:00:30,300 --> 00:00:32,100
+Whenever you create Angular components, 
+7
+
+8
+00:00:32,130 --> 00:00:35,670
+You need to associate it with an angular module.
+8
+
+9
+00:00:35,790 --> 00:00:42,030
+So the application is built up of Angular modules, which in turn is nothing but a set of angular component
+9
+
+10
+00:00:42,360 --> 00:00:45,500
+or directives or building blocks of angular.
+10
+
+11
+00:00:45,510 --> 00:00:51,300
+Each component has a template which is basically a HTML file where typical HTML
+11
+
+12
+00:00:51,330 --> 00:00:57,030
+is combined with a few angular specific things, like angular binding syntax right.
+12
+
+13
+00:00:57,030 --> 00:00:59,200
+We looked at interpolation.
+13
+
+14
+00:00:59,320 --> 00:01:03,650
+Look at 2-way binding. We looked at event binding as well.
+14
+
+15
+00:01:03,720 --> 00:01:10,770
+The style CSS part of it, because it is basically the place where we put all the data in as well
+15
+
+16
+00:01:10,770 --> 00:01:14,000
+as how should we react to the view actions.
+16
+
+17
+00:01:14,040 --> 00:01:20,220
+So we'll put methods which help us react to view actions the different data binding features in Angular
+17
+
+18
+00:01:20,400 --> 00:01:29,940
+help us to bind the template to the code. To be able to bind the view, the HTML, to specific data and specific
+18
+
+19
+00:01:30,000 --> 00:01:32,810
+event which are described in the code.
+19
+
+20
+00:01:32,820 --> 00:01:38,470
+We also looked at routing, which helps us mainly get from one component to another.
+20
+
+21
+00:01:38,490 --> 00:01:44,400
+We also made use of a number of ng directives, angular directivess and the forms. We made use of ngIf,
+21
+
+22
+00:01:44,460 --> 00:01:51,510
+ngFor. We made use of the pipes. While we learn a lot of things in the last few steps, there are a lot.
+22
+
+23
+00:01:51,510 --> 00:01:53,110
+of things remaining as well.
+23
+
+24
+00:01:53,210 --> 00:01:55,470
+Other things is look at the design of the pages.
+24
+
+25
+00:01:55,470 --> 00:01:57,860
+Right now they don't really look appealing.
+25
+
+26
+00:01:57,950 --> 00:02:02,230
+We would want to use something like bootstrap, we would want to create a few proper menus.
+26
+
+27
+00:02:02,280 --> 00:02:04,110
+You don't have a proper footer.
+27
+
+28
+00:02:04,140 --> 00:02:07,970
+The other important thing is there is no security for the menus at all.
+28
+
+29
+00:02:08,010 --> 00:02:13,470
+If I did localhost:4200/todo, you'd be able to look at the list of those you don't really have
+29
+
+30
+00:02:13,470 --> 00:02:16,710
+to log in to be able to see the todos.
+30
+
+31
+00:02:16,750 --> 00:02:23,190
+I don't need to really do this, and go and click this to go to those even without logging in.
+31
+
+32
+00:02:23,250 --> 00:02:29,460
+If I go to a new page, and type in todos, I will be able to still see the todos. it's highly secure.
+32
+
+33
+00:02:29,460 --> 00:02:33,660
+The other thing is hardcoded. Logic of the ToDo list is hardcoded.
+33
+
+34
+00:02:33,660 --> 00:02:37,160
+It's not really coming from the rest API or something of that kind.
+34
+
+35
+00:02:37,170 --> 00:02:39,630
+The same is the case with authentication.
+35
+
+36
+00:02:39,720 --> 00:02:45,000
+We have a hard coded logic which is present in there, and there is a lot of Todo functionality which
+36
+
+37
+00:02:45,000 --> 00:02:46,400
+is remaining to create it.
+37
+
+38
+00:02:46,410 --> 00:02:53,670
+We need to be able to edit, view and delete Todo's and add todo's, and we have not even started creating
+38
+
+39
+00:02:53,670 --> 00:02:57,350
+the basics of a piece, with springboot and spring security.
+39
+
+40
+00:02:57,360 --> 00:03:01,260
+There are a lot of work ahead of us and in the future steps.
+40
+
+41
+00:03:01,320 --> 00:03:05,520
+Let's focus on getting things done one by one.
+41
+
+42
+00:03:05,520 --> 00:03:11,070
+I'm really excited to go on this journey of building a full stack application with you and I'll see
+42
+
+43
+00:03:11,070 --> 00:03:12,300
+you in the next step.

@@ -1,0 +1,299 @@
+0
+1
+00:00:01,920 --> 00:00:08,850
+Welcome back.  until now,  I've created a number of components: component... login component and welcome component
+1
+
+2
+00:00:09,100 --> 00:00:15,990
+list-todos component, and we saw that whenever we created a component using ng generate component.
+2
+
+3
+00:00:16,290 --> 00:00:22,630
+Each time the component was getting added into an NgModule, which was app module
+3
+
+4
+00:00:22,860 --> 00:00:30,410
+This app module has an additional NgModule on it, which stands for Angular Module. Anything attached
+4
+
+5
+00:00:30,540 --> 00:00:34,320
+to the ng is Angular, so Angular Module.
+5
+
+6
+00:00:34,550 --> 00:00:41,970
+So let's discuss what is NgModule doing, and how were Angular modules are different from javascript modules.
+6
+
+7
+00:00:42,040 --> 00:00:50,460
+When you think about Angular applications, they are built using a number of angular modules
+7
+
+8
+00:00:50,520 --> 00:00:59,040
+Some of the angular modules are built into angular framework, so you can see FormsModule, AppRoutingModule
+8
+
+9
+00:00:59,100 --> 00:01:01,860
+BrowserModule, NgModule.
+9
+
+10
+00:01:01,920 --> 00:01:08,880
+All of these are built in angular modules, inside the angular framework.
+10
+
+11
+00:01:08,930 --> 00:01:16,770
+Whenever we need to use any of the angular features, we needed to import that specific module in.
+11
+
+12
+00:01:16,800 --> 00:01:25,240
+If you remember in the login.component.html, we want to use the module data, to and then be added
+12
+
+13
+00:01:25,290 --> 00:01:28,120
+in the module, that gave us an error.
+13
+
+14
+00:01:28,170 --> 00:01:30,580
+And what did we do at that particular point in time?
+14
+
+15
+00:01:30,690 --> 00:01:33,920
+We imported the FormsModule.
+15
+
+16
+00:01:33,960 --> 00:01:42,870
+So if you want to use any of the building features in angular, we need to import the corresponding angular
+16
+
+17
+00:01:42,870 --> 00:01:45,020
+module for it.
+17
+
+18
+00:01:45,150 --> 00:01:50,490
+That's what we observed until now. In summary, all the components that we created until now, are
+18
+
+19
+00:01:50,490 --> 00:01:56,920
+associated with this Angular module called app module. and whenever we needed to use some other feature from
+19
+
+20
+00:01:56,920 --> 00:02:02,390
+Angular, we needed to import the specific module.
+20
+
+21
+00:02:02,400 --> 00:02:08,310
+Thing is, when we think about Angular's applications, you should always think about them as a group of
+21
+
+22
+00:02:08,760 --> 00:02:12,390
+angular modules. Each component,
+22
+
+23
+00:02:12,390 --> 00:02:20,580
+Each directive that you create as part of the angular application are always associated with angular.
+23
+
+24
+00:02:20,610 --> 00:02:29,300
+Module. If you look at the syntax of the angular module, it starts with an '@' , @NgModule decorator
+24
+
+25
+00:02:29,460 --> 00:02:35,660
+what the declaration is saying is these five things are part of this specific Angular module.
+25
+
+26
+00:02:35,670 --> 00:02:41,910
+So if some other application wants to reuse the error component, or it wants to use the logging component
+26
+
+27
+00:02:42,420 --> 00:02:43,870
+What do they need to do?
+27
+
+28
+00:02:43,870 --> 00:02:49,620
+They would need to make use of this NgModule, so they would need to import the module in and only
+28
+
+29
+00:02:49,620 --> 00:02:54,680
+then they will be able to make use of the specific component.
+29
+
+30
+00:02:54,780 --> 00:03:01,190
+The second attribute what you're seeing here is import. import is nothing but the components and directives
+30
+
+31
+00:03:01,440 --> 00:03:02,830
+of this specific model.
+31
+
+32
+00:03:02,970 --> 00:03:07,580
+What you are saying is component in the app model will need all these modules to work.
+32
+
+33
+00:03:07,580 --> 00:03:12,590
+So we said we need the app.module, we need the browserModule we need the module.
+33
+
+34
+00:03:12,740 --> 00:03:18,410
+We talk about providers a little later when we talk more about dependency injection.
+34
+
+35
+00:03:18,420 --> 00:03:22,090
+The last one that just isn't in here is something called Bootstrap.
+35
+
+36
+00:03:22,100 --> 00:03:26,480
+Then this module is loaded, which component should be loaded as well.
+36
+
+37
+00:03:26,490 --> 00:03:29,110
+Those are called the bootstrap component.
+37
+
+38
+00:03:29,160 --> 00:03:33,900
+We have Appcomponent listed in as a bootstrap component in here.
+38
+
+39
+00:03:34,020 --> 00:03:39,930
+So what we have discussed until now is the fact that the module is a group of components are that active
+39
+
+40
+00:03:40,200 --> 00:03:46,980
+which are dedicated for a specific purpose, and that module is the fundamental block of use in an
+40
+
+41
+00:03:47,010 --> 00:03:48,560
+angular application.
+41
+
+42
+00:03:48,570 --> 00:03:53,740
+If you go through the components, you would need to import the corresponding angular module you.
+42
+
+43
+00:03:53,910 --> 00:03:59,940
+One of the question is, how was the more different from a javascript module? The first important thing
+43
+
+44
+00:03:59,940 --> 00:04:10,890
+is you has the annotation in angular, and it is used to group angular component, angular building blocks.
+44
+
+45
+00:04:10,950 --> 00:04:13,670
+A javascript module is a file.
+45
+
+46
+00:04:13,920 --> 00:04:19,620
+So just any of this module that these files can open into these files, or be created a lot of component
+46
+
+47
+00:04:19,620 --> 00:04:21,570
+of these files until now.
+47
+
+48
+00:04:21,830 --> 00:04:26,980
+So all this component.ts files login.ts, error.ts, welcome.component.ts
+48
+
+49
+00:04:27,060 --> 00:04:34,590
+Each of these each file is a module. You can create any number of classes in the module. You can create
+49
+
+50
+00:04:34,620 --> 00:04:37,450
+any number of functions in that specific module.
+50
+
+51
+00:04:37,510 --> 00:04:46,140
+So each of these things that you are looking at is a Javascript module. In comparison an angular module
+51
+
+52
+00:04:46,140 --> 00:04:52,950
+is something which has @NgModule... annotation on it. Javascript module is used to group different
+52
+
+53
+00:04:52,950 --> 00:05:00,360
+elements which are present in a single file, whereas an angular module is used to group different angular
+53
+
+54
+00:05:00,530 --> 00:05:08,820
+Components, or different angular building blocks. This angular component might be actually defined in a
+54
+
+55
+00:05:08,820 --> 00:05:11,020
+separate file as well.
+55
+
+56
+00:05:11,270 --> 00:05:19,140
+In this video, we quickly looked at the concept of an angular module and compared it with javascript model
+56
+
+57
+00:05:19,340 --> 00:05:25,780
+An Angular module is a grouping of a number of angular building blocks like components.
+57
+
+58
+00:05:25,800 --> 00:05:27,060
+I'll see you in the next step.
+58
+
+59
+00:05:27,060 --> 00:05:27,500
+Until then,
+59
+
+60
+00:05:27,590 --> 00:05:28,120
+Bye bye.

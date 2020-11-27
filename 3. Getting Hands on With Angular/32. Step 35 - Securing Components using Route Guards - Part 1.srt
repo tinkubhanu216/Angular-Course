@@ -1,0 +1,454 @@
+0
+1
+00:00:02,430 --> 00:00:04,230
+Welcome back.
+1
+
+2
+00:00:04,410 --> 00:00:09,950
+One of the things which we are seeing right now, is the fact that when I directly entered the URL, I would still
+2
+
+3
+00:00:10,530 --> 00:00:13,560
+get the details, even though I'm not really logged in.
+3
+
+4
+00:00:13,570 --> 00:00:15,270
+And that's not really good.
+4
+
+5
+00:00:15,270 --> 00:00:16,210
+That's not accurate.
+5
+
+6
+00:00:16,220 --> 00:00:22,170
+I like to make the application secure, by actually trying to authenticate before we allow user to go
+6
+
+7
+00:00:22,170 --> 00:00:23,640
+to specific URL.
+7
+
+8
+00:00:23,730 --> 00:00:28,700
+A quick word of caution. if you're hearing a few crackers in the background it's because it's Diwali time
+8
+
+9
+00:00:28,920 --> 00:00:30,040
+in India right now.
+9
+
+10
+00:00:30,240 --> 00:00:34,500
+If there are few crackers sound in the background that you're hearing that's because it's Diwali in
+10
+
+11
+00:00:34,500 --> 00:00:35,140
+India.
+11
+
+12
+00:00:35,220 --> 00:00:36,660
+Wish me Happy Diwali as well.
+12
+
+13
+00:00:36,810 --> 00:00:38,680
+OK let's get to the task at hand.
+13
+
+14
+00:00:38,700 --> 00:00:44,430
+So that is where we have defined the route, in the app-routing.model.ts . What we want to do is
+14
+
+15
+00:00:44,430 --> 00:00:48,900
+before executing the route, we would want to check something out.
+15
+
+16
+00:00:48,900 --> 00:00:56,910
+You'd want to check if the user is logged in, before he can go to the welcome page, that he's actually
+16
+
+17
+00:00:57,120 --> 00:01:02,880
+been loggen before he goes to this page.  Whether he's equal whether his logged in before he goes to the todos
+17
+
+18
+00:01:02,940 --> 00:01:03,760
+page.
+18
+
+19
+00:01:03,990 --> 00:01:05,640
+So how do we do that?
+19
+
+20
+00:01:05,640 --> 00:01:08,420
+What you are looking at right now is app routing module.
+20
+
+21
+00:01:08,580 --> 00:01:16,440
+This is where we find our routes. Over here we can specify conditions when these can be activated.
+21
+
+22
+00:01:16,440 --> 00:01:21,060
+So I can say activate this specific condition, activate this only in specific condition.
+22
+
+23
+00:01:21,120 --> 00:01:27,240
+What we'll do is we will activate welcome.component, list-todos component, and logout  component, only when
+23
+
+24
+00:01:27,300 --> 00:01:29,580
+a user is logged in.
+24
+
+25
+00:01:29,720 --> 00:01:35,550
+But to be able to do that, we need to implement the service and tie it up down here.
+25
+
+26
+00:01:35,550 --> 00:01:39,300
+So this is called a RouteGuardService.
+26
+
+27
+00:01:39,310 --> 00:01:40,550
+RouteGuardService.
+27
+
+28
+00:01:40,840 --> 00:01:42,250
+You would want to call it.
+28
+
+29
+00:01:42,480 --> 00:01:43,400
+So what do we do, is
+29
+
+30
+00:01:43,410 --> 00:01:45,290
+We'll start creating this service.
+30
+
+31
+00:01:45,350 --> 00:01:46,870
+I want to create a service.
+31
+
+32
+00:01:47,110 --> 00:01:52,900
+The service I would want to create, again in this service folder itself and I'll call this service/
+32
+
+33
+00:01:53,340 --> 00:01:54,570
+routeguard
+33
+
+34
+00:01:54,600 --> 00:01:55,790
+Be very careful.
+34
+
+35
+00:01:55,830 --> 00:01:58,200
+You don't need to specify the service at the end.
+35
+
+36
+00:01:58,210 --> 00:02:02,920
+So it's ng generate service service/routeGuard
+36
+
+37
+00:02:05,210 --> 00:02:08,940
+Then open up the routeguardservice.
+37
+
+38
+00:02:09,130 --> 00:02:10,030
+ts.
+38
+
+39
+00:02:10,510 --> 00:02:16,000
+And before we can implement logic in the service,  is one important thing is, this needs to implement a
+39
+
+40
+00:02:16,000 --> 00:02:19,250
+specific interface, before I can use it in the router.
+40
+
+41
+00:02:19,300 --> 00:02:22,660
+The interface is called CanActivate
+41
+
+42
+00:02:22,660 --> 00:02:29,230
+The important thing to note is there are multiple imports that match this CanActivate, so be careful and
+42
+
+43
+00:02:29,230 --> 00:02:34,840
+choose the one which is from the angular router package. So you can see it in here or to input from @angular
+43
+
+44
+00:02:34,840 --> 00:02:35,810
+/route
+44
+
+45
+00:02:36,000 --> 00:02:42,790
+So the one which we need to import is from the router package. so you can see now over here, CanActivate
+45
+
+46
+00:02:42,850 --> 00:02:45,000
+from @angular/router.
+46
+
+47
+00:02:45,330 --> 00:02:48,910
+Now you can see that it says an error.
+47
+
+48
+00:02:49,030 --> 00:02:54,280
+It says it incorrectly implements the interface CanActivate it as property can activate is missing.
+48
+
+49
+00:02:54,310 --> 00:02:55,280
+What does that mean?
+49
+
+50
+00:02:55,300 --> 00:02:59,710
+This means that we have not really implemented the method which is defined in the CanActivate.
+50
+
+51
+00:02:59,710 --> 00:03:07,180
+So what I'll do is I'll make it easy.. So I'll go here and copy the method thing , and do a control click.
+51
+
+52
+00:03:07,180 --> 00:03:08,320
+You can go to that.
+52
+
+53
+00:03:08,320 --> 00:03:12,210
+I'll copy the method definition. What it's saying,
+53
+
+54
+00:03:12,400 --> 00:03:17,770
+It should either it in an observable, or a promise, of a boolean. to really worry about it.
+54
+
+55
+00:03:17,770 --> 00:03:18,590
+Fair enough.
+55
+
+56
+00:03:18,850 --> 00:03:24,380
+Let's remove all that stuff and let's put these in.
+56
+
+57
+00:03:24,580 --> 00:03:27,580
+Let's start with the activated route.
+57
+
+58
+00:03:27,670 --> 00:03:37,240
+Snapshot control space and put it in. Next, RouterStateSnapshot and import it as well.
+58
+
+59
+00:03:37,570 --> 00:03:40,430
+So you can see that all these are from the same package.
+59
+
+60
+00:03:40,450 --> 00:03:43,830
+So if you don't get this suggestion, then make sure that you add this import.
+60
+
+61
+00:03:43,870 --> 00:03:47,250
+They are all from angular/router.
+61
+
+62
+00:03:47,430 --> 00:03:50,260
+The error is because we are not returning anything back.
+62
+
+63
+00:03:50,450 --> 00:03:51,950
+It's true.
+63
+
+64
+00:03:52,420 --> 00:03:54,340
+Just to make the whole thing happy.
+64
+
+65
+00:03:54,350 --> 00:03:56,480
+Now what do you want to do in here.
+65
+
+66
+00:03:56,560 --> 00:04:01,540
+What do you want to do is we would want to return true, only if the user is logged in.A certain links.
+66
+
+67
+00:04:01,540 --> 00:04:03,870
+We only want to enable when a user is logged in.
+67
+
+68
+00:04:03,880 --> 00:04:08,570
+And in those kind of situations only, we would want to return true back.
+68
+
+69
+00:04:08,620 --> 00:04:10,120
+So how can we implement that?
+69
+
+70
+00:04:10,120 --> 00:04:11,110
+Think about it.
+70
+
+71
+00:04:11,230 --> 00:04:17,940
+You'd want it to only when the user is logged in. how can I find out if the user is logged in? Hardcoded
+71
+
+72
+00:04:17,950 --> 00:04:19,110
+authentication service.
+72
+
+73
+00:04:19,170 --> 00:04:24,660
+Again HardcodedAuthenticationService private
+73
+
+74
+00:04:28,820 --> 00:04:43,630
+h,  and let's control space... implement ... import it in if HardcodedAuthenticationService. import it in
+74
+
+75
+00:04:46,400 --> 00:04:46,920
+return true.
+75
+
+76
+00:04:48,000 --> 00:04:51,920
+Else return false.
+76
+
+77
+00:04:52,060 --> 00:04:56,480
+What would happen if we leave... a user has logged in then it would return true.
+77
+
+78
+00:04:56,510 --> 00:05:00,460
+Otherwise it would return false.
+78
+
+79
+00:05:00,520 --> 00:05:09,100
+What I can do is use this in... let's quickly format this... right click format document so the code is formatted.
+79
+
+80
+00:05:09,630 --> 00:05:14,230
+What we'll do in the next step is to make use of this code.  In this step,
+80
+
+81
+00:05:14,280 --> 00:05:20,490
+What we did is we implemented a quick logout service in the router for each of the links. Before we
+81
+
+82
+00:05:20,580 --> 00:05:22,320
+go to that specific thing.
+82
+
+83
+00:05:22,380 --> 00:05:28,530
+We want to check if user is actually logged in, before we can see the truth or we continue to the.
+83
+
+84
+00:05:28,530 --> 00:05:29,450
+Welcome page.
+84
+
+85
+00:05:29,550 --> 00:05:32,160
+And that's what the RouteGuardService enables us to do.
+85
+
+86
+00:05:32,210 --> 00:05:38,420
+We just need a to implement CanActivate interface, and it defines a specific method based on the activated route
+86
+
+87
+00:05:38,460 --> 00:05:40,150
+and the route snapshot.
+87
+
+88
+00:05:40,350 --> 00:05:44,600
+We don't really need to use any of that information. What  we need to do is use the authentication service,
+88
+
+89
+00:05:44,890 --> 00:05:49,570
+to check if user is logged in. If user loggend in, return true. Else,  false.
+89
+
+90
+00:05:49,650 --> 00:05:51,590
+Let's make use of this  in the next video.
+90
+
+91
+00:05:51,810 --> 00:05:52,140
+Bye Bye!

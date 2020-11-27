@@ -1,0 +1,419 @@
+0
+1
+00:00:02,810 --> 00:00:04,250
+Welcome back.
+1
+
+2
+00:00:04,250 --> 00:00:08,180
+Let's shift our attention to enhancing the application which you want to create.
+2
+
+3
+00:00:08,180 --> 00:00:15,650
+We created an welcome page, and now let's look forward to creating a login page, what will the login page typically contain?
+3
+
+4
+00:00:15,810 --> 00:00:17,630
+a user name and a password.
+4
+
+5
+00:00:17,630 --> 00:00:24,110
+Let's create a simple page with a user name and password, and we use a LoginComponent to contain all
+5
+
+6
+00:00:24,110 --> 00:00:25,480
+the code of that.
+6
+
+7
+00:00:25,730 --> 00:00:32,030
+How do you create a component? And let's use the ng, and ng generate. What do we want to generate?
+7
+
+8
+00:00:32,180 --> 00:00:34,680
+We want to generate a component. What is the name of it?
+8
+
+9
+00:00:34,690 --> 00:00:37,350
+Login. This is very very simple.
+9
+
+10
+00:00:37,540 --> 00:00:42,060
+It's something that you'd would be doing a number of times, during the specific course, and actually you'd
+10
+
+11
+00:00:42,110 --> 00:00:46,160
+be doing this a number of times during your career,  because you would want to create a lot of components
+11
+
+12
+00:00:46,160 --> 00:00:47,770
+when you are writing Angular code.
+12
+
+13
+00:00:47,780 --> 00:00:49,850
+Let's go ahead and do that, Login.
+13
+
+14
+00:00:50,030 --> 00:00:56,510
+It would create. How many files would it create? It creates four files, and it updates the app.module.
+14
+
+15
+00:00:56,750 --> 00:00:57,530
+What does that mean here?
+15
+
+16
+00:00:57,560 --> 00:00:59,150
+This login component is created.
+16
+
+17
+00:00:59,270 --> 00:01:05,190
+And the login component is added to the app module, and the login component...
+17
+
+18
+00:01:05,210 --> 00:01:07,330
+How many files are created for us?
+18
+
+19
+00:01:07,330 --> 00:01:12,950
+A CSS file, a HTML file, and the typescript file, which would contain the view logic too. This would
+19
+
+20
+00:01:12,950 --> 00:01:17,720
+contain the styling, this would contain the view, and this would contain the view logic.
+20
+
+21
+00:01:17,720 --> 00:01:21,320
+This file... we'll not worry about this... it would be typically be the unit test file.
+21
+
+22
+00:01:21,500 --> 00:01:27,680
+Let's open up the IDE, and you would see login here and this is where the whole thing is.
+22
+
+23
+00:01:27,720 --> 00:01:33,630
+And the easiest way to open up files is by just pressing control-P or command-P.
+23
+
+24
+00:01:34,030 --> 00:01:40,100
+Let's start using control-P and command-P be to start opening the files, because that would help you remember
+24
+
+25
+00:01:40,100 --> 00:01:41,430
+the names of the files.
+25
+
+26
+00:01:41,510 --> 00:01:46,970
+better. So log.component.ts , css, html
+26
+
+27
+00:01:47,000 --> 00:01:50,160
+These are the 3 important files. Let's go to the HTML file.
+27
+
+28
+00:01:50,230 --> 00:01:52,080
+It says login works right now.
+28
+
+29
+00:01:52,370 --> 00:01:56,410
+Let's see the application, login works
+29
+
+30
+00:01:56,420 --> 00:01:58,450
+is not really shown. why?
+30
+
+31
+00:01:58,760 --> 00:01:59,770
+Because we are not including
+31
+
+32
+00:01:59,780 --> 00:02:01,560
+The login tag anywhere.
+32
+
+33
+00:02:01,730 --> 00:02:03,800
+What is the tag of the logging component?
+33
+
+34
+00:02:04,010 --> 00:02:06,480
+Let's go to login.component.ts.
+34
+
+35
+00:02:06,550 --> 00:02:07,180
+Yes.
+35
+
+36
+00:02:07,670 --> 00:02:11,250
+The tag is app-login.
+36
+
+37
+00:02:11,270 --> 00:02:19,730
+So let's open up which file would contain code for including the tag in? It would be the component, because
+37
+
+38
+00:02:19,730 --> 00:02:24,450
+that's kind of the component where we are generating, we are driving everything from.
+38
+
+39
+00:02:24,680 --> 00:02:26,170
+So I can open and start off.
+39
+
+40
+00:02:26,180 --> 00:02:29,190
+And from there we are including all the other components.
+40
+
+41
+00:02:29,240 --> 00:02:33,390
+So if I want to show the login page, I can say <app-login> here.
+41
+
+42
+00:02:34,910 --> 00:02:38,450
+Right let's see if I see the content.
+42
+
+43
+00:02:38,480 --> 00:02:40,450
+Yep it says logging works right now.
+43
+
+44
+00:02:40,450 --> 00:02:44,210
+So now you can see login work as part of this particular thing as well.
+44
+
+45
+00:02:44,210 --> 00:02:49,780
+One of the important things is the fact that right now, we are including all the components as part
+45
+
+46
+00:02:50,020 --> 00:02:52,950
+of the root component, which is the app component.
+46
+
+47
+00:02:52,960 --> 00:02:57,460
+So what is happening here, is the root component is getting loaded, which is the app component, and the
+47
+
+48
+00:02:57,520 --> 00:03:01,530
+root component contains a number of other components.
+48
+
+49
+00:03:01,660 --> 00:03:03,730
+So all the other components are getting in there.
+49
+
+50
+00:03:03,730 --> 00:03:05,490
+That's part of the component.
+50
+
+51
+00:03:05,740 --> 00:03:09,590
+What we want to do from here on, is just focus on a specific component it.
+51
+
+52
+00:03:09,600 --> 00:03:13,450
+So what I'll do,  is this code
+52
+
+53
+00:03:13,450 --> 00:03:17,720
+This is not really needed anymore, and I'll comment out the app.
+53
+
+54
+00:03:17,720 --> 00:03:21,830
+"welcome", and all the content below.
+54
+
+55
+00:03:22,000 --> 00:03:24,080
+We don't really need it anymore.
+55
+
+56
+00:03:24,370 --> 00:03:29,860
+What we'll do is we'll start focusing on the login, and at a later point in time we would make use of
+56
+
+57
+00:03:30,070 --> 00:03:30,940
+router.
+57
+
+58
+00:03:31,210 --> 00:03:35,840
+So the router would help us to bring from logging to welcome page, and all that fun stuff.
+58
+
+59
+00:03:35,980 --> 00:03:39,540
+Let's not really worry about it right now. Let's focus on the login page.
+59
+
+60
+00:03:39,580 --> 00:03:45,490
+And if you go to the browser, the only thing you are seeing right now is login works. Index HTML
+60
+
+61
+00:03:45,520 --> 00:03:46,610
+And where is this coming from?
+61
+
+62
+00:03:46,630 --> 00:03:49,080
+This is coming from the index file.
+62
+
+63
+00:03:49,360 --> 00:03:54,880
+So in the index.html file, we are loading the root component and the root component.
+63
+
+64
+00:03:54,880 --> 00:03:56,310
+After that we have this.
+64
+
+65
+00:03:56,320 --> 00:03:59,780
+So let's come in this out as well.
+65
+
+66
+00:04:00,830 --> 00:04:07,920
+The shortcut if you'd want to comment something out, is control-/ or command-/.
+66
+
+67
+00:04:07,930 --> 00:04:16,570
+It would comment anything, whether it's HTML, whether it's Javascript, you can easily comment it.
+67
+
+68
+00:04:16,610 --> 00:04:22,470
+Now let's go to the page, and you'll see that "login works" is the only one which we are seeing now.
+68
+
+69
+00:04:22,510 --> 00:04:27,760
+Let's focus on the login component. login that component data is where it's present.
+69
+
+70
+00:04:27,880 --> 00:04:30,250
+Let's create a simple login page.
+70
+
+71
+00:04:30,260 --> 00:04:38,210
+So I would want to get the username and the password. How do we get the name and password? Typically in
+71
+
+72
+00:04:38,210 --> 00:04:46,390
+which HTML would create an input element. So <input type="text"... and you would want to say, we would want to
+72
+
+73
+00:04:46,390 --> 00:04:56,040
+put in the name, and the name is user.name. And let's have a password, for the last one <input type=
+73
+
+74
+00:04:56,480 --> 00:04:58,770
+"password".
+74
+
+75
+00:05:00,060 --> 00:05:04,880
+And name it user.password as well.
+75
+
+76
+00:05:05,070 --> 00:05:10,050
+Right now if you go to the browser, you would see a username and password.
+76
+
+77
+00:05:10,050 --> 00:05:15,990
+This looks like a typical page. Now styling it. We talk about styling a little later, for now what we
+77
+
+78
+00:05:15,990 --> 00:05:24,540
+have is very basic page, which is the username and password. And I can enter some values in here and we can do
+78
+
+79
+00:05:24,540 --> 00:05:25,780
+nothing with it right now.
+79
+
+80
+00:05:25,910 --> 00:05:26,510
+OK.
+80
+
+81
+00:05:26,630 --> 00:05:31,560
+In this video, we created the login component, and cleaned everything up so that the only thing that
+81
+
+82
+00:05:31,560 --> 00:05:35,230
+we are seeing on the screen is the login component. In the next step,
+82
+
+83
+00:05:35,240 --> 00:05:38,170
+Let's make the login component a little bit more functional.
+83
+
+84
+00:05:38,340 --> 00:05:40,250
+I'll see you in the next step. Until then, bye-bye!

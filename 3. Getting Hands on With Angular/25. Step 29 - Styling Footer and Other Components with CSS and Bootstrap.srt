@@ -1,0 +1,449 @@
+0
+1
+00:00:02,370 --> 00:00:07,710
+Welcome back. In this step, let's start focusing on the footer. Let's go down to the footer component, and let's
+1
+
+2
+00:00:07,710 --> 00:00:10,000
+start with creating a footer.
+2
+
+3
+00:00:10,050 --> 00:00:16,480
+So let's create a footer inside it, to create a div, and let's create a container div
+3
+
+4
+00:00:19,390 --> 00:00:20,050
+inside it.
+4
+
+5
+00:00:20,110 --> 00:00:24,300
+Let's put All Rights Reserved
+5
+
+6
+00:00:25,330 --> 00:00:32,910
+At whatever thing that you would want to put it in here, and you can maybe put here.
+6
+
+7
+00:00:33,060 --> 00:00:34,890
+This is how the page looks like right now.
+7
+
+8
+00:00:34,890 --> 00:00:36,510
+We have a footer at the bottom.
+8
+
+9
+00:00:36,600 --> 00:00:38,820
+What I would want this, to be here.
+9
+
+10
+00:00:38,850 --> 00:00:41,260
+So I would want a fixed position for this footer.
+10
+
+11
+00:00:41,350 --> 00:00:45,870
+What we do is we add a little bit of CSS for that.
+11
+
+12
+00:00:45,870 --> 00:00:48,920
+What we'll do is we'll open up the footer components CSS.
+12
+
+13
+00:00:48,930 --> 00:00:51,390
+So this is specific to just the footer.
+13
+
+14
+00:00:51,450 --> 00:00:56,950
+So we are adding it directly in the footer component, and what we want to do, is what we want to do?
+14
+
+15
+00:00:57,000 --> 00:01:00,660
+We want to have absolute position.
+15
+
+16
+00:01:00,750 --> 00:01:10,730
+Actually it's position absolute. What we want as it should be at the bottom of the page. Let's give it
+16
+
+17
+00:01:10,750 --> 00:01:10,860
+a width, 
+17
+
+18
+00:01:14,770 --> 00:01:18,260
+and a height.
+18
+
+19
+00:01:18,340 --> 00:01:20,320
+It should be 40 pixels.
+19
+
+20
+00:01:20,370 --> 00:01:22,580
+It's.
+20
+
+21
+00:01:22,770 --> 00:01:33,500
+And let's give it a darker background color #222222.  OK.  and let's see what would happen.
+21
+
+22
+00:01:34,690 --> 00:01:37,900
+Oops!
+22
+
+23
+00:01:38,000 --> 00:01:38,870
+We did not add the class.
+23
+
+24
+00:01:39,440 --> 00:01:44,050
+That's the reason why it's not really formatted. .class =  footer.
+24
+
+25
+00:01:44,490 --> 00:01:45,000
+OK.
+25
+
+26
+00:01:45,110 --> 00:01:45,710
+Nice.
+26
+
+27
+00:01:45,720 --> 00:01:48,860
+Now you can see the footer at the bottom,  but I'm not able to see the text.
+27
+
+28
+00:01:48,860 --> 00:01:49,560
+All right.
+28
+
+29
+00:01:49,630 --> 00:01:56,360
+I'll go to the footer component, and expand on this.
+29
+
+30
+00:01:56,350 --> 00:01:56,940
+span
+30
+
+31
+00:01:59,790 --> 00:02:07,700
+would say class=text-white.
+31
+
+32
+00:02:07,890 --> 00:02:10,320
+Now you can see the footer down here.
+32
+
+33
+00:02:10,320 --> 00:02:14,340
+I think it's a little too bright, so let's not really use text-white.
+33
+
+34
+00:02:14,340 --> 00:02:16,120
+Let's make it a little muted.
+34
+
+35
+00:02:18,610 --> 00:02:20,240
+Now you have this down here.
+35
+
+36
+00:02:20,240 --> 00:02:21,610
+That's nice.
+36
+
+37
+00:02:21,620 --> 00:02:24,420
+You have a header that's cool.
+37
+
+38
+00:02:24,520 --> 00:02:27,560
+Let's now focus on the actual content of the page.
+38
+
+39
+00:02:27,560 --> 00:02:36,830
+Let's go to the root component app.component.html, and over here, what I'll do is I'll include
+39
+
+40
+00:02:36,830 --> 00:02:40,150
+the actual content of the page in div.
+40
+
+41
+00:02:40,190 --> 00:02:46,370
+Typically if you put something in a container, then it would be appearing with a little bit of padding
+41
+
+42
+00:02:46,400 --> 00:02:47,150
+and stuff.
+42
+
+43
+00:02:47,150 --> 00:02:54,140
+So are like putting stuff in a container, so it can put the main content of the page inside a container
+43
+
+44
+00:02:54,210 --> 00:03:03,780
+div, and what we'll do is we'll go to the todos.component, and we'll add a class onto this.
+44
+
+45
+00:03:03,770 --> 00:03:05,860
+So we'll remove the border=1.
+45
+
+46
+00:03:06,020 --> 00:03:17,840
+And let's say class=todos, and what we do is we'll have h1, and  then type in.
+46
+
+47
+00:03:18,000 --> 00:03:23,600
+So this would be to My Todos.
+47
+
+48
+00:03:23,860 --> 00:03:26,690
+And with the caption... we don't really need the caption any more.
+48
+
+49
+00:03:26,690 --> 00:03:32,290
+And next what I'll do is I'll put a little bit of div again.
+49
+
+50
+00:03:32,370 --> 00:03:39,090
+The class=container, so I'll put the table as well.
+50
+
+51
+00:03:40,490 --> 00:03:43,870
+Another div.Let's do that.
+51
+
+52
+00:03:44,830 --> 00:03:46,400
+And save it.
+52
+
+53
+00:03:46,410 --> 00:03:49,290
+And now this looks much better right.
+53
+
+54
+00:03:49,510 --> 00:03:53,050
+The class I should have added in here should be table. It's now
+54
+
+55
+00:03:55,860 --> 00:04:00,430
+good enough. the todos page looks much better than what it was earlier.
+55
+
+56
+00:04:00,660 --> 00:04:05,060
+Let's do this stuff on the login page, so that quickly as well.
+56
+
+57
+00:04:05,060 --> 00:04:11,460
+So what we want to do is we want to add a h1 saying This is Login.
+57
+
+58
+00:04:11,880 --> 00:04:13,450
+And I'll put it here.
+58
+
+59
+00:04:13,460 --> 00:04:16,320
+The class is equal to container
+59
+
+60
+00:04:20,050 --> 00:04:25,350
+and let's repeat this over here.
+60
+
+61
+00:04:25,400 --> 00:04:29,470
+A few things more, What i'll do is use something called the
+61
+
+62
+00:04:33,250 --> 00:04:35,410
+bootstrap has this concept called alert.
+62
+
+63
+00:04:35,430 --> 00:04:36,950
+So we'll use those.
+63
+
+64
+00:04:37,290 --> 00:04:42,600
+That class is called alert, and this would be a warning alert, which is an error message.
+64
+
+65
+00:04:42,600 --> 00:04:46,880
+Try doing that and over here, all the other stuff.
+65
+
+66
+00:04:46,900 --> 00:04:48,410
+Kind of looks good.
+66
+
+67
+00:04:48,720 --> 00:04:49,770
+That's good.
+67
+
+68
+00:04:49,780 --> 00:04:52,720
+Put the login page and see how it looks.
+68
+
+69
+00:04:52,720 --> 00:04:53,970
+Cool! login page.
+69
+
+70
+00:04:53,970 --> 00:04:56,480
+The only thing which I don't really like is the login button.
+70
+
+71
+00:04:56,910 --> 00:04:59,590
+Let's add a class onto this button as well.
+71
+
+72
+00:04:59,600 --> 00:05:07,340
+So that's at a class=btn and btn-success.
+72
+
+73
+00:05:07,480 --> 00:05:08,800
+Now we have a login.
+73
+
+74
+00:05:08,850 --> 00:05:15,340
+Now the login page looks relatively well-designed, good enough and you can see you can go in here.
+74
+
+75
+00:05:15,640 --> 00:05:21,940
+Let's call the welcome page, and design it a little bit. What i'll do is is remove this chunk between this. Let's have just
+75
+
+76
+00:05:21,940 --> 00:05:23,130
+one line
+76
+
+77
+00:05:26,040 --> 00:05:28,100
+welcome, and that should be fine.
+77
+
+78
+00:05:28,110 --> 00:05:34,720
+And let's add a class=container, and let's add an h1.
+78
+
+79
+00:05:39,560 --> 00:05:44,100
+OK! welcome! It says welcome in28minutes
+79
+
+80
+00:05:44,170 --> 00:05:49,890
+it goes here and management todos, the home link works,  todos link works.
+80
+
+81
+00:05:49,930 --> 00:05:53,560
+login link works. in28minutes.
+81
+
+82
+00:05:53,560 --> 00:05:55,910
+Dummy will be able to log in.
+82
+
+83
+00:05:56,270 --> 00:06:01,930
+Now you'll see that most of the stuff on this page looks much better than what it was earlier in the
+83
+
+84
+00:06:01,930 --> 00:06:02,830
+last two steps.
+84
+
+85
+00:06:02,830 --> 00:06:07,880
+We used a little bit of CSS, little bit of bootstrap to make these pages look better.
+85
+
+86
+00:06:07,900 --> 00:06:13,900
+Bootstrap is definitely not the focus of this course, but even then if you search for bootstrap, for you'd
+86
+
+87
+00:06:13,900 --> 00:06:19,960
+be able to get to this website, where you have a lot of information about bootstrap, and a lot of examples
+87
+
+88
+00:06:19,990 --> 00:06:20,540
+as well.
+88
+
+89
+00:06:20,590 --> 00:06:25,180
+I recommend you to spend some time with all this stuff and all,  some time later.
+89
+
+90
+00:06:25,180 --> 00:06:29,170
+For now let's focus on Angular. And I'll see you in the next step.

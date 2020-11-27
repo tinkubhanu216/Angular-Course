@@ -1,0 +1,209 @@
+0
+1
+00:00:00,150 --> 00:00:06,290
+Welcome back! In the step, you'll want to help you get quickly started this course.
+1
+
+2
+00:00:06,330 --> 00:00:11,740
+The first thing I would want to do, is to congratulate you on making a great decision in choosing this
+2
+
+3
+00:00:11,740 --> 00:00:12,590
+course.
+3
+
+4
+00:00:12,600 --> 00:00:15,040
+Now, let's get down to getting started with the course.
+4
+
+5
+00:00:15,230 --> 00:00:21,150
+The first thing you would need to do, is to bookmark the GitHub repository of this course.
+5
+
+6
+00:00:21,300 --> 00:00:27,310
+You'll find a link to it in the resources section of the video you are watching.
+6
+
+7
+00:00:27,510 --> 00:00:34,100
+You just have to hover over to the left top corner of your screen, and you should see resources, and a
+7
+
+8
+00:00:34,110 --> 00:00:35,780
+link to the repository.
+8
+
+9
+00:00:35,950 --> 00:00:43,320
+Just click it, and launch the GitHub repository, and bookmark the URL. The repository contains links
+9
+
+10
+00:00:43,320 --> 00:00:45,370
+to all the installation we use, 
+10
+
+11
+00:00:45,390 --> 00:00:49,610
+Step-by-step details of the code and the source code.
+11
+
+12
+00:00:49,620 --> 00:00:55,580
+Also present is backup of all the code at various points.
+12
+
+13
+00:00:55,620 --> 00:00:57,900
+For example, this is the last backup.
+13
+
+14
+00:00:57,900 --> 00:01:04,710
+This is the final backup of the code in this specific course. yYou'd see that the backup is present as
+14
+
+15
+00:01:04,710 --> 00:01:09,660
+a single file, so that if you face a problem you can use this as a reference.
+15
+
+16
+00:01:09,660 --> 00:01:15,070
+You can look at how it is done here, and check how you are approaching it.
+16
+
+17
+00:01:15,120 --> 00:01:21,840
+The first two sections of this course would extensively focus on Angular. The tools you would need for
+17
+
+18
+00:01:21,870 --> 00:01:26,310
+that section is NPM, and Visual Studio Code.
+18
+
+19
+00:01:26,370 --> 00:01:30,640
+We can install Java and Eclipse a little later.
+19
+
+20
+00:01:30,780 --> 00:01:38,190
+For now you can launch this playlist which would help us to install NodeJS, which is NPM, and Visual Studio
+20
+
+21
+00:01:38,190 --> 00:01:38,760
+Code.
+21
+
+22
+00:01:38,890 --> 00:01:45,690
+This list contains three steps: Installing nodejs, and npm,  a quick introduction to NPM, and installing
+22
+
+23
+00:01:45,690 --> 00:01:47,090
+Visual Studio Code.
+23
+
+24
+00:01:47,250 --> 00:01:54,300
+I would recommend to pause the video in here, and continue with the installation of nodejs and Visual
+24
+
+25
+00:01:54,300 --> 00:01:55,220
+Studio Code.
+25
+
+26
+00:01:55,410 --> 00:02:00,420
+If you have successfully installed nodejs and Visual Studio Code,  you are now all set to rock the
+26
+
+27
+00:02:00,450 --> 00:02:01,610
+Angular world.
+27
+
+28
+00:02:01,800 --> 00:02:07,110
+If you are a Java developer, the first few steps can be overwhelming.
+28
+
+29
+00:02:07,240 --> 00:02:15,540
+You will be using a new language. More than javascript and typescript, you will be using a new IDE,  Visual
+29
+
+30
+00:02:15,540 --> 00:02:23,820
+Studio Code. You'll be using a new framework: Angular, with a new tool: Angular CLI,  which is used to create
+30
+
+31
+00:02:23,880 --> 00:02:25,560
+angular projects.
+31
+
+32
+00:02:25,590 --> 00:02:33,630
+The first seven steps contain a little bit of theory, to introduce you to the various part of developing
+32
+
+33
+00:02:33,690 --> 00:02:36,880
+modern javascript applications.
+33
+
+34
+00:02:36,990 --> 00:02:43,980
+Once you get to the second section of the course, you'll be spending 95 percent of the time getting your
+34
+
+35
+00:02:43,980 --> 00:02:45,570
+hands dirty.
+35
+
+36
+00:02:45,570 --> 00:02:50,930
+The recommended approach to follow in the course, is to take steps one at a time.
+36
+
+37
+00:02:51,150 --> 00:02:54,180
+Do them in the order which is present in here.
+37
+
+38
+00:02:54,390 --> 00:03:00,710
+If you are in a hurry to get your hands dirty and write a lot of code, then you can skip step 6 and
+38
+
+39
+00:03:00,720 --> 00:03:07,620
+Step 7, and come back to them a little later. We'll talk about all the remaining sections of this course
+39
+
+40
+00:03:07,890 --> 00:03:09,380
+when we get to them.
+40
+
+41
+00:03:09,390 --> 00:03:11,420
+Let's get started with understanding the application.
+41
+
+42
+00:03:11,420 --> 00:03:12,870
+architecture, in the next step.

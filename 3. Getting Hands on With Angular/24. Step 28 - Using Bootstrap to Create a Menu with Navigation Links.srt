@@ -1,0 +1,364 @@
+0
+1
+00:00:02,710 --> 00:00:04,720
+Welcome back.
+1
+
+2
+00:00:04,720 --> 00:00:10,330
+This is how the page looks like right now. In this step, let's format a few of the elements on the screen, so
+2
+
+3
+00:00:10,330 --> 00:00:11,770
+that they look much better.
+3
+
+4
+00:00:11,890 --> 00:00:13,650
+Let's start with the top menu.
+4
+
+5
+00:00:13,690 --> 00:00:15,040
+I'm going to visual studio code.
+5
+
+6
+00:00:15,040 --> 00:00:21,090
+This is where our menu component is coded in. Let's make a list of things that we would want to do.
+6
+
+7
+00:00:21,230 --> 00:00:29,950
+By HTML5 standards,  the menu should be in something called a header, and inside a class, inside a element
+7
+
+8
+00:00:30,100 --> 00:00:31,260
+called head.
+8
+
+9
+00:00:31,420 --> 00:00:34,450
+All our elements should come inside nav.
+9
+
+10
+00:00:34,510 --> 00:00:40,630
+So let's move this stuff out, and let's try and put a list of elements that I would want to have in here.
+10
+
+11
+00:00:40,640 --> 00:00:47,710
+So first create a div and inside this div, I would put the name of the application or the
+11
+
+12
+00:00:47,710 --> 00:00:50,470
+brand or something like that, and let's create a link for that.
+12
+
+13
+00:00:50,520 --> 00:01:01,920
+So href= this, and instead put in this. Let's just say this is like the UI of the website.
+13
+
+14
+00:01:01,950 --> 00:01:07,500
+https://www.in28minutes.com.
+14
+
+15
+00:01:08,730 --> 00:01:13,620
+Maximize the page and over here, we would want to show a list of menu items.
+15
+
+16
+00:01:13,620 --> 00:01:18,270
+What we want to show is, we want to list items here and to list items.
+16
+
+17
+00:01:18,270 --> 00:01:24,400
+At the end. We'll show home, and let's say todos here, and log in and log out at the corner.
+17
+
+18
+00:01:24,690 --> 00:01:32,980
+So I create an ordered list. Actually should have started with that list and inside that would be... yes
+18
+
+19
+00:01:34,560 --> 00:01:37,100
+each of those lists would contain links.
+19
+
+20
+00:01:37,140 --> 00:01:42,760
+So let's create that a href= "" 
+20
+
+21
+00:01:46,700 --> 00:01:49,150
+where it needs to link, to the link.
+21
+
+22
+00:01:49,160 --> 00:01:51,920
+There are a few bootstrap classes that we need to add.
+22
+
+23
+00:01:52,190 --> 00:01:59,770
+So I'll add them in. Wehn something represents the navigation bar in Bootstrap, the class do you need to add
+23
+
+24
+00:02:00,110 --> 00:02:00,740
+is navbar.
+24
+
+25
+00:02:00,990 --> 00:02:06,210
+And I would want to expand all the list elements which represents what I would need to show. I will expand
+25
+
+26
+00:02:07,570 --> 00:02:12,560
+this part of navigation of the navbar, so I need to say 
+26
+
+27
+00:02:12,840 --> 00:02:14,950
+navbar-nav
+27
+
+28
+00:02:15,400 --> 00:02:17,800
+And this is one of the links which is present.
+28
+
+29
+00:02:18,040 --> 00:02:22,260
+So they should be navbar-link.
+29
+
+30
+00:02:22,280 --> 00:02:28,130
+So what we are doing is just having a few standard bootstrap classes. I would recommend you to look up
+30
+
+31
+00:02:28,130 --> 00:02:31,360
+the bootstrap documentation if you want to understand this further.
+31
+
+32
+00:02:31,580 --> 00:02:38,120
+I am no means an expert at bootstrap, but I really like the application to look a little better than
+32
+
+33
+00:02:38,660 --> 00:02:39,940
+what we have right now.
+33
+
+34
+00:02:40,010 --> 00:02:42,130
+So let's quickly add a few things.
+34
+
+35
+00:02:42,220 --> 00:02:45,960
+So if you save and refresh the page you'd see something at the top.
+35
+
+36
+00:02:45,960 --> 00:02:54,380
+And I think that's how it's reflecting  as of now enough to create a couple of links Let's call this home.
+36
+
+37
+00:02:55,360 --> 00:03:00,480
+And this would be to do with it. See what would happen.
+37
+
+38
+00:03:00,650 --> 00:03:07,060
+So you can see in28minutes,  home, todos at the top that's cool. And what we'll do is we'll
+38
+
+39
+00:03:07,060 --> 00:03:15,790
+have another set of links going up, so you'll see all this stuff at the top.
+39
+
+40
+00:03:15,900 --> 00:03:20,460
+You just need to add a few more classes to make them appear beautiful.
+40
+
+41
+00:03:20,460 --> 00:03:25,830
+Before that let's add the home link. What's the link to the home page?
+41
+
+42
+00:03:25,950 --> 00:03:28,150
+/welcome.
+42
+
+43
+00:03:28,170 --> 00:03:28,750
+Fair enough.
+43
+
+44
+00:03:28,830 --> 00:03:30,270
+hard-code this value, right?
+44
+
+45
+00:03:30,390 --> 00:03:40,650
+So /welcome/in28minutes, /todos,  would be the link for todos,and /login would be the link 
+45
+
+46
+00:03:40,650 --> 00:03:41,510
+for login.
+46
+
+47
+00:03:41,520 --> 00:03:43,790
+We did not create the log out page yet.
+47
+
+48
+00:03:43,920 --> 00:03:48,210
+We'll create it a little later, we'll put /logout.
+48
+
+49
+00:03:48,290 --> 00:03:54,120
+One of the things I have done wrong, is actually this class should be nav-link.,not
+49
+
+50
+00:03:54,120 --> 00:03:55,020
+navbar-link.
+50
+
+51
+00:03:55,110 --> 00:03:55,980
+Let's fix that.
+51
+
+52
+00:03:57,250 --> 00:04:01,110
+And let's see how it looks on the page.
+52
+
+53
+00:04:01,130 --> 00:04:05,240
+So you have in28minutes,  home, todos, login, logout
+53
+
+54
+00:04:05,240 --> 00:04:06,050
+That's cool.
+54
+
+55
+00:04:06,350 --> 00:04:08,390
+This link is the link of the brand.
+55
+
+56
+00:04:08,510 --> 00:04:16,100
+So let's add a class called navbar-brand. and move in28minutes to the next line. Cool. in28minutes
+56
+
+57
+00:04:16,120 --> 00:04:18,160
+is now little more highlighted.
+57
+
+58
+00:04:18,210 --> 00:04:25,160
+We would want this log in and log out to appear at the end of the page, or at the right hand corner of
+58
+
+59
+00:04:25,160 --> 00:04:26,220
+the page.
+59
+
+60
+00:04:26,240 --> 00:04:36,470
+So what we need to do is add something like navbar-collapse, and another class justify-content-end.
+60
+
+61
+00:04:37,120 --> 00:04:44,630
+and now you have in28minutes, the two links here, login and logout in the corner.
+61
+
+62
+00:04:44,630 --> 00:04:52,330
+Now I would want to give a dark background to this screen, so I'll say it navbar-dark, and I would
+62
+
+63
+00:04:52,330 --> 00:04:54,600
+want to change the background to dark.
+63
+
+64
+00:04:55,060 --> 00:04:58,410
+So you'd see that the background is cool!
+64
+
+65
+00:04:58,720 --> 00:05:00,510
+You have all the links present.
+65
+
+66
+00:05:00,610 --> 00:05:04,430
+So we have our menu very well designed.
+66
+
+67
+00:05:04,480 --> 00:05:09,000
+What we were looking at in this specific step, is how we have to design a menu.
+67
+
+68
+00:05:09,220 --> 00:05:12,510
+If you are good at this then it should have been easy for you.
+68
+
+69
+00:05:12,730 --> 00:05:17,660
+But if you did not know bootstrap before, then some of these classes might be new.
+69
+
+70
+00:05:17,770 --> 00:05:21,320
+You can look up bootstrap documentation for information about these classes.
+70
+
+71
+00:05:21,410 --> 00:05:27,010
+But the purpose of all this thing was to get a good looking header, and that's what we were able to do,
+71
+
+72
+00:05:27,130 --> 00:05:28,300
+in this specific step.
+72
+
+73
+00:05:28,300 --> 00:05:30,630
+We will look at more stuff in the next step. Until then, bye!

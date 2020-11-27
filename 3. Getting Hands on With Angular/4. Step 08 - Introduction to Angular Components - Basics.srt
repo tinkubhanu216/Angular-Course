@@ -1,0 +1,354 @@
+0
+1
+00:00:00,120 --> 00:00:01,780
+Welcome back.
+1
+
+2
+00:00:01,860 --> 00:00:07,330
+Let's get introduced to one of the most important concepts in Angular, which is called component.
+2
+
+3
+00:00:07,440 --> 00:00:11,870
+Let's consider that we want to develop a page like this.
+3
+
+4
+00:00:11,910 --> 00:00:20,290
+We have a menu at the top, and we have a list of todo's which are shown and we have footer. In Angular, the
+4
+
+5
+00:00:20,280 --> 00:00:21,250
+way we would develop
+5
+
+6
+00:00:21,260 --> 00:00:24,720
+this, is as a set of components.
+6
+
+7
+00:00:24,780 --> 00:00:29,060
+So the page would be divided into a number of components.
+7
+
+8
+00:00:29,190 --> 00:00:30,610
+So we would have a menu component.
+8
+
+9
+00:00:30,620 --> 00:00:32,960
+We would have a list of todo components.
+9
+
+10
+00:00:32,970 --> 00:00:35,160
+We would have a footer component.
+10
+
+11
+00:00:35,220 --> 00:00:42,530
+Each of these components are responsible for displaying the view, that's basically the html,  the styling.
+11
+
+12
+00:00:42,660 --> 00:00:49,310
+That's basically the CSS, as well as the code to react to the user actions.
+12
+
+13
+00:00:49,500 --> 00:00:55,390
+So when user clicks update, when user clicks delete, when you add todo, what needs to be done?
+13
+
+14
+00:00:55,590 --> 00:01:02,030
+All that is handled by the view logic which is present in that specific component.
+14
+
+15
+00:01:02,100 --> 00:01:07,500
+This menu component is responsible for showing the list of menu items: which is highlighted, which is
+15
+
+16
+00:01:07,500 --> 00:01:12,590
+not highlighting, the styling for that, and handling the click of the event.
+16
+
+17
+00:01:12,660 --> 00:01:19,380
+If home is clicked, if it's clicked or log out is clicked. When we build Angular applications, we first
+17
+
+18
+00:01:19,380 --> 00:01:24,150
+start thinking about what should be the component which should be created.
+18
+
+19
+00:01:24,300 --> 00:01:30,140
+Typically a component is associated with a template which is basically the HTML.
+19
+
+20
+00:01:30,180 --> 00:01:33,320
+How should it be shown, the styling, which is basically this.
+20
+
+21
+00:01:33,360 --> 00:01:41,470
+Is this how should the elements be styled ,and the code: how should you really respond to use of actions.
+21
+
+22
+00:01:41,550 --> 00:01:43,950
+This is written in typescript.
+22
+
+23
+00:01:44,040 --> 00:01:51,540
+When we look at most components in Angular, you would see that the template file is having extension of
+23
+
+24
+00:01:51,540 --> 00:01:59,830
+dot component, and the style file has a .component.css extension and the code file has a component.ts
+24
+
+25
+00:01:59,910 --> 00:02:04,050
+The extension .ts stands for typescript.
+25
+
+26
+00:02:04,200 --> 00:02:10,050
+When you look at our workspace, that is one component which is already present in here.
+26
+
+27
+00:02:10,050 --> 00:02:16,710
+It's called the app component, and you would see that the extensions exactly match to what we have seen
+27
+
+28
+00:02:16,800 --> 00:02:17,620
+earlier.
+28
+
+29
+00:02:17,640 --> 00:02:21,130
+So we have a html template: component.html.
+29
+
+30
+00:02:21,270 --> 00:02:24,410
+That's basically the app.component.html.
+30
+
+31
+00:02:24,660 --> 00:02:29,290
+We have the styling in app.component.css.
+31
+
+32
+00:02:29,340 --> 00:02:30,750
+This file is empty for now.
+32
+
+33
+00:02:30,870 --> 00:02:40,230
+And we have the code which is pleasant in app.component.ts. In Angular would indicate that
+33
+
+34
+00:02:40,230 --> 00:02:45,780
+something is a component by using something called a decorator.
+34
+
+35
+00:02:45,780 --> 00:02:50,580
+The decorator is very similar to annotations in Java.
+35
+
+36
+00:02:50,690 --> 00:02:58,740
+We use the decorator at component to indicate that the app component is a component, and we have a few
+36
+
+37
+00:02:58,740 --> 00:03:04,800
+attributes which are specified as part of the component decorator.
+37
+
+38
+00:03:04,800 --> 00:03:11,340
+The first one is the selector, it is basically the tag name for this component.
+38
+
+39
+00:03:11,340 --> 00:03:17,820
+So if I want to make use of this component, what tag name should I use as the selector.
+39
+
+40
+00:03:17,820 --> 00:03:24,710
+So if you look at index.html, which is where this particular component is used it is app root.
+40
+
+41
+00:03:24,750 --> 00:03:30,030
+The next thing which is present in here is something called app.component.html, which
+41
+
+42
+00:03:30,030 --> 00:03:32,320
+is the template you want.
+42
+
+43
+00:03:32,750 --> 00:03:38,970
+So what we are saying is where is the location of the HTML template for this specific component, and we
+43
+
+44
+00:03:38,970 --> 00:03:42,410
+said it's in the app.component.html.
+44
+
+45
+00:03:42,480 --> 00:03:49,050
+The other thing which we specify in here is where is the styling for that specific component.
+45
+
+46
+00:03:49,050 --> 00:03:55,710
+So the cpp.component.css is where typically the styling which is specific to this specific
+46
+
+47
+00:03:55,740 --> 00:03:57,930
+component is present.
+47
+
+48
+00:03:58,050 --> 00:04:05,370
+You can see that as part of our component code, we have some data we have a member available to represent
+48
+
+49
+00:04:05,490 --> 00:04:12,700
+in here this member variable is actually mapped to this value in here.
+49
+
+50
+00:04:12,780 --> 00:04:17,130
+What we're using in here is something called interpolation.
+50
+
+51
+00:04:17,160 --> 00:04:23,710
+So what it does is it takes the value which is present in here and put it in here.
+51
+
+52
+00:04:23,730 --> 00:04:26,530
+So let's say I would want to create on that one.
+52
+
+53
+00:04:26,530 --> 00:04:31,420
+So let's say I'm saying message = "welcome
+53
+
+54
+00:04:33,940 --> 00:04:42,040
+to In28minutes".  what I can do in here is I can use interpolation and I can put
+54
+
+55
+00:04:45,190 --> 00:04:54,850
+within curly brackets or braces, I can put in the message. you would see when you look at the page.
+55
+
+56
+00:04:54,900 --> 00:04:57,190
+You would see "welcome to IN 28 minutes".
+56
+
+57
+00:04:57,210 --> 00:05:01,400
+Also as part of your <h1>.  What are we doing in here 
+57
+
+58
+00:05:01,410 --> 00:05:03,360
+is called binding.
+58
+
+59
+00:05:03,600 --> 00:05:09,220
+You're taking some data from the component and showing it in the view.
+59
+
+60
+00:05:09,650 --> 00:05:12,720
+In this quick step we looked at the component.
+60
+
+61
+00:05:12,780 --> 00:05:17,700
+We said all Angular applications are built up of a number of components.
+61
+
+62
+00:05:17,790 --> 00:05:27,640
+Each component has the HTML or the template, the styling or CSS, and code to handle the view actions.
+62
+
+63
+00:05:27,660 --> 00:05:34,350
+This code is written in typescript, but it's because the fact that a component decorator is what makes
+63
+
+64
+00:05:34,560 --> 00:05:44,130
+this app component a component. We look at the attributes which are part of the @component decorator, the templateUrl
+64
+
+65
+00:05:44,160 --> 00:05:49,440
+and the styleUrl, as well as the tag which is used to to present this element.
+65
+
+66
+00:05:49,440 --> 00:05:55,920
+And we looked at the fact that, what we did is present as part of the component we can use it in the
+66
+
+67
+00:05:55,980 --> 00:06:00,000
+template by using interpolation.
+67
+
+68
+00:06:00,080 --> 00:06:01,890
+I leave you with an exercise.
+68
+
+69
+00:06:01,950 --> 00:06:08,130
+What I would recommend you to do is create a few more data elements as part of this, and make sure that
+69
+
+70
+00:06:08,220 --> 00:06:13,230
+you use them in your app.component which do you plan on with it.
+70
+
+71
+00:06:13,230 --> 00:06:13,860
+I'll see you.
