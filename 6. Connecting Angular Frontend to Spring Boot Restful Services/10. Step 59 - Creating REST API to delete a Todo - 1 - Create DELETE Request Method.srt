@@ -1,0 +1,454 @@
+0
+1
+00:00:00,160 --> 00:00:08,460
+Welcome back. In the previous steps, we connected todos page to the todo service from the back end.
+1
+
+2
+00:00:08,470 --> 00:00:12,090
+We are now retrieving all the todos from the back-end.
+2
+
+3
+00:00:12,270 --> 00:00:17,620
+So if you go with the back end, and make a change like this, so let's learn about Microservices 2.
+3
+
+4
+00:00:17,640 --> 00:00:24,160
+Just to refresh the todos page again, you see oos home../. todoss.
+4
+
+5
+00:00:24,440 --> 00:00:27,950
+You see the new data are getting reflected. In subsequent steps,
+5
+
+6
+00:00:27,950 --> 00:00:31,580
+Let's focus on adding more features to our page.
+6
+
+7
+00:00:31,580 --> 00:00:35,700
+Let's add delete update and add two new features.
+7
+
+8
+00:00:35,930 --> 00:00:43,060
+Let's start with adding the delete feature in the next few steps. To be able to delete something you'd
+8
+
+9
+00:00:43,090 --> 00:00:49,160
+want to have a servies exposed, what you are allowed to delete them. We have already decided that delete
+9
+
+10
+00:00:49,310 --> 00:00:53,450
+/user/username/todos, and the ID of the two.
+10
+
+11
+00:00:53,540 --> 00:00:57,960
+So let's just modify this a little. So let's make this something like this.
+11
+
+12
+00:00:57,980 --> 00:00:59,360
+Where do we need to create this?
+12
+
+13
+00:00:59,360 --> 00:01:02,010
+You need to create it in the todo resource.
+13
+
+14
+00:01:02,060 --> 00:01:09,100
+So let's go back to the resource.. I'll paste this in. What we want to do, is we would want to create a
+14
+
+15
+00:01:09,320 --> 00:01:13,210
+delete method. Before we create a delete method in the resource,
+15
+
+16
+00:01:13,220 --> 00:01:20,040
+we need a delete method in the hardcoded service. So that we can collect and delete the todo
+16
+
+17
+00:01:20,310 --> 00:01:24,630
+Let's quickly create a todo delete method... public...
+17
+
+18
+00:01:24,940 --> 00:01:31,610
+Let's return the deleted todo back, so it would return the todo back. If we did not find that todo,
+18
+
+19
+00:01:31,610 --> 00:01:33,260
+we'll return back.
+19
+
+20
+00:01:33,260 --> 00:01:39,490
+So I'll say deleteById,  and pass the ID in, so long ID.
+20
+
+21
+00:01:39,530 --> 00:01:45,520
+That's the id which we want to pass in, and we would want to delete the ID with this specific id.
+21
+
+22
+00:01:45,920 --> 00:01:55,300
+So let's saty Todo todo = findByID(),  and I will create a method called find by id very soon and what we can do? 
+22
+
+23
+00:01:55,390 --> 00:02:01,430
+what we can do is todos.remove the to do which is fine
+23
+
+24
+00:02:01,550 --> 00:02:07,850
+We don't really have the find by id method yet, and the other thing is todo.remove as the equals method.
+24
+
+25
+00:02:07,880 --> 00:02:10,220
+We don't really have equal method defined on the todo
+25
+
+26
+00:02:10,220 --> 00:02:18,070
+Let's go out and define, it so that you can do a right click generators... generate hash code in equals
+26
+
+27
+00:02:18,550 --> 00:02:21,090
+and is just the id.
+27
+
+28
+00:02:21,120 --> 00:02:24,930
+So I use just the ID to compare, if Id's are same, then todos are same.
+28
+
+29
+00:02:25,090 --> 00:02:29,850
+You'd see that there are two methods to each injector: hash code and the equals. The importante logic
+29
+
+30
+00:02:29,880 --> 00:02:31,380
+is in here.
+30
+
+31
+00:02:31,380 --> 00:02:35,870
+So if IDS are same only then this would return true back. That's cool.
+31
+
+32
+00:02:35,910 --> 00:02:42,440
+So we now have todo hardcoded service. doing a find by id,  and we are removing that todo.
+32
+
+33
+00:02:42,630 --> 00:02:49,890
+But the find by ID is not yet defined, so can one create method find by ID ,and let's make it a public
+33
+
+34
+00:02:49,890 --> 00:02:51,130
+method.
+34
+
+35
+00:02:51,130 --> 00:02:57,440
+We'll get the todo by find by id, long id,  all looks good so let's go ahead and implement this method.
+35
+
+36
+00:02:57,450 --> 00:03:02,230
+It should be simple iterations, right! so  for Todo todo : 
+36
+
+37
+00:03:02,230 --> 00:03:11,890
+Let's iterate through all the todos...and if todo.ID == ID.
+37
+
+38
+00:03:11,890 --> 00:03:13,800
+Actually it should have todo..
+38
+
+39
+00:03:13,870 --> 00:03:14,850
+Get ID().
+39
+
+40
+00:03:15,100 --> 00:03:17,440
+== ID then.
+40
+
+41
+00:03:18,450 --> 00:03:23,190
+return the todo back. If a matching todo is found, it would return todo back
+41
+
+42
+00:03:23,190 --> 00:03:25,140
+Otherwise it would return NULL back.
+42
+
+43
+00:03:25,140 --> 00:03:33,290
+And what does the delete Id do? it finds a todo by ID, and if todd == null
+43
+
+44
+00:03:33,630 --> 00:03:37,860
+Let's return back right here.
+44
+
+45
+00:03:38,140 --> 00:03:45,680
+And if we are able to successfully return the todo out, then we return todo back.
+45
+
+46
+00:03:45,770 --> 00:03:51,590
+If you want to really be safe, then you can actually check the return value. if todo.remove() is successful,
+46
+
+47
+00:03:52,050 --> 00:03:55,880
+then return true. Otherwise,
+47
+
+48
+00:03:56,120 --> 00:03:59,120
+At the end you can say return null.
+48
+
+49
+00:03:59,150 --> 00:04:01,560
+So what we're doing here is very simple checking.
+49
+
+50
+00:04:01,610 --> 00:04:06,650
+At this point if we are able to find a todo at this point, we are checking if we are able to delete
+50
+
+51
+00:04:06,730 --> 00:04:11,140
+the todo. remove returns true or false, based on whether it was successful at removing it.
+51
+
+52
+00:04:11,150 --> 00:04:17,390
+If it was successfully removing, it then we are returning true back. Otherwise, we are returning null back.
+52
+
+53
+00:04:17,600 --> 00:04:19,640
+Let's focus on the delete method.
+53
+
+54
+00:04:19,680 --> 00:04:21,070
+In the to do resource
+54
+
+55
+00:04:21,230 --> 00:04:22,710
+What should we be doing here?
+55
+
+56
+00:04:22,710 --> 00:04:30,730
+We need to use the delete mappings, so @Delete mapping and let us use this .. user is present in here.
+56
+
+57
+00:04:30,830 --> 00:04:35,950
+It was a name to user ID that looks good... and public.
+57
+
+58
+00:04:36,030 --> 00:04:40,250
+Typically what should be the response to it, is that we should return from a delete method.
+58
+
+59
+00:04:40,250 --> 00:04:46,370
+There are two options: either we can return success or we can return no content back.
+59
+
+60
+00:04:46,370 --> 00:04:50,430
+So in this specific thing we choose the no content option response
+60
+
+61
+00:04:50,450 --> 00:04:57,290
+Entity. Without any content response entity, unable to us to return a specific status back, or will we
+61
+
+62
+00:04:57,300 --> 00:04:57,680
+return
+62
+
+63
+00:04:57,680 --> 00:05:02,790
+The success status back? So we did not really need to use the response entity, because that's the default.
+63
+
+64
+00:05:03,080 --> 00:05:08,470
+But now we want to return a specific status of the content back, and that's the reason why we are using
+64
+
+65
+00:05:08,490 --> 00:05:17,060
+response entity, and the response entity of void,  and I'll say delete todo, and we would need to have two path variables
+65
+
+66
+00:05:17,620 --> 00:05:22,380
+path variable string... the first one is username.
+66
+
+67
+00:05:22,390 --> 00:05:24,940
+The second one is the ID..
+67
+
+68
+00:05:25,210 --> 00:05:31,480
+It should be a long id,  and let's start the method down here.
+68
+
+69
+00:05:31,650 --> 00:05:32,870
+There are a few compilation errors.
+69
+
+70
+00:05:32,870 --> 00:05:36,360
+Let's work on it after we make the entire code visible.
+70
+
+71
+00:05:36,650 --> 00:05:43,120
+Yep this is cool. control one... import delete mapping , control-1 or command-1 again, an import response entity
+71
+
+72
+00:05:43,270 --> 00:05:45,960
+Cool the delete todo method.
+72
+
+73
+00:05:46,460 --> 00:05:47,900
+It's not returning anything that's why
+73
+
+74
+00:05:47,900 --> 00:05:56,760
+There's a compilation error. Let's call  todo service.delete by ID.. I'd delete ID...  ID method we have..
+74
+
+75
+00:05:56,840 --> 00:06:00,670
+We are able to call it. let's assign the statement to a new local variable.
+75
+
+76
+00:06:03,960 --> 00:06:08,810
+todo != null then it means it successfully deleted.
+76
+
+77
+00:06:08,820 --> 00:06:15,770
+So i'll say return response entity.noContent().build()
+77
+
+78
+00:06:16,100 --> 00:06:18,200
+We are returning a status of no content.
+78
+
+79
+00:06:18,310 --> 00:06:26,050
+If you are able to successfully delete it. Otherwise it's returning response entity . not found status.
+79
+
+80
+00:06:26,050 --> 00:06:29,090
+Actually we should return response.notfound() .
+80
+
+81
+00:06:29,500 --> 00:06:33,420
+So what we are doing in here is we are invoking the todo service delete method.
+81
+
+82
+00:06:33,670 --> 00:06:36,740
+If delete was successful, this would return a todo back.
+82
+
+83
+00:06:36,930 --> 00:06:40,190
+And in other situation, we are retaining no content back. Either we are.
+83
+
+84
+00:06:40,270 --> 00:06:42,870
+We are returning not fund status back.
+84
+
+85
+00:06:42,880 --> 00:06:48,400
+One of the important parts of building RESTful services is deciding what status to use and
+85
+
+86
+00:06:48,530 --> 00:06:54,730
+Response entity helps us to build specific requests with specific state assigned. And that's the reason
+86
+
+87
+00:06:54,730 --> 00:06:59,830
+why we are making use of response entity in this specific request. In this step,
+87
+
+88
+00:07:00,400 --> 00:07:04,240
+The resource method for delete. In the next step,
+88
+
+89
+00:07:04,240 --> 00:07:07,720
+Let's try and this and see if we are successfully doing that.
+89
+
+90
+00:07:07,720 --> 00:07:09,190
+I'll see you in the next step. Until then,
+90
+
+91
+00:07:09,200 --> 00:07:09,710
+Bye Bye!

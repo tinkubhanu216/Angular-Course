@@ -1,0 +1,159 @@
+0
+1
+00:00:02,130 --> 00:00:08,840
+Welcome back. Until now, we have created the entire structure of the application. We have created
+1
+
+2
+00:00:08,840 --> 00:00:09,910
+the welcome page.
+2
+
+3
+00:00:10,010 --> 00:00:13,030
+We learned how to call a http service in the background.
+3
+
+4
+00:00:13,160 --> 00:00:17,720
+And now let's start focusing on creating the services.
+4
+
+5
+00:00:17,810 --> 00:00:22,910
+So until now we have just a list of todos which are being shown, but this list of todos is hardcoded.
+5
+
+6
+00:00:23,060 --> 00:00:30,260
+What we focus on here on, is to start getting the list of tools from the backend. We would want to be
+6
+
+7
+00:00:30,260 --> 00:00:35,780
+able to edit to those. We would want to add a new todo, and we would want to be able to delete a
+7
+
+8
+00:00:35,780 --> 00:00:39,990
+todo. So we would want to create back-end services for each one of those features.
+8
+
+9
+00:00:40,130 --> 00:00:46,890
+And we would want to be able to invoke them from the front end. The services that we would need.
+9
+
+10
+00:00:47,040 --> 00:00:52,420
+One I would want to be able to retrieve all the todos for a user.
+10
+
+11
+00:00:52,460 --> 00:00:58,990
+The second one I would want would be to be able to delete a todo, delete to do of a
+11
+
+12
+00:00:58,990 --> 00:01:05,420
+users. We would want to be able to edit it  the todo, and we would want to be able to create a new todo which
+12
+
+13
+00:01:05,420 --> 00:01:08,350
+of course may be used to retrieval all todos for a user.
+13
+
+14
+00:01:08,360 --> 00:01:14,870
+Typically we would use get or retrieve all the todos for the user, and the way we would design the service
+14
+
+15
+00:01:15,170 --> 00:01:23,340
+to have URL users /username. For this user, we would want to retrieve all todos.
+15
+
+16
+00:01:23,660 --> 00:01:30,610
+So we want to do a GET request to users/username. The username would be a path variable, and we would want 
+16
+
+17
+00:01:30,640 --> 00:01:33,410
+to get all the tools for that specific user.
+17
+
+18
+00:01:33,420 --> 00:01:38,820
+Now how do I delete a specific todo? The way I can do that is by using the delete method.
+18
+
+19
+00:01:39,090 --> 00:01:46,700
+So I use delete request method, and you'd want to pass in which to do you would want to delete.
+19
+
+20
+00:01:46,700 --> 00:01:50,720
+So todo_id. Now if you want to edit a todo,
+20
+
+21
+00:01:50,720 --> 00:01:51,670
+How do we do that?
+21
+
+22
+00:01:51,830 --> 00:01:57,590
+The way we can do that is by using put method. When you want to edit or update, it it is nothing but an
+22
+
+23
+00:01:57,590 --> 00:02:01,490
+update and we want to update a resource you'll want to use
+23
+
+24
+00:02:01,660 --> 00:02:06,390
+Put. The remaining stuff would remain exactly the same as the Delete, to put a specific user.
+24
+
+25
+00:02:06,560 --> 00:02:10,660
+You would want to update a todo, and the last one is to create a new todo.
+25
+
+26
+00:02:10,880 --> 00:02:16,580
+Which method would we use to create a new todo? We would be using post method,  and which you want
+26
+
+27
+00:02:16,580 --> 00:02:17,460
+to post to?
+27
+
+28
+00:02:17,610 --> 00:02:20,980
+You'd want to post to the todos you are in.
+28
+
+29
+00:02:21,290 --> 00:02:24,630
+So this would be the resources that we would be creating.
+29
+
+30
+00:02:24,710 --> 00:02:28,470
+So we could get resource, or delete resource, or put resource, and post resource.
+30
+
+31
+00:02:28,490 --> 00:02:35,060
+We start with creating this resource to retrieve all the todos for a user, in the next step.
+31
+
+32
+00:02:35,060 --> 00:02:36,830
+I'll see you in the next step. Until then, Bye!

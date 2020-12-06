@@ -1,0 +1,543 @@
+1
+00:00:02,060 --> 00:00:03,500
+Welcome back.
+
+2
+00:00:03,750 --> 00:00:09,370
+There is just one feature which is left in this specific app to really make it a complete app.
+
+3
+00:00:09,440 --> 00:00:10,980
+That's basically the ad, too.
+
+4
+00:00:11,180 --> 00:00:14,540
+I mean, there are a lot of stuff out on security that we'll discuss a little later.
+
+5
+00:00:14,750 --> 00:00:17,390
+And also, we did not really talk about database until now.
+
+6
+00:00:17,420 --> 00:00:20,210
+So we need to add and stuff a little later.
+
+7
+00:00:20,480 --> 00:00:26,120
+But from the features perspective on the actual functionality perspective, let's look at adding up
+
+8
+00:00:26,360 --> 00:00:27,460
+to do right enough.
+
+9
+00:00:27,830 --> 00:00:34,100
+So let's add a button here for adding a two and let's call the post method to create a new two.
+
+10
+00:00:34,460 --> 00:00:35,450
+And let's get that going.
+
+11
+00:00:35,930 --> 00:00:40,130
+Let's go to Jill's record and let's start with creating a new button.
+
+12
+00:00:40,910 --> 00:00:44,180
+Let's take the button that we already created.
+
+13
+00:00:44,810 --> 00:00:52,160
+And what I'll do is, oh, here at the bottom of this specific table, I create another div and take
+
+14
+00:00:52,210 --> 00:00:54,230
+glass is equal to raw.
+
+15
+00:00:55,540 --> 00:00:58,810
+And have my button down there.
+
+16
+00:00:59,320 --> 00:01:02,630
+And this would actually add to add to.
+
+17
+00:01:03,920 --> 00:01:07,160
+And and I would want it to be success, right?
+
+18
+00:01:07,190 --> 00:01:09,080
+Why do we really want it to be warning?
+
+19
+00:01:09,560 --> 00:01:09,830
+Cool.
+
+20
+00:01:10,280 --> 00:01:11,450
+Let's see the page.
+
+21
+00:01:13,180 --> 00:01:13,960
+Pretty decent.
+
+22
+00:01:14,500 --> 00:01:19,920
+Now let's create the add to the method, where do we implemented to lose Dort component?
+
+23
+00:01:20,990 --> 00:01:22,720
+This is where it would go.
+
+24
+00:01:24,210 --> 00:01:30,240
+What we would want to do is add two and two to add it to do, we don't really need to have anything
+
+25
+00:01:30,480 --> 00:01:31,140
+right now.
+
+26
+00:01:31,710 --> 00:01:36,060
+So what we'll do is we'll just take the user to the to do speech.
+
+27
+00:01:36,510 --> 00:01:40,920
+However, for the ad to do what I'll do is I'll pass the ideas minus one.
+
+28
+00:01:41,370 --> 00:01:45,600
+So in that application, let's how all the ideas to be positive.
+
+29
+00:01:45,720 --> 00:01:47,360
+And when the ideas minus one.
+
+30
+00:01:47,430 --> 00:01:49,380
+Let's assume that the user is trying to do.
+
+31
+00:01:50,130 --> 00:01:54,030
+And to do this, would it help us to use the component that we have already created.
+
+32
+00:01:54,620 --> 00:01:56,660
+So enough when I click add to the what happens.
+
+33
+00:01:57,030 --> 00:01:57,590
+Books.
+
+34
+00:01:58,200 --> 00:02:01,660
+Apps that make inspect error.
+
+35
+00:02:01,950 --> 00:02:03,090
+What error is it.
+
+36
+00:02:04,200 --> 00:02:04,770
+Compulsion.
+
+37
+00:02:04,770 --> 00:02:05,110
+Error.
+
+38
+00:02:06,030 --> 00:02:07,140
+Let's see what it is all about.
+
+39
+00:02:07,170 --> 00:02:10,080
+Cannot read property ideas of undefined.
+
+40
+00:02:10,560 --> 00:02:11,070
+What is happening.
+
+41
+00:02:11,100 --> 00:02:13,200
+When I click add to do to do that.
+
+42
+00:02:13,280 --> 00:02:13,820
+Idee.
+
+43
+00:02:14,980 --> 00:02:15,300
+Huh?
+
+44
+00:02:15,820 --> 00:02:16,600
+That's the problem.
+
+45
+00:02:17,800 --> 00:02:22,840
+What we did was when we copy pasted it, we forgot to actually remove what to do today.
+
+46
+00:02:23,500 --> 00:02:25,990
+But we don't really need to do Heidi.
+
+47
+00:02:26,330 --> 00:02:26,540
+Right.
+
+48
+00:02:26,920 --> 00:02:30,730
+So let's fix that and let's get back to where we were.
+
+49
+00:02:30,850 --> 00:02:31,630
+Let's add.
+
+50
+00:02:32,320 --> 00:02:33,250
+OK, good enough.
+
+51
+00:02:33,490 --> 00:02:35,200
+I'm able to go to the next screen.
+
+52
+00:02:35,390 --> 00:02:38,870
+The thing is, if you look at the console, you'll see that there is an error.
+
+53
+00:02:39,670 --> 00:02:41,680
+It says cannot read description often.
+
+54
+00:02:42,640 --> 00:02:46,960
+And if you go to the network, go back and add.
+
+55
+00:02:48,820 --> 00:02:50,170
+Let's clearly cancel right enough.
+
+56
+00:02:50,740 --> 00:02:55,660
+Let's try and add it to do you see that there is a request going into minus one?
+
+57
+00:02:56,110 --> 00:02:59,770
+So this is not really good because he's actually fighting a request.
+
+58
+00:02:59,800 --> 00:03:01,000
+Why is it fighting a request?
+
+59
+00:03:01,480 --> 00:03:05,410
+Because that's what we told it to do in two court component.
+
+60
+00:03:05,430 --> 00:03:08,660
+Dotty's drank a lot to do that component, Dr. Pierce.
+
+61
+00:03:09,100 --> 00:03:11,830
+And what does it to do that competent teachers do?
+
+62
+00:03:12,700 --> 00:03:16,780
+When you pass in an I.D., it actually tries to quality it.
+
+63
+00:03:16,780 --> 00:03:22,930
+It seems to what I do is, oh, here we said this third I.D. is equal to we got the idea from the parameters
+
+64
+00:03:23,170 --> 00:03:26,500
+and oh, here we created it with the hardcoded one.
+
+65
+00:03:26,650 --> 00:03:27,190
+Instead of that.
+
+66
+00:03:27,250 --> 00:03:32,860
+I think it's a better thing to do desert I.D. in here so that we use the I.D., which is coming in to
+
+67
+00:03:32,860 --> 00:03:37,660
+create the to do the other thing which we want to do is we would only want to call this if to do is
+
+68
+00:03:38,540 --> 00:03:40,620
+if the to do I.D. not dispense equally.
+
+69
+00:03:40,750 --> 00:03:47,650
+So if this dot I.D. not equal to minus one only then, then you'd want to call this specific thing.
+
+70
+00:03:48,160 --> 00:03:51,670
+So I'll put this in if.
+
+71
+00:03:52,370 --> 00:03:58,250
+So that when it's a neutral, you don't really need to call the retreat to do so, used to get the details
+
+72
+00:03:58,250 --> 00:03:58,750
+of it.
+
+73
+00:03:59,240 --> 00:04:01,630
+And the other thing is when we do a save.
+
+74
+00:04:02,270 --> 00:04:08,660
+We need to exactly do similar condition to if if this third I.D. is equal is equal to minus one.
+
+75
+00:04:09,650 --> 00:04:10,430
+Then what do we need to do?
+
+76
+00:04:10,630 --> 00:04:12,620
+We not need to actually call update.
+
+77
+00:04:12,650 --> 00:04:17,860
+We need to color create or else we need to call update.
+
+78
+00:04:18,010 --> 00:04:20,730
+So let's format this and get this right here.
+
+79
+00:04:20,900 --> 00:04:23,840
+We need to call create to see if to do that.
+
+80
+00:04:23,930 --> 00:04:25,730
+Idee is a political two minus one.
+
+81
+00:04:26,120 --> 00:04:30,350
+Then create otherwise update and same thing down here as well.
+
+82
+00:04:30,510 --> 00:04:37,580
+So here we are saying these are ideas equal to we are getting it from the usual parameters, sorted
+
+83
+00:04:37,580 --> 00:04:44,960
+out parameters and we are creating a default to do to represent it while we are getting it from the
+
+84
+00:04:45,230 --> 00:04:45,760
+service.
+
+85
+00:04:46,010 --> 00:04:48,950
+And if the idea is not minus one, then you need to get it.
+
+86
+00:04:49,080 --> 00:04:51,140
+Otherwise, we agree on you to do so.
+
+87
+00:04:51,140 --> 00:04:53,870
+We don't really need to get the values from the database.
+
+88
+00:04:53,900 --> 00:04:55,940
+Let's see if this is all working out fine.
+
+89
+00:04:56,370 --> 00:04:57,720
+Now to do minus one.
+
+90
+00:04:57,980 --> 00:04:58,210
+Okay.
+
+91
+00:04:58,250 --> 00:04:59,690
+I don't see any arrows down here.
+
+92
+00:04:59,720 --> 00:05:00,300
+That's cool.
+
+93
+00:05:00,740 --> 00:05:02,420
+This is the default that I wouldn't want to see.
+
+94
+00:05:02,570 --> 00:05:03,220
+Two to one.
+
+95
+00:05:03,800 --> 00:05:04,010
+Cool.
+
+96
+00:05:04,020 --> 00:05:05,450
+I'm seeing the details of one.
+
+97
+00:05:05,490 --> 00:05:06,950
+So both of them are working finally.
+
+98
+00:05:07,130 --> 00:05:11,660
+Go back to two minus one, because that's what we would want to focus on the new to do.
+
+99
+00:05:12,200 --> 00:05:17,840
+Now, if I click save, we don't really have anything implemented yet, because if you do that, if
+
+100
+00:05:17,840 --> 00:05:20,640
+this variety is visible to minus one need created to do.
+
+101
+00:05:20,750 --> 00:05:22,220
+But they're not done it yet.
+
+102
+00:05:22,760 --> 00:05:25,070
+Creating the create is very similar to the update to do.
+
+103
+00:05:25,070 --> 00:05:25,370
+Right.
+
+104
+00:05:25,670 --> 00:05:27,110
+So create two.
+
+105
+00:05:31,710 --> 00:05:37,500
+And you don't need to pass an I.D. and the UI role would not have the idea as well.
+
+106
+00:05:38,310 --> 00:05:42,270
+And instead they put it up post.
+
+107
+00:05:43,920 --> 00:05:44,550
+That's cool.
+
+108
+00:05:44,910 --> 00:05:49,660
+Now, let's go back to true component and make a call.
+
+109
+00:05:49,830 --> 00:05:50,940
+So how do we make a call?
+
+110
+00:05:53,930 --> 00:05:54,460
+This is.
+
+111
+00:05:56,380 --> 00:05:57,530
+Create to do.
+
+112
+00:05:57,760 --> 00:05:59,800
+I don't need to pass in the I.D..
+
+113
+00:06:01,600 --> 00:06:04,080
+And there is data coming back.
+
+114
+00:06:04,480 --> 00:06:08,820
+I would just need to log it and I would need to rout it back to the truth.
+
+115
+00:06:08,940 --> 00:06:09,510
+That's good.
+
+116
+00:06:09,780 --> 00:06:12,510
+So we don't really need to do anything else.
+
+117
+00:06:13,380 --> 00:06:14,820
+Let's look at it right now.
+
+118
+00:06:16,030 --> 00:06:17,360
+Let's wait for the whole thing to refresh.
+
+119
+00:06:17,380 --> 00:06:25,890
+I guess it has already refreshed and lets in to learn Microsoft uses a gain and save.
+
+120
+00:06:27,010 --> 00:06:27,280
+Cool.
+
+121
+00:06:27,850 --> 00:06:29,610
+Let's see if I have learned Microsoft.
+
+122
+00:06:29,610 --> 00:06:30,850
+Is this again down here.
+
+123
+00:06:31,240 --> 00:06:31,570
+Cool.
+
+124
+00:06:31,810 --> 00:06:32,120
+I see.
+
+125
+00:06:32,130 --> 00:06:34,150
+Learn Microsoft is is again down here.
+
+126
+00:06:34,610 --> 00:06:35,830
+That's awesome.
+
+127
+00:06:35,890 --> 00:06:36,620
+Right now.
+
+128
+00:06:36,760 --> 00:06:37,390
+She does this.
+
+129
+00:06:38,080 --> 00:06:42,500
+Let's try and update this so you can see that it was a sign that idea or for.
+
+130
+00:06:43,120 --> 00:06:45,370
+Let's update it lent again.
+
+131
+00:06:45,670 --> 00:06:46,790
+Forward save.
+
+132
+00:06:47,800 --> 00:06:48,130
+Cool.
+
+133
+00:06:48,430 --> 00:06:49,930
+You can try and test it a little more.
+
+134
+00:06:50,200 --> 00:06:53,140
+And now we have most of the features that we would want.
+
+135
+00:06:53,560 --> 00:06:57,880
+We have the update feature, the lead feature, and we can add a new to do as well.
+
+136
+00:06:58,180 --> 00:07:00,640
+Congratulate yourself and I'll see you in the next step.

@@ -1,0 +1,314 @@
+0
+1
+00:00:02,200 --> 00:00:08,410
+Welcome back. The last step, we created the basic framework. In this step, let's focus on really working the
+1
+
+2
+00:00:08,470 --> 00:00:10,130
+Hello World Service.
+2
+
+3
+00:00:10,250 --> 00:00:17,370
+Now how do we work this out? Angular provides a module called HTTPClientModule
+3
+
+4
+00:00:17,560 --> 00:00:21,580
+And as part of it we have something called HTTPClient
+4
+
+5
+00:00:21,940 --> 00:00:32,050
+We can use the client to get, post, delete, put: all kinds of HTTPP requests. All that we need to say is
+5
+
+6
+00:00:32,130 --> 00:00:34,530
+OK this is the URL, and this is the data.
+6
+
+7
+00:00:34,670 --> 00:00:37,020
+Let's use that in this,
+7
+
+8
+00:00:37,060 --> 00:00:38,330
+And the subsequent steps.
+8
+
+9
+00:00:38,450 --> 00:00:40,990
+Let's get the HTTPClient in here.
+9
+
+10
+00:00:40,990 --> 00:00:44,870
+So how do they inject it in? add it to the constructor.
+10
+
+11
+00:00:44,890 --> 00:00:56,610
+Right I'll say private http: HTTPClient.  so you can see that HttpClient is coming
+11
+
+12
+00:00:56,610 --> 00:01:01,630
+in here. Make sure that it's coming in from an @angular/common/http
+12
+
+13
+00:01:01,650 --> 00:01:06,820
+There is another HttpClient which is present in here. If you go a little down it's coming from selenium.
+13
+
+14
+00:01:06,930 --> 00:01:13,530
+web-driver/http. So make sure that you're using the one from the angular/common/http.
+14
+
+15
+00:01:13,540 --> 00:01:16,310
+If this client is not really listed.
+15
+
+16
+00:01:16,380 --> 00:01:22,530
+All that you need to do is just put @ in here and make sure that you are putting this important
+16
+
+17
+00:01:22,560 --> 00:01:24,390
+to import HTTPClient
+17
+
+18
+00:01:24,590 --> 00:01:29,430
+This is part of a module angular/common/HTTP.
+18
+
+19
+00:01:29,480 --> 00:01:32,270
+So the client does not automatically appear.
+19
+
+20
+00:01:32,310 --> 00:01:35,800
+Make sure that you do this, it would be cool.
+20
+
+21
+00:01:35,820 --> 00:01:45,550
+Now we have the http client imported in, and now let's go to work. this.http.get()...
+21
+
+22
+00:01:45,610 --> 00:01:51,400
+one which you would want to do that. We would want in a GET request to what URL? to Hello World.
+22
+
+23
+00:01:51,590 --> 00:01:52,910
+Isn't it easy?
+23
+
+24
+00:01:52,910 --> 00:01:58,060
+Doesn't this look very easy? or it will return this back.
+24
+
+25
+00:01:58,210 --> 00:01:59,870
+let's remove
+25
+
+26
+00:01:59,900 --> 00:02:02,170
+this log, we'll not need it anymore.
+26
+
+27
+00:02:02,390 --> 00:02:11,300
+So let's return this thing back. And what we'll do is, in the welcome component let's do a log of this.
+27
+
+28
+00:02:11,300 --> 00:02:13,750
+So what we did is welcome back from the service.
+28
+
+29
+00:02:14,090 --> 00:02:14,800
+We are trying to log.
+29
+
+30
+00:02:14,810 --> 00:02:15,890
+Is that what we're doing
+30
+
+31
+00:02:16,070 --> 00:02:17,420
+Let's see what would happen.
+31
+
+32
+00:02:17,760 --> 00:02:18,310
+OK.
+32
+
+33
+00:02:18,310 --> 00:02:20,860
+When I when I go to the page and refresh it
+33
+
+34
+00:02:24,460 --> 00:02:25,870
+I see error.
+34
+
+35
+00:02:26,320 --> 00:02:29,710
+It says No provider for HttpClient
+35
+
+36
+00:02:31,500 --> 00:02:36,180
+So what it's saying is the client is not really available.
+36
+
+37
+00:02:36,300 --> 00:02:37,860
+Why is it not available?
+37
+
+38
+00:02:37,860 --> 00:02:45,050
+Think about it... think about the concept of an alert for an angler application. To make use of a component
+38
+
+39
+00:02:45,090 --> 00:02:46,860
+or a utility from a module,
+39
+
+40
+00:02:46,860 --> 00:02:47,900
+What do we need to do?
+40
+
+41
+00:02:47,970 --> 00:02:50,990
+We need to import that module in.
+41
+
+42
+00:02:51,000 --> 00:02:57,190
+The thing is we have not really imported the module in the way... we need to put it in in app.module
+42
+
+43
+00:02:57,360 --> 00:02:57,810
+.ts
+43
+
+44
+00:02:57,840 --> 00:03:04,150
+And the module that you need to import in, is HttpModule. It's HttpClientModule
+44
+
+45
+00:03:04,210 --> 00:03:09,370
+So you can see that it's from angular/common.http.
+45
+
+46
+00:03:09,600 --> 00:03:14,660
+So let's do that. imporitng this module into our app module
+46
+
+47
+00:03:14,940 --> 00:03:23,000
+Make sure that you have this import. So the import client module... http client module from angular/common
+47
+
+48
+00:03:23,070 --> 00:03:23,960
+/HTTP.
+48
+
+49
+00:03:24,030 --> 00:03:27,270
+Now save this and go ahead.
+49
+
+50
+00:03:27,300 --> 00:03:33,280
+And again when you log in and click to get the message, you would see that there is an observable which
+50
+
+51
+00:03:33,280 --> 00:03:36,340
+is printed out to the console.  so interesting!
+51
+
+52
+00:03:36,390 --> 00:03:36,890
+Right!
+52
+
+53
+00:03:36,940 --> 00:03:40,530
+What is happening is, an observable is printed to the console.
+53
+
+54
+00:03:40,570 --> 00:03:47,370
+And when I go to the network, clear it by using the clear and again to get a message, you're seeign that no activity
+54
+
+55
+00:03:47,370 --> 00:03:53,050
+is taking place in the network. You can see what other requests which are sent from the client
+55
+
+56
+00:03:53,050 --> 00:03:54,020
+application.
+56
+
+57
+00:03:54,300 --> 00:03:58,130
+So for applications from the front end application, to the back and application.
+57
+
+58
+00:03:58,180 --> 00:04:01,470
+And as of now, you can see that there is no request going out.
+58
+
+59
+00:04:01,480 --> 00:04:08,430
+However when I go to the console whenever I press get welcome message, you see that there is an observable
+59
+
+60
+00:04:08,440 --> 00:04:11,110
+which is getting logged.
+60
+
+61
+00:04:11,260 --> 00:04:15,130
+This call is not going over the network.
+61
+
+62
+00:04:15,130 --> 00:04:19,140
+What is happening in here? Lets look at that in the next step.
+62
+
+63
+00:04:19,140 --> 00:04:19,910
+Until then, bye!

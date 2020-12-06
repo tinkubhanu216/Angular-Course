@@ -1,0 +1,469 @@
+0
+1
+00:00:02,720 --> 00:00:06,620
+Welcome back. In the previous step, we created the todos service.
+1
+
+2
+00:00:06,620 --> 00:00:11,440
+Now we want to create our mytodo the application to the service from the back end.
+2
+
+3
+00:00:11,550 --> 00:00:12,650
+How can we do that?
+3
+
+4
+00:00:12,780 --> 00:00:15,330
+Let's look at that in this specific step.
+4
+
+5
+00:00:15,330 --> 00:00:20,280
+The first thing we would want to do, is we would want to create a data service. So let's use the command
+5
+
+6
+00:00:20,280 --> 00:00:21,300
+which we used earlier.
+6
+
+7
+00:00:21,400 --> 00:00:23,840
+I'll call this ng generate service.
+7
+
+8
+00:00:23,880 --> 00:00:27,500
+service/data. so we would want to create it in the service/data folder.
+8
+
+9
+00:00:27,630 --> 00:00:32,830
+And this is what data this has. todo data. todo data.
+9
+
+10
+00:00:33,090 --> 00:00:35,440
+Let's wait for the service to be created. This is created.
+10
+
+11
+00:00:35,460 --> 00:00:41,010
+And let's open todo-data.service.ts
+11
+
+12
+00:00:41,050 --> 00:00:45,680
+So this is the file we just created, and over here, we would want to start creating.
+12
+
+13
+00:00:45,900 --> 00:00:50,990
+a method. You want to be able to create a method to retrieve the list of todos.
+13
+
+14
+00:00:51,050 --> 00:00:57,170
+Let's get started with it, by looking at the welcome data service component.
+14
+
+15
+00:00:57,180 --> 00:01:00,970
+So let's copy the hello world bean service.
+15
+
+16
+00:01:02,630 --> 00:01:08,520
+what you want to do, is we would want to retrieve all todos.
+16
+
+17
+00:01:08,810 --> 00:01:10,760
+We have a parameter in here.
+17
+
+18
+00:01:10,750 --> 00:01:11,700
+What is the parameter?
+18
+
+19
+00:01:11,810 --> 00:01:18,410
+The username. We would want to be able to retrieve all the things for it, and we would want to first
+19
+
+20
+00:01:18,860 --> 00:01:23,960
+import http. So let's do added as construct an argument.
+20
+
+21
+00:01:24,060 --> 00:01:30,670
+So I'll say private http, and would want to say the HttpClient.
+21
+
+22
+00:01:30,710 --> 00:01:32,520
+So now we have the httpClient.
+22
+
+23
+00:01:32,600 --> 00:01:39,650
+We would want to use the hello world bean. What we would get is a list of todos. We already have
+23
+
+24
+00:01:39,850 --> 00:01:40,650
+todo bean.
+24
+
+25
+00:01:40,670 --> 00:01:45,470
+So I'll say to do we have defined a todo,  in the list-todos component.
+25
+
+26
+00:01:45,590 --> 00:01:47,990
+So let's use that. If you do a control-,
+26
+
+27
+00:01:48,010 --> 00:01:50,860
+You'd be able to see the definition of the todo.
+27
+
+28
+00:01:51,050 --> 00:01:55,950
+So we have a description done, and a target date. cool.
+28
+
+29
+00:01:56,210 --> 00:02:01,190
+The only thing we don't really have here is a username. but when we are talking about todos on the client
+29
+
+30
+00:02:01,190 --> 00:02:03,590
+side they are already assigned to a specific user.
+30
+
+31
+00:02:03,590 --> 00:02:05,840
+So we don't really need the user name in there.
+31
+
+32
+00:02:05,990 --> 00:02:06,840
+So this is good.
+32
+
+33
+00:02:06,840 --> 00:02:10,180
+The only change we need to do is they should be an array of todos.
+33
+
+34
+00:02:10,190 --> 00:02:14,910
+So what we're expecting back is a array of todos, which are coming back.
+34
+
+35
+00:02:14,990 --> 00:02:16,850
+And now let's change the URL.
+35
+
+36
+00:02:16,970 --> 00:02:18,070
+What should be the URL?
+36
+
+37
+00:02:18,410 --> 00:02:24,620
+Localhost:8080. Let's copy the URL from the browser.
+37
+
+38
+00:02:24,620 --> 00:02:25,410
+This one.
+38
+
+39
+00:02:25,660 --> 00:02:27,240
+So this should be the URl.
+39
+
+40
+00:02:27,560 --> 00:02:32,350
+Except that let's use tick and tick over here.
+40
+
+41
+00:02:32,570 --> 00:02:33,320
+Over here.
+41
+
+42
+00:02:33,470 --> 00:02:42,290
+And now I can replace this with a variable name. But it should not be in28minutes but it should be username
+42
+
+43
+00:02:43,840 --> 00:02:44,430
+cool.
+43
+
+44
+00:02:44,620 --> 00:02:47,190
+Now we have to retrieve all this data.
+44
+
+45
+00:02:47,200 --> 00:02:53,950
+service method ready. We would want to be able use todo data  service, where? In the list-todos component
+45
+
+46
+00:02:54,480 --> 00:02:55,030
+right!
+46
+
+47
+00:02:55,090 --> 00:02:58,530
+We have a hard coded list of todos in here, which are being used.
+47
+
+48
+00:02:58,750 --> 00:03:06,130
+So what I'll do is I'll comment all these steps and say control-. or command-/,  and comment all this
+48
+
+49
+00:03:06,130 --> 00:03:08,730
+stuff and we'll have a todos.
+49
+
+50
+00:03:08,780 --> 00:03:11,420
+This is nothing but three todos.
+50
+
+51
+00:03:11,440 --> 00:03:15,530
+So I'll say :todos, so we don't really have todos initialized.
+51
+
+52
+00:03:15,670 --> 00:03:22,000
+What I would want to do is in the end, we only need what we want to do, is we don't initialized the todo
+52
+
+53
+00:03:22,000 --> 00:03:24,530
+, as we would want to be able to call the todo data
+53
+
+54
+00:03:24,550 --> 00:03:29,450
+Service. Before doing that, we should be able to use the todo data service, because todo data service
+54
+
+55
+00:03:29,450 --> 00:03:34,670
+is defined as @injectable. To be able to use dependency injection.
+55
+
+56
+00:03:34,670 --> 00:03:38,410
+So what I'll do is over here, is a private service.
+56
+
+57
+00:03:38,720 --> 00:03:47,720
+This is what you'd want to use todo data service, and call this todo service. Just to be clear,
+57
+
+58
+00:03:49,720 --> 00:03:58,090
+What you want to do is,  this.todoservice.retrieveAllTodos(),  and to this I would need
+58
+
+59
+00:03:58,090 --> 00:04:00,520
+to pass in a username.
+59
+
+60
+00:04:00,520 --> 00:04:01,870
+How can I get the username?
+60
+
+61
+00:04:01,930 --> 00:04:07,590
+One of the ways is to quickly hard code it. Will this work?
+61
+
+62
+00:04:07,660 --> 00:04:12,020
+No! The reason why this would not work is because the retrieve all todos
+62
+
+63
+00:04:12,030 --> 00:04:13,460
+Actually returns
+63
+
+64
+00:04:13,520 --> 00:04:14,820
+What did ... what does it return?
+64
+
+65
+00:04:14,880 --> 00:04:17,340
+It returns an observable.
+65
+
+66
+00:04:17,340 --> 00:04:20,820
+And what we would need to do is, we need to do a subscriber on it.
+66
+
+67
+00:04:20,820 --> 00:04:27,580
+So what we need to do is subscribe, and we need to define what should happen when you get a successful
+67
+
+68
+00:04:27,600 --> 00:04:31,950
+respond. So when I get a successful response. what should we do?
+68
+
+69
+00:04:32,100 --> 00:04:34,080
+Let's define the method in here.
+69
+
+70
+00:04:34,080 --> 00:04:42,780
+What we want to do when we get a successful response is: this.todos lose = 
+70
+
+71
+00:04:44,520 --> 00:04:53,330
+What I'll also do is console.log() a response, so that we can see what's coming back in response.So
+71
+
+72
+00:04:53,360 --> 00:04:59,480
+what we are doing is we are calling the retrieveAllTodos,  All the hardcoded in28minutes, and we are subscribing
+72
+
+73
+00:04:59,480 --> 00:05:02,560
+to that response, and we get the response back.
+73
+
+74
+00:05:02,810 --> 00:05:10,920
+What we want to do, is we want to log the response and assign it to the todos. Go to the todos application
+74
+
+75
+00:05:11,780 --> 00:05:12,760
+click todos,
+75
+
+76
+00:05:13,030 --> 00:05:14,480
+Whoops.
+76
+
+77
+00:05:14,780 --> 00:05:19,290
+Nothing is visible. Let's expand and see what the error is.
+77
+
+78
+00:05:20,260 --> 00:05:21,480
+What do you think the error is?
+78
+
+79
+00:05:22,180 --> 00:05:23,900
+As usual, CORS policy.
+79
+
+80
+00:05:24,130 --> 00:05:30,860
+Let's go to the hello world control-F, ,  and take this cross-origin,  and put it in to resource as well.
+80
+
+81
+00:05:33,310 --> 00:05:35,610
+Let's refresh now.
+81
+
+82
+00:05:35,650 --> 00:05:40,450
+You see that all this stuff which we're interested in is coming up.
+82
+
+83
+00:05:40,450 --> 00:05:48,130
+Let's close this, and you'll see that we have the list of  todos that we are having in a database that's
+83
+
+84
+00:05:48,130 --> 00:05:48,690
+coming up.
+84
+
+85
+00:05:48,700 --> 00:05:50,910
+Not really the database, the in-memory database.
+85
+
+86
+00:05:50,920 --> 00:05:52,570
+If you can call it that way.
+86
+
+87
+00:05:52,840 --> 00:05:58,440
+All those things are coming up. So we have home, and we have a get welcome message, service which is getting called
+87
+
+88
+00:05:58,730 --> 00:06:04,060
+And when we click todos,  we are calling a service, and we are getting data back, and we are showing it
+88
+
+89
+00:06:04,150 --> 00:06:05,510
+down to the user.
+89
+
+90
+00:06:05,740 --> 00:06:06,790
+So we are making progress.
+90
+
+91
+00:06:06,790 --> 00:06:12,290
+In terms of actually connecting our front-end to the back end, there are a lot of things that we would
+91
+
+92
+00:06:12,370 --> 00:06:13,540
+still need to improve.
+92
+
+93
+00:06:13,690 --> 00:06:19,040
+But we are making progress towards our goal of having the todo application really.
+93
+
+94
+00:06:19,200 --> 00:06:20,990
+I'll see you in the next step, and until then,  bye-bye.

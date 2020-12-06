@@ -1,0 +1,464 @@
+0
+1
+00:00:02,370 --> 00:00:09,470
+Welcome back. In the todo page, we have the feature to update it, but the save feature we have not really
+1
+
+2
+00:00:09,470 --> 00:00:14,900
+implemented it, and are able to say what you need to call the request.
+2
+
+3
+00:00:15,050 --> 00:00:19,460
+And in the previous step we implemented the post mapping.
+3
+
+4
+00:00:19,640 --> 00:00:26,510
+Let's look at how to call the put method to update the details of the todo. Let's go to visual studio code.
+4
+
+5
+00:00:26,570 --> 00:00:29,730
+And what we want to do is focus on the save.
+5
+
+6
+00:00:29,750 --> 00:00:32,340
+So we want to create this save todo method.
+6
+
+7
+00:00:32,360 --> 00:00:39,890
+Let's go to the todo.component.ts component.ts is what we are looking for, and over
+7
+
+8
+00:00:39,950 --> 00:00:47,670
+here we want to do, is we will want to save the todo, and to be able to save that todo, what we want to
+8
+
+9
+00:00:47,670 --> 00:00:52,960
+do is we would want to call the data service to do that.
+9
+
+10
+00:00:52,980 --> 00:00:55,240
+So we should expose put method.
+10
+
+11
+00:00:55,320 --> 00:00:57,490
+Let's see if it's there right now.
+11
+
+12
+00:00:57,630 --> 00:00:58,590
+It's not really there.
+12
+
+13
+00:00:58,620 --> 00:01:00,360
+So let's go out and create it.
+13
+
+14
+00:01:00,400 --> 00:01:08,470
+I'll take the retrieve  todo, and use it to create the PUT TODO lstuff. so put todo.
+14
+
+15
+00:01:09,020 --> 00:01:19,190
+Or if you will want to say update todo,  fine! update the new username, ID and I would want the details
+15
+
+16
+00:01:19,220 --> 00:01:24,870
+of that todo to be updated. that very important like whatever details of the todo.
+16
+
+17
+00:01:25,220 --> 00:01:28,000
+Needs to be saved to the database, I need to say that too.
+17
+
+18
+00:01:28,010 --> 00:01:30,630
+So I need to do it all here.
+18
+
+19
+00:01:30,650 --> 00:01:40,180
+We don't really get. What we would do is put. If you look at it, it's saying this compilation error, because it's
+19
+
+20
+00:01:40,180 --> 00:01:42,560
+saying expect a todo three arguments.
+20
+
+21
+00:01:42,570 --> 00:01:46,130
+Let's start putting the second argument which is the body.
+21
+
+22
+00:01:46,200 --> 00:01:50,650
+So you can see that it's the body and the body we want to pass it to itself.
+22
+
+23
+00:01:50,700 --> 00:01:55,590
+So we want to pass todo as part of the body of the request.
+23
+
+24
+00:01:55,590 --> 00:02:02,400
+This is similar to how we did it in the restlet client, right ?when we need a post we put it in here
+24
+
+25
+00:02:02,940 --> 00:02:09,060
+containing the body of the todo to be updated, so that later,  that the body needs to be put inside the
+25
+
+26
+00:02:09,060 --> 00:02:11,310
+request when we make the request.
+26
+
+27
+00:02:11,350 --> 00:02:17,400
+So I'll just put in there, so that it's very clear that we are putting these parameters in.
+27
+
+28
+00:02:17,400 --> 00:02:20,090
+I want to make use of this update todo method.
+28
+
+29
+00:02:20,100 --> 00:02:21,840
+Where do I want to make use of it?
+29
+
+30
+00:02:21,990 --> 00:02:24,440
+Inside the todo component.
+30
+
+31
+00:02:24,630 --> 00:02:29,750
+So let's get started reading that this update todo.
+31
+
+32
+00:02:31,030 --> 00:02:39,440
+OOPS! Not do really have to do this but todo so is not true.
+32
+
+33
+00:02:39,720 --> 00:02:47,400
+And what we need to do is we need to call the update todo with a username,  ID And so this username
+33
+
+34
+00:02:47,960 --> 00:02:58,470
+ID comma,  todo or actually this.todo, and what we need to do once we call it? we need to subscribe
+34
+
+35
+00:02:58,470 --> 00:02:59,620
+to it right?
+35
+
+36
+00:02:59,700 --> 00:03:01,750
+To subscribe to it to make the call.
+36
+
+37
+00:03:01,800 --> 00:03:09,170
+And what does the update todo return back? update todo return back, what does it return back?  it returns
+37
+
+38
+00:03:09,180 --> 00:03:11,960
+back the updated todo.
+38
+
+39
+00:03:12,120 --> 00:03:13,300
+So once you get the data back,
+39
+
+40
+00:03:13,380 --> 00:03:17,200
+all that I need to do is do a console.log data now.
+40
+
+41
+00:03:17,460 --> 00:03:25,380
+In addition to this, if I want to do more in the subscribe, what I can do, is I can actually put a brace and closing
+41
+
+42
+00:03:25,380 --> 00:03:28,310
+this to write more statements.
+42
+
+43
+00:03:28,320 --> 00:03:33,890
+For now let's just log. It really do a lot more than that. Let's see what happens.
+43
+
+44
+00:03:33,930 --> 00:03:37,450
+Let's go to the todo page,  and say save.
+44
+
+45
+00:03:37,710 --> 00:03:39,300
+Let's change it to 25.
+45
+
+46
+00:03:39,540 --> 00:03:43,260
+And to refresh.
+46
+
+47
+00:03:43,260 --> 00:03:45,770
+You can see that learned todo, and 25.
+47
+
+48
+00:03:46,050 --> 00:03:48,590
+So the todo with ID 1 is updated.
+48
+
+49
+00:03:48,630 --> 00:03:50,160
+That's what you see in there.
+49
+
+50
+00:03:50,190 --> 00:03:53,460
+Let's see if the target date or date is working 2000.
+50
+
+51
+00:03:53,920 --> 00:04:00,650
+Let's say I would want to pick the date, and let's say I would want to pick November 30th 2018, and save
+51
+
+52
+00:04:00,650 --> 00:04:01,690
+it.
+52
+
+53
+00:04:02,110 --> 00:04:08,620
+Let's call this to check if... Cool! November 30.
+53
+
+54
+00:04:08,630 --> 00:04:09,390
+2018.
+54
+
+55
+00:04:09,390 --> 00:04:11,350
+So this is working fine.
+55
+
+56
+00:04:12,810 --> 00:04:18,270
+Now if I do right click inspect, and see the log, you would see that an object is being printed with all
+56
+
+57
+00:04:18,270 --> 00:04:24,440
+the detail that we would expect. So description, done, the target date and that's cool.
+57
+
+58
+00:04:24,810 --> 00:04:27,690
+And if we had network enabled and we did save
+58
+
+59
+00:04:30,670 --> 00:04:34,090
+you would see that we as an input request for this.
+59
+
+60
+00:04:34,150 --> 00:04:40,470
+And you can see that request payload also in here. When you go down and you'd see that the response status
+60
+
+61
+00:04:40,470 --> 00:04:41,770
+code is 200.
+61
+
+62
+00:04:41,820 --> 00:04:44,720
+And the response contains these details.
+62
+
+63
+00:04:44,760 --> 00:04:50,370
+Awesome so we are able to make their respective changes that are needed to update the todo. Wo when
+63
+
+64
+00:04:50,370 --> 00:04:51,140
+you click save.
+64
+
+65
+00:04:51,350 --> 00:04:53,680
+The details are being updated.
+65
+
+66
+00:04:53,820 --> 00:04:57,870
+But what I would also want to be able to do, is when I click save, I would want to be able to go back
+66
+
+67
+00:04:57,870 --> 00:04:59,520
+to the todos page.
+67
+
+68
+00:04:59,850 --> 00:05:04,320
+How can I do that? I can do that is by using the router.
+68
+
+69
+00:05:04,610 --> 00:05:09,690
+So private router.
+69
+
+70
+00:05:10,710 --> 00:05:16,420
+Let's take the router in.  You know where the router is coming from it's from angular/ router.
+70
+
+71
+00:05:17,250 --> 00:05:27,540
+And now in addition to this, what we want to do is this is .navigate().
+71
+
+72
+00:05:27,960 --> 00:05:30,790
+Where do you want to go? todo.
+72
+
+73
+00:05:31,050 --> 00:05:33,360
+Let's see what would happen? refresh the page
+73
+
+74
+00:05:36,170 --> 00:05:42,890
+and say... oops! Up there is a small syntax error... in what I have done.
+74
+
+75
+00:05:42,890 --> 00:05:48,590
+Actually it should have been a method call,  I forgot to put parentheses around it, and that caused
+75
+
+76
+00:05:48,590 --> 00:05:49,420
+the problem.
+76
+
+77
+00:05:49,640 --> 00:05:53,620
+So is is out router.navigate. And pass in an array.
+77
+
+78
+00:05:53,750 --> 00:05:55,130
+So let's see what would happen.
+78
+
+79
+00:05:56,850 --> 00:05:59,230
+Let's wait for the whole thing to refresh.
+79
+
+80
+00:05:59,620 --> 00:06:00,560
+Ok cool.
+80
+
+81
+00:06:00,650 --> 00:06:01,800
+Click Save
+81
+
+82
+00:06:02,130 --> 00:06:02,480
+OK.
+82
+
+83
+00:06:02,520 --> 00:06:09,290
+I'm going back to the screen, so let's update learn about angular,  23.
+83
+
+84
+00:06:09,820 --> 00:06:11,240
+Save it.
+84
+
+85
+00:06:11,250 --> 00:06:14,740
+Cool!You see learn about angler , 23 at the bottom now.
+85
+
+86
+00:06:15,010 --> 00:06:17,940
+Now let's change the date.
+86
+
+87
+00:06:17,950 --> 00:06:18,620
+Click here.
+87
+
+88
+00:06:18,850 --> 00:06:21,350
+And you'd be able to select the specific date
+88
+
+89
+00:06:21,370 --> 00:06:25,940
+So 15,  and so on and so forth.
+89
+
+90
+00:06:25,960 --> 00:06:28,650
+So we are now able to update and delete the todo.
+90
+
+91
+00:06:28,870 --> 00:06:33,510
+And in the next step, let's focus on adding new todo to  that as well.
+91
+
+92
+00:06:33,580 --> 00:06:36,230
+We are making a lot of progress and I'll see you in the next step.
+92
+
+93
+00:06:36,290 --> 00:06:36,810
+Bye-bye!

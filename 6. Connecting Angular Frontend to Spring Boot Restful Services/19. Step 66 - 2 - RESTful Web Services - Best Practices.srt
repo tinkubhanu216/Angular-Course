@@ -1,0 +1,249 @@
+0
+1
+00:00:01,010 --> 00:00:01,560
+This video,
+1
+
+2
+00:00:01,710 --> 00:00:06,200
+Let's quickly evaluate a few best practices in RESTful services.
+2
+
+3
+00:00:06,210 --> 00:00:11,580
+The first and the last best practice is consumer first.
+3
+
+4
+00:00:11,740 --> 00:00:17,570
+Always think about the user.  Can you have a clear idea about who you are consumers are?
+4
+
+5
+00:00:17,610 --> 00:00:19,240
+Is it a web application?
+5
+
+6
+00:00:19,310 --> 00:00:25,800
+Do you expect a mobile application coming in in the future? And have a clear idea of what they want before
+6
+
+7
+00:00:25,800 --> 00:00:27,310
+you name your resources.
+7
+
+8
+00:00:27,330 --> 00:00:31,950
+Think from the perspective of your customers. What do they think about those resources?
+8
+
+9
+00:00:31,950 --> 00:00:35,370
+Will they be able to understand the naming of your resources?
+9
+
+10
+00:00:35,370 --> 00:00:40,230
+The simpler it is for your consumer to understand your services, the better it is for you.
+10
+
+11
+00:00:40,230 --> 00:00:45,150
+Last but not least have great documentation for your apps.
+11
+
+12
+00:00:45,180 --> 00:00:50,700
+Swagger is one of the most popular documentation standard for RESTful APIs. But whatever standard you are
+12
+
+13
+00:00:50,700 --> 00:00:51,540
+using,
+13
+
+14
+00:00:51,570 --> 00:00:55,870
+Make sure that your consumers understand the documentation that you produce.
+14
+
+15
+00:00:56,040 --> 00:01:02,060
+The next important best practice is make the best use of whatever HTTP provides.
+15
+
+16
+00:01:02,080 --> 00:01:07,870
+The RESTful services based on HTTP make the best use of the request.
+16
+
+17
+00:01:07,900 --> 00:01:12,240
+Use the right request method appropriate for your specific action.
+17
+
+18
+00:01:12,480 --> 00:01:19,530
+Get post put and delete and ensure that you are sending a proper response status back when a resource
+18
+
+19
+00:01:19,530 --> 00:01:20,480
+is not found.
+19
+
+20
+00:01:20,490 --> 00:01:22,140
+Do not send a server error
+20
+
+21
+00:01:22,650 --> 00:01:29,040
+When there is a bad request, when there is a validation error not in the server, send a bad request 400.
+21
+
+22
+00:01:29,130 --> 00:01:34,640
+When you create a resource do not send just success,  send created back.
+22
+
+23
+00:01:34,680 --> 00:01:38,700
+Think about what is the appropriate response status for your situation.
+23
+
+24
+00:01:38,730 --> 00:01:43,140
+Ensure that there is no secure info that is retained in your case.
+24
+
+25
+00:01:43,140 --> 00:01:48,690
+Things like SSL,  just don't go by the standard definition.
+25
+
+26
+00:01:48,690 --> 00:01:55,020
+Think about what you're putting in the URL,  and make sure that there is nothing secure that going in
+26
+
+27
+00:01:55,020 --> 00:01:56,350
+your case.
+27
+
+28
+00:01:56,550 --> 00:01:58,580
+Always use plurals.
+28
+
+29
+00:01:58,710 --> 00:02:02,530
+For example in the course, we always used /users.
+29
+
+30
+00:02:02,550 --> 00:02:05,330
+It is that we created was /users/1.
+30
+
+31
+00:02:05,340 --> 00:02:07,020
+Not /user/1
+31
+
+32
+00:02:07,170 --> 00:02:14,500
+I really prefer using the plurals, because it's more readable than using the singular when you think resources.
+32
+
+33
+00:02:14,640 --> 00:02:19,640
+Think nouns, it's user, it's account.
+33
+
+34
+00:02:19,830 --> 00:02:22,740
+It's not delete user, it's not delete account.
+34
+
+35
+00:02:23,100 --> 00:02:25,940
+Think about nouns and when you talk about resources.
+35
+
+36
+00:02:25,950 --> 00:02:31,160
+Think about noun's. How you are thinking about nouns? it's all not always possible right.
+36
+
+37
+00:02:31,170 --> 00:02:32,670
+There are always exceptions in.
+37
+
+38
+00:02:32,670 --> 00:02:38,580
+For example if there's a search link on the web page, how do you do that for all these exception scenarios?
+38
+
+39
+00:02:38,880 --> 00:02:41,440
+have a consistent approach.
+39
+
+40
+00:02:41,460 --> 00:02:47,640
+If you are searching through something, then if you are searching for users, then say /users/
+40
+
+41
+00:02:47,760 --> 00:02:48,710
+search.
+41
+
+42
+00:02:48,910 --> 00:02:53,200
+So on the resource, have the actions defined.
+42
+
+43
+00:02:53,370 --> 00:02:57,490
+For example this is how github does a star on the gists.
+43
+
+44
+00:02:57,510 --> 00:03:05,160
+So if I put a star on the gist,  the way it sends the request is to the resource to just send the request
+44
+
+45
+00:03:05,730 --> 00:03:09,750
+with star in the URL,  and the same thing in the delete.
+45
+
+46
+00:03:09,760 --> 00:03:15,030
+If I understand something, this is the request goes out to define a consistent approach of how you would
+46
+
+47
+00:03:15,030 --> 00:03:17,070
+want to handle the exception scenarios.
+47
+
+48
+00:03:17,070 --> 00:03:23,060
+Things that don't fit into the nouns. What we looked at in this step are some of the best practices.
+48
+
+49
+00:03:23,210 --> 00:03:24,210
+in RESTful design.
+49
+
+50
+00:03:24,420 --> 00:03:27,060
+Most important thing: consumer first!

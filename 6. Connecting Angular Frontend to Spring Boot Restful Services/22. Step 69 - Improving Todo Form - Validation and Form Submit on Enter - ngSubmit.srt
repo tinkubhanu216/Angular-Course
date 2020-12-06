@@ -1,0 +1,429 @@
+0
+1
+00:00:00,120 --> 00:00:05,610
+Welcome back. In the previous steps, we added all the features that are typically necessary at a high
+1
+
+2
+00:00:05,610 --> 00:00:07,580
+level, for managing your todos.
+2
+
+3
+00:00:07,590 --> 00:00:11,170
+We are now able to update, delete and add todos as well.
+3
+
+4
+00:00:11,400 --> 00:00:16,920
+But one of the things you would have observed already, is when I press enter in here...  in the description
+4
+
+5
+00:00:16,970 --> 00:00:18,410
+field and I press enter.
+5
+
+6
+00:00:18,660 --> 00:00:21,660
+Typically I would expect the form to be submitted.
+6
+
+7
+00:00:21,660 --> 00:00:28,200
+The other thing you would notice is, when you click Save button I'm able to enter empty todo and save
+7
+
+8
+00:00:28,340 --> 00:00:29,490
+todo it.
+8
+
+9
+00:00:29,790 --> 00:00:34,730
+And even when I'm updating it I'll be able to save it without description.
+9
+
+10
+00:00:34,860 --> 00:00:37,410
+And actually you'd be able to see it even with add todo.
+10
+
+11
+00:00:37,410 --> 00:00:40,500
+So if I say save now, you have to do that.
+11
+
+12
+00:00:40,530 --> 00:00:45,260
+Doesn't have a description and a target date, and that's not really a good situation to be in.
+12
+
+13
+00:00:45,270 --> 00:00:46,010
+Right?
+13
+
+14
+00:00:46,260 --> 00:00:50,300
+Let's improve the form to have important functionality.
+14
+
+15
+00:00:50,310 --> 00:00:56,010
+One is when you press enter, you want to be able to submit the form. Two, when you have press save.
+15
+
+16
+00:00:56,130 --> 00:01:00,170
+You would want to validate, we would have basic validation.
+16
+
+17
+00:01:00,330 --> 00:01:05,700
+And we would want to make sure that they are validated before we are able to see the todo out.
+17
+
+18
+00:01:05,700 --> 00:01:06,920
+Let's get started now.
+18
+
+19
+00:01:06,960 --> 00:01:11,200
+The first thing we focus on is when I press enter, I would want this form to be submitted.
+19
+
+20
+00:01:11,400 --> 00:01:18,540
+The interesting thing is now we don't really have a form in our page at all! Let's open up todo and we
+20
+
+21
+00:01:18,540 --> 00:01:22,650
+see that there is not really a form that's pleasant in here.
+21
+
+22
+00:01:22,680 --> 00:01:28,830
+So this is when you are using, and you know you don't really need a form, because you are not really submitting
+22
+
+23
+00:01:28,830 --> 00:01:30,400
+anything our Todos.
+23
+
+24
+00:01:30,600 --> 00:01:37,740
+But when you want to utilize the form features, like when I pressed enter inside any of the fields,  I would
+24
+
+25
+00:01:37,740 --> 00:01:43,120
+want to submit the form typically like this,  In those kind of situations we would need a form. Let's add a
+25
+
+26
+00:01:43,200 --> 00:01:44,570
+form in quickly.
+26
+
+27
+00:01:44,580 --> 00:01:53,010
+So from and /form that basically the syntax, and I'll put all the important things in the form and
+27
+
+28
+00:01:53,010 --> 00:01:56,610
+let's select all the code within the form, and type it in.
+28
+
+29
+00:01:56,730 --> 00:02:03,100
+And I would want this one to be a submit type=submit.
+29
+
+30
+00:02:03,330 --> 00:02:09,150
+And when you have a submit button inside the form, what we will do is we'll not really need to handle
+30
+
+31
+00:02:09,150 --> 00:02:11,720
+the button click event.
+31
+
+32
+00:02:11,940 --> 00:02:20,370
+What we do is we just make it on the form, so form we will add a submit event will say onSubmit
+32
+
+33
+00:02:21,210 --> 00:02:26,630
+is equal to the same thing that we were doing earlier. So instead of click what we are moving it to is
+33
+
+34
+00:02:26,760 --> 00:02:32,000
+onSubmit(). So what we're saying is when this form is submitted on  the submit event.
+34
+
+35
+00:02:32,190 --> 00:02:36,420
+So make sure that you get the syntax right. So form and you submit is in save todo.
+35
+
+36
+00:02:36,420 --> 00:02:41,970
+We removed that from here, and we added a type-submit so that the submit button gets called
+36
+
+37
+00:02:42,180 --> 00:02:43,400
+by the form.
+37
+
+38
+00:02:43,470 --> 00:02:48,410
+Now let's save this, relaunch  the application and press enter.
+38
+
+39
+00:02:48,540 --> 00:02:55,300
+You'd see that as soon as I press enter, the form gets submitted and let's do submit and save.
+39
+
+40
+00:02:55,460 --> 00:03:00,990
+And now you would see that both the save button, and as well as enters, work
+40
+
+41
+00:03:00,990 --> 00:03:06,040
+So now we are able to submit the form just by pressing enter.
+41
+
+42
+00:03:06,360 --> 00:03:07,260
+That's good.
+42
+
+43
+00:03:07,260 --> 00:03:10,200
+Now that one problem solved. We have one more problem remaining.
+43
+
+44
+00:03:10,210 --> 00:03:15,720
+That's basically the validation. We would want to make sure that only when this form is valid, we would
+44
+
+45
+00:03:15,720 --> 00:03:18,330
+want to have this form to be submitted.
+45
+
+46
+00:03:18,330 --> 00:03:19,450
+How can I do that?
+46
+
+47
+00:03:19,470 --> 00:03:23,440
+Now I want to check that this form is valid in Angular?
+47
+
+48
+00:03:23,700 --> 00:03:26,510
+There are some things called template variables.
+48
+
+49
+00:03:26,520 --> 00:03:33,380
+You would need a template variable on this form to identify this form and check logic around it.
+49
+
+50
+00:03:33,630 --> 00:03:44,040
+And the template variable I would create is  #todoform =  and this is "ngForm". So
+50
+
+51
+00:03:44,190 --> 00:03:49,490
+what you are saying is have this entire form,  in this template.
+51
+
+52
+00:03:49,500 --> 00:03:53,120
+This variable is kind of a reference to this entire form.
+52
+
+53
+00:03:53,150 --> 00:04:02,100
+Now what I want to do, is I want  saveTodo only if this form is not invalid.
+53
+
+54
+00:04:02,100 --> 00:04:03,850
+So let's quickly write this code.
+54
+
+55
+00:04:03,870 --> 00:04:06,210
+I'll explain this in a little while.
+55
+
+56
+00:04:06,300 --> 00:04:09,550
+What we are doing is we are creating a reference variable.
+56
+
+57
+00:04:09,630 --> 00:04:15,250
+So this is a template variable, but you can use this within this template anywhere.
+57
+
+58
+00:04:15,300 --> 00:04:21,980
+And what we are using it here is to check if it's invalid.  When you have a form.
+58
+
+59
+00:04:21,990 --> 00:04:24,740
+It provides a lot of features on it.
+59
+
+60
+00:04:24,750 --> 00:04:31,230
+One of the features is to check if it's invalid. Todoform.invalid ... if from has any invalid
+60
+
+61
+00:04:31,560 --> 00:04:34,360
+data, then todoForm.invalid would be true
+61
+
+62
+00:04:34,380 --> 00:04:38,400
+What I'm saying is, submit it only if not of invalid.
+62
+
+63
+00:04:38,400 --> 00:04:45,480
+So the form is valid then go ahead and do the save todo. The other thing is we already added a few validations
+63
+
+64
+00:04:45,570 --> 00:04:47,270
+in we said required.
+64
+
+65
+00:04:47,280 --> 00:04:49,920
+So we said this date is required.
+65
+
+66
+00:04:49,920 --> 00:04:51,560
+It's just that these were not executed
+66
+
+67
+00:04:51,560 --> 00:04:52,510
+earlier.
+67
+
+68
+00:04:52,580 --> 00:04:55,830
+So you would see that even the description field said it's required.
+68
+
+69
+00:04:55,980 --> 00:04:59,670
+So let's now check the form and see what would happen.
+69
+
+70
+00:04:59,700 --> 00:05:00,790
+Let's save this.
+70
+
+71
+00:05:00,950 --> 00:05:05,780
+And now let's open up the update and press enter.
+71
+
+72
+00:05:05,820 --> 00:05:12,930
+Now you would see that when we press enter, the form doesn't get submitted.  The form gets submitted only when
+72
+
+73
+00:05:13,410 --> 00:05:16,920
+I enter something in,  let's save.
+73
+
+74
+00:05:16,980 --> 00:05:17,860
+Nope.
+74
+
+75
+00:05:18,180 --> 00:05:27,270
+When I say target date and select the date, only when I select the date I'll be able to save that. Now,
+75
+
+76
+00:05:27,270 --> 00:05:28,700
+Isn't that awesome!
+76
+
+77
+00:05:28,860 --> 00:05:33,250
+The awesome thing is all these features are built in into Angular.
+77
+
+78
+00:05:33,560 --> 00:05:40,690
+So we're just moving out the click event, and making it ngSubmit on the form, and making the button
+78
+
+79
+00:05:40,700 --> 00:05:41,790
+this type submit.
+79
+
+80
+00:05:41,910 --> 00:05:48,430
+We were able to get a lot of functionality, and actually support a few other validations as well.
+80
+
+81
+00:05:48,450 --> 00:05:52,310
+For example I can say minlength = 5.
+81
+
+82
+00:05:52,340 --> 00:05:56,460
+I'm saying for the description field, the minimum length is 5.
+82
+
+83
+00:05:56,640 --> 00:05:59,530
+So now, the minimum length of the description field is 5.
+83
+
+84
+00:05:59,550 --> 00:06:04,500
+So if you enter less than four characters, then the form will not be submitted.
+84
+
+85
+00:06:04,500 --> 00:06:08,740
+In this step, we look at the basic features around validating the forms.
+85
+
+86
+00:06:09,000 --> 00:06:13,980
+There are a number of other awesome features which will be looking at in the next step. Until then, Bye Bye!

@@ -1,0 +1,359 @@
+0
+1
+00:00:02,460 --> 00:00:08,890
+Welcome back. In the previous step, we implemented the Delete todo. In this step and the subsequent steps
+1
+
+2
+00:00:09,050 --> 00:00:11,800
+let's focus on update todos.
+2
+
+3
+00:00:11,880 --> 00:00:14,510
+So we would want to add a feature to update a todo.
+3
+
+4
+00:00:14,510 --> 00:00:15,420
+How do we do that?
+4
+
+5
+00:00:15,420 --> 00:00:18,060
+Let's look at it in the next few steps.
+5
+
+6
+00:00:18,150 --> 00:00:20,410
+Let's get started with updating the UI.
+6
+
+7
+00:00:20,610 --> 00:00:29,540
+In this specific step. Let's go to the list-todos component.html,  and let's add a fresh button let's call
+7
+
+8
+00:00:29,570 --> 00:00:30,950
+this delete.
+8
+
+9
+00:00:31,110 --> 00:00:35,190
+And before they delete you would want to have an Update.
+9
+
+10
+00:00:35,620 --> 00:00:44,770
+And here I'll copy this Delete. Exactly the same thing but instead of delete though, let's call it update
+10
+
+11
+00:00:44,950 --> 00:00:50,030
+todo, and bnt- , instead of  warning, say  success.
+11
+
+12
+00:00:50,330 --> 00:00:54,350
+And let's see how the screen looks.
+12
+
+13
+00:00:54,440 --> 00:00:56,990
+Now you have an update button and the delete button.
+13
+
+14
+00:00:57,080 --> 00:00:59,320
+It's up to you if you want to have the label.
+14
+
+15
+00:00:59,380 --> 00:01:00,230
+Edit here.
+15
+
+16
+00:01:00,320 --> 00:01:04,020
+A Bit later. But this looks relatively comfortable.
+16
+
+17
+00:01:04,130 --> 00:01:06,260
+Let's get started with implementing the update.
+17
+
+18
+00:01:06,260 --> 00:01:14,000
+Let's go to the list-todos component, and what we want to do is create something similar to this for
+18
+
+19
+00:01:14,000 --> 00:01:15,920
+the update.
+19
+
+20
+00:01:16,010 --> 00:01:17,580
+It should be.
+20
+
+21
+00:01:17,790 --> 00:01:20,830
+update, and here.
+21
+
+22
+00:01:21,210 --> 00:01:26,100
+console.log(), ticks, update.
+22
+
+23
+00:01:27,530 --> 00:01:29,160
+id tick.
+23
+
+24
+00:01:29,830 --> 00:01:34,150
+Typically what would happen when I click the update? We should go to the new screen. We'll implement that
+24
+
+25
+00:01:34,150 --> 00:01:37,530
+very soon, after we check that our basic right.
+25
+
+26
+00:01:37,590 --> 00:01:44,050
+You go to the console, and click update. and you can say update 1, update 2, update 3 
+26
+
+27
+00:01:44,080 --> 00:01:47,440
+What should I do on the update? Typically I should go to the next screen.
+27
+
+28
+00:01:47,470 --> 00:01:47,710
+Right.
+28
+
+29
+00:01:47,710 --> 00:01:53,560
+I should go to the screen, and I should be able to update the todo. What I need if I want to create a
+29
+
+30
+00:01:53,560 --> 00:01:55,690
+new screen, what should I create?
+30
+
+31
+00:01:55,690 --> 00:01:56,750
+Think about it.
+31
+
+32
+00:01:56,950 --> 00:01:58,880
+You would need to create a new component.
+32
+
+33
+00:01:59,100 --> 00:02:03,320
+Let's go out and do that and regenerate component.
+33
+
+34
+00:02:03,550 --> 00:02:08,680
+And I call this todo, because it would be allowing us to edit or todo.
+34
+
+35
+00:02:08,680 --> 00:02:13,060
+And later we'll also be using the same thing for creating a todo. So I'll call this component as just
+35
+
+36
+00:02:13,060 --> 00:02:20,680
+todo. component todo. And you would see that there would be four files created, one file being modified
+36
+
+37
+00:02:20,950 --> 00:02:28,350
+four files created: the CSS, HTML, and the code file .ts, and the app.module app
+37
+
+38
+00:02:28,390 --> 00:02:34,960
+module, which is the root module, also contains the todocomponent so that basically the things which are
+38
+
+39
+00:02:34,960 --> 00:02:35,410
+added in.
+39
+
+40
+00:02:35,410 --> 00:02:41,170
+Now what we want to do, is we would want to route to the todo component when user clicks update. We would
+40
+
+41
+00:02:41,170 --> 00:02:43,420
+want to send him to the component.
+41
+
+42
+00:02:43,420 --> 00:02:44,730
+How do we do that?
+42
+
+43
+00:02:44,920 --> 00:02:48,630
+First of all,  we need to define the route for the todos.
+43
+
+44
+00:02:48,820 --> 00:02:52,190
+So how do we define a route for the todo component?
+44
+
+45
+00:02:52,450 --> 00:02:57,490
+It's been a long time since we touched this module, because it's been a long time since we actually created
+45
+
+46
+00:02:57,740 --> 00:03:00,700
+a component. Let's get down to here.
+46
+
+47
+00:03:00,910 --> 00:03:11,370
+So I'll say path todos/:id . So which to do
+47
+
+48
+00:03:11,410 --> 00:03:19,800
+So what I'm defining over here is todos/:ID, because I would want to have an ID which says
+48
+
+49
+00:03:19,920 --> 00:03:30,600
+which todo is being edited, and the component is todo component I wanted to get that out. Got to
+49
+
+50
+00:03:30,640 --> 00:03:36,820
+it because I dont want anybody to be able to get to this URL, without the route guard. Lets say this
+50
+
+51
+00:03:37,210 --> 00:03:37,780
+now.
+51
+
+52
+00:03:37,870 --> 00:03:44,240
+Let's go to the list-todos component.ts .  Over here, what we want to do, is we would want the route to that
+52
+
+53
+00:03:44,240 --> 00:03:45,810
+specific screen.
+53
+
+54
+00:03:46,120 --> 00:03:48,110
+How do we route that to screen?
+54
+
+55
+00:03:48,130 --> 00:03:54,540
+We need to use the router. Long time since we played with the router. So private router:
+55
+
+56
+00:03:59,020 --> 00:04:08,660
+Router. Let's import this in, So put a comma here so that it compiles, and if you go to the top router angular
+56
+
+57
+00:04:08,880 --> 00:04:13,890
+/router. that's the import which we have done with  dependency injection successfully.
+57
+
+58
+00:04:13,950 --> 00:04:16,160
+Now I can use the router in here.
+58
+
+59
+00:04:16,170 --> 00:04:19,320
+So I need to, do what I need to do is,
+59
+
+60
+00:04:19,700 --> 00:04:28,140
+this.router.navigate  We can pass an array, and the first thing which we have
+60
+
+61
+00:04:28,140 --> 00:04:36,520
+in the arrsy is the name of the route to do. And to do this,  would want to actually pass in parameter.
+61
+
+62
+00:04:36,590 --> 00:04:40,210
+So todo with a specific ID.
+62
+
+63
+00:04:40,270 --> 00:04:41,700
+Lets see what would happen right there.
+63
+
+64
+00:04:41,910 --> 00:04:44,760
+So I click on it and we are going to the todo.
+64
+
+65
+00:04:44,790 --> 00:04:45,910
+/1.
+65
+
+66
+00:04:46,020 --> 00:04:49,130
+Let's go to todos again and let's click update.
+66
+
+67
+00:04:49,290 --> 00:04:51,150
+So it's going to todo/2.
+67
+
+68
+00:04:51,330 --> 00:04:56,670
+If you click on it here, it goes to Todos/3. So routing is working.
+68
+
+69
+00:04:56,760 --> 00:05:00,850
+However you would need to still implement the todo page. In the next step,
+69
+
+70
+00:05:00,900 --> 00:05:07,110
+Let's focus on the todo page. Let's implement a form in here, and get a beautiful view. And I'll see you
+70
+
+71
+00:05:07,110 --> 00:05:07,800
+in the next step.
+71
+
+72
+00:05:07,820 --> 00:05:08,550
+Until then, bye bye!

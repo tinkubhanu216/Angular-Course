@@ -1,0 +1,559 @@
+0
+1
+00:00:02,090 --> 00:00:08,560
+Welcome back. In the last step, we saw that when we click the get welcoming message, the hello world bean  service is
+1
+
+2
+00:00:08,630 --> 00:00:11,400
+called and we saw the response coming back.
+2
+
+3
+00:00:11,540 --> 00:00:16,560
+However, we were not able to really get the response and print it on the console.
+3
+
+4
+00:00:16,570 --> 00:00:22,820
+So what we want to do is first get the response, print it on the console, and then make use of it and
+4
+
+5
+00:00:22,820 --> 00:00:24,930
+show it on the welcome page.
+5
+
+6
+00:00:24,950 --> 00:00:26,840
+Let's get started with it right now.
+6
+
+7
+00:00:26,930 --> 00:00:31,820
+The first thing you need to understand is the fact that subscribers send asynchronous call, it means
+7
+
+8
+00:00:32,420 --> 00:00:37,640
+this one will not return the results, but it will be when a synchronous call in javascript.
+8
+
+9
+00:00:37,640 --> 00:00:44,540
+What we need to do, is we need to say: what should we do when we get the results back, when we get the
+9
+
+10
+00:00:44,540 --> 00:00:45,410
+response back.
+10
+
+11
+00:00:45,410 --> 00:00:46,450
+What should we do?
+11
+
+12
+00:00:46,640 --> 00:00:51,000
+We should create a function like that, and tie it up to the subscribe.
+12
+
+13
+00:00:51,260 --> 00:00:54,450
+So what we need to do now, is we need to create a new function.
+13
+
+14
+00:00:54,450 --> 00:00:56,850
+So I'm going outside to get welcome message.
+14
+
+15
+00:00:56,930 --> 00:01:02,460
+So let's not really worry about this stuff right now, let's have the subscribing here.
+15
+
+16
+00:01:02,660 --> 00:01:04,070
+Let's create a new function.
+16
+
+17
+00:01:04,190 --> 00:01:08,530
+I call this handle successful response.
+17
+
+18
+00:01:08,570 --> 00:01:16,550
+So what we are saying is if a successful response comes back to this, you have a successful response
+18
+
+19
+00:01:16,550 --> 00:01:17,440
+response.
+19
+
+20
+00:01:17,600 --> 00:01:26,180
+And what they do here is for now, let's just do a console log of response. We do a lot more a little
+20
+
+21
+00:01:26,180 --> 00:01:26,600
+later.
+21
+
+22
+00:01:26,600 --> 00:01:33,680
+For now, console.log is good enough. and well here, what we need to do is when the successful response
+22
+
+23
+00:01:33,680 --> 00:01:35,780
+comes back, what does it need to do?
+23
+
+24
+00:01:35,900 --> 00:01:44,180
+It needs to call the handle successful response. What we are doing in here is called Arrow function.
+24
+
+25
+00:01:44,480 --> 00:01:51,800
+So what we're defining is, we need to call this.handler successful response, the response which comes
+25
+
+26
+00:01:51,800 --> 00:02:00,260
+back. You're saying when the subscribe whatever is done, by the observable is successful, get the response
+26
+
+27
+00:02:00,560 --> 00:02:05,090
+and call this specific method. One other things you would observe.
+27
+
+28
+00:02:05,160 --> 00:02:08,100
+If I were to log in here.
+28
+
+29
+00:02:08,210 --> 00:02:17,220
+So let's  do a console.log in here, so that log last line of get welcome message.
+29
+
+30
+00:02:17,650 --> 00:02:20,040
+Let's see how this works out.
+30
+
+31
+00:02:20,300 --> 00:02:27,380
+Let's refresh and clear console. Let's call get welcome message.
+31
+
+32
+00:02:27,400 --> 00:02:36,620
+The thing you'll see is last later welcome message is printed first, and then they say hello world. The
+32
+
+33
+00:02:36,620 --> 00:02:43,680
+way it works is this is asynchronous call. What happens is all we are saying execute the Hello World
+33
+
+34
+00:02:43,860 --> 00:02:44,380
+Service,
+34
+
+35
+00:02:44,390 --> 00:02:51,380
+And whenever response comes back to this. And what we're doing, is just declaring it. We don't really need
+35
+
+36
+00:02:51,650 --> 00:02:53,430
+a complete execution.
+36
+
+37
+00:02:53,720 --> 00:03:00,350
+And after that immediately this line is executed, and then the response comes back, maybe after two seconds,
+37
+
+38
+00:03:00,410 --> 00:03:03,290
+three seconds. What response comes back?
+38
+
+39
+00:03:03,290 --> 00:03:05,560
+It get printed out to the ground.
+39
+
+40
+00:03:05,570 --> 00:03:11,730
+So the advantage of this approach is, we're not keeping the thread which is executing this hanging. What
+40
+
+41
+00:03:11,760 --> 00:03:13,910
+we are saying is just declaring it.
+41
+
+42
+00:03:14,000 --> 00:03:18,640
+That's the biggest advantage with observables. With observables.
+42
+
+43
+00:03:18,710 --> 00:03:21,490
+you just declared what needs to be done... and what needs to be done.
+43
+
+44
+00:03:21,520 --> 00:03:27,440
+If a successful response comes back. If it never comes back and then you'll continue executing the rest
+44
+
+45
+00:03:27,440 --> 00:03:28,180
+of the code.
+45
+
+46
+00:03:28,310 --> 00:03:30,800
+And then the response comes back.
+46
+
+47
+00:03:30,800 --> 00:03:35,870
+It would be appropriately handled, because we have already declared how to handle that.
+47
+
+48
+00:03:35,880 --> 00:03:37,610
+Now actually instead of doing this,
+48
+
+49
+00:03:37,650 --> 00:03:45,480
+successfulresponse I could have actually done, it's very easy ... so take console.log.
+49
+
+50
+00:03:45,660 --> 00:03:49,230
+So instead of this.data, what I could have done this as well.
+50
+
+51
+00:03:49,260 --> 00:03:55,560
+So let's say I was doing console.log response and I would want to get the message object right.
+51
+
+52
+00:03:55,560 --> 00:04:00,810
+What we want to do, is we would want to get the welcome message from the response. We would want to pick
+52
+
+53
+00:04:00,810 --> 00:04:07,590
+up the message. What would happen if I do a respond to the message? It says compilation error.
+53
+
+54
+00:04:07,850 --> 00:04:09,890
+That response does not exist.
+54
+
+55
+00:04:10,290 --> 00:04:13,350
+The message does not exist on the response.
+55
+
+56
+00:04:13,350 --> 00:04:16,650
+Now we know that in the response there is a message.
+56
+
+57
+00:04:16,860 --> 00:04:24,300
+How do we define the object which is expected back, when I execute a service? We can do that by going to
+57
+
+58
+00:04:24,300 --> 00:04:30,930
+the welcome data service and over here, I'll create another class defining what kind of response I am
+58
+
+59
+00:04:30,930 --> 00:04:31,820
+expecting
+59
+
+60
+00:04:31,820 --> 00:04:37,420
+back. So I'll say export class I'll call this hello world.
+60
+
+61
+00:04:38,040 --> 00:04:41,000
+And it's create a constructor in here.
+61
+
+62
+00:04:42,280 --> 00:04:49,300
+Let's define a few public properties, and the structure we expect is the Hello world bean, would contain
+62
+
+63
+00:04:49,360 --> 00:04:53,790
+a message which is a string.
+63
+
+64
+00:04:54,220 --> 00:04:59,170
+So what we're doing in here, is we are creating a simple bean defining the structure of the response
+64
+
+65
+00:04:59,200 --> 00:05:01,220
+that we're expecting.
+65
+
+66
+00:05:01,310 --> 00:05:08,100
+And the great thing is you can say in the GET, what response structure I'm expecting back? I can say
+66
+
+67
+00:05:08,110 --> 00:05:12,540
+I am expecting a structure of the kind: hello world bean.
+67
+
+68
+00:05:12,590 --> 00:05:18,400
+So if you had better generics in Java, this is something very similar to generics in Java. We are saying
+68
+
+69
+00:05:19,150 --> 00:05:22,630
+we are expecting this kind of response back.
+69
+
+70
+00:05:22,640 --> 00:05:29,170
+And what I can do in here, is go and see the code would come by and so... what we are now getting is a response
+70
+
+71
+00:05:29,560 --> 00:05:32,530
+.message.
+71
+
+72
+00:05:32,710 --> 00:05:39,290
+I'll go back to handle successful response, let's call it the successful response with the response.
+72
+
+73
+00:05:39,580 --> 00:05:45,060
+And over here, I got compilation error, because this.handles successful response and we're here now.
+73
+
+74
+00:05:45,070 --> 00:05:49,960
+I can do a response.message.
+74
+
+75
+00:05:50,160 --> 00:05:52,410
+Let's see what would happen, when I do get ready method.
+75
+
+76
+00:05:52,440 --> 00:05:56,140
+You'd see that hello world is also being printed up.
+76
+
+77
+00:05:56,220 --> 00:05:56,810
+That's good.
+77
+
+78
+00:05:56,910 --> 00:06:02,340
+So what we have done, is we have the response, we are able to get the message from the response, and now
+78
+
+79
+00:06:02,510 --> 00:06:05,100
+we would want to show it on the welcome component.
+79
+
+80
+00:06:05,110 --> 00:06:12,930
+So let's create another container, and let's create a quick h2 out here... let's do this.
+80
+
+81
+00:06:13,090 --> 00:06:20,010
+h2 and /h2 . A customized.
+81
+
+82
+00:06:20,250 --> 00:06:31,120
+Welcome message over here. What we want over here is the message which comes back from the component.
+82
+
+83
+00:06:31,220 --> 00:06:40,590
+So what you need to do, is need to first create a member variable.  message ... welcome message.
+83
+
+84
+00:06:42,130 --> 00:06:47,750
+from service, and I'll say it's a string. What we can do.
+84
+
+85
+00:06:47,770 --> 00:06:51,480
+now, I would want to populate the welcome message from service. Where can I do that?
+85
+
+86
+00:06:51,760 --> 00:06:58,210
+I can do that in here. Instead of logging the response and all that stuff, what I'll do is make a message
+86
+
+87
+00:06:58,210 --> 00:07:07,000
+from service = response.message. compilation error is not there.
+87
+
+88
+00:07:07,800 --> 00:07:08,710
+So what is happening?
+88
+
+89
+00:07:08,720 --> 00:07:12,110
+The welcome message is tied up to the response message.
+89
+
+90
+00:07:12,110 --> 00:07:18,710
+The other thing is I don't really want to show this always.  For that welcome message.
+90
+
+91
+00:07:18,710 --> 00:07:20,730
+So we see it here now.
+91
+
+92
+00:07:20,750 --> 00:07:22,820
+I don't really want to show this always.
+92
+
+93
+00:07:22,830 --> 00:07:30,430
+I want to show it only when welcome message from service has a value. So I put a *ngIf on top of the whole thing.
+93
+
+94
+00:07:30,450 --> 00:07:31,800
+That's what would happen right now?
+94
+
+95
+00:07:32,820 --> 00:07:37,370
+Let's say a message, and you can see that I don't need this.
+95
+
+96
+00:07:37,360 --> 00:07:40,540
+If I can minimize this you can see.
+96
+
+97
+00:07:40,580 --> 00:07:42,240
+Hello world being printed.
+97
+
+98
+00:07:42,270 --> 00:07:44,070
+Where is this coming from?
+98
+
+99
+00:07:44,330 --> 00:07:47,860
+The hello world is coming from this particular thing.
+99
+
+100
+00:07:48,170 --> 00:07:51,880
+Let's change this to make sure that we are getting it from here.
+100
+
+101
+00:07:52,130 --> 00:07:53,090
+So I'm saving this.
+101
+
+102
+00:07:53,090 --> 00:07:53,860
+You can see that.
+102
+
+103
+00:07:53,900 --> 00:07:56,090
+So it is restarting and picking it up.
+103
+
+104
+00:07:56,090 --> 00:07:58,460
+So make sure that you restart it and pick it up.
+104
+
+105
+00:07:58,460 --> 00:08:00,850
+And if you do hello world bean.
+105
+
+106
+00:08:00,980 --> 00:08:02,880
+Hello world changed is coming up.
+106
+
+107
+00:08:02,900 --> 00:08:03,530
+That's cool!
+107
+
+108
+00:08:03,620 --> 00:08:05,320
+And now, get welcome message.
+108
+
+109
+00:08:05,510 --> 00:08:08,350
+Hello world changed is now being printed.
+109
+
+110
+00:08:08,600 --> 00:08:15,560
+So what you want to successfully do until now, is we really will call a service in the backend, and we
+110
+
+111
+00:08:15,560 --> 00:08:19,070
+were able to show the response from it in the friend.
+111
+
+112
+00:08:19,070 --> 00:08:23,150
+And congratulations and I'll see you in the next step.

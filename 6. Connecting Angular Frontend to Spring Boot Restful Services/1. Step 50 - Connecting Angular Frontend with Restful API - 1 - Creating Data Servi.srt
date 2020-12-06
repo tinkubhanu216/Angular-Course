@@ -1,0 +1,515 @@
+0
+1
+00:00:00,120 --> 00:00:01,440
+Welcome back.
+1
+
+2
+00:00:01,590 --> 00:00:05,810
+We created a few services using spring boot the last few steps.
+2
+
+3
+00:00:05,820 --> 00:00:10,790
+And when I ran this Hello World application,  I get this message back.
+3
+
+4
+00:00:10,940 --> 00:00:19,150
+Now the interesting part is how do you call these services 
+from your front-end, and from our application.
+4
+
+5
+00:00:19,350 --> 00:00:25,860
+What we'll start with is we take the welcome screen, and we add a button in here so let's add a button
+5
+
+6
+00:00:25,860 --> 00:00:33,390
+in here. And our eventual aim is to be able to call the service and see the message which is coming back
+6
+
+7
+00:00:33,810 --> 00:00:41,860
+in here. The next few steps would help you understand the complexities associated with invoking RESTful 
+7
+
+8
+00:00:41,910 --> 00:00:43,920
+API from angular applications.
+8
+
+9
+00:00:43,950 --> 00:00:49,290
+We will use something called HTTPClientModule, where you'll see that Angular provides us with an awesome
+9
+
+10
+00:00:49,290 --> 00:00:52,150
+framework based on something called the observable.
+10
+
+11
+00:00:52,170 --> 00:00:53,950
+But let's get started now.
+11
+
+12
+00:00:53,960 --> 00:00:59,820
+Let's start with enhancing the welcome screen to have a button, and something which we can click. Before
+12
+
+13
+00:00:59,820 --> 00:01:00,800
+we get started,
+13
+
+14
+00:01:00,840 --> 00:01:07,890
+Make sure that you are able to run the REST service, as well as you have your Angular thing up and
+14
+
+15
+00:01:07,890 --> 00:01:08,590
+running.
+15
+
+16
+00:01:08,720 --> 00:01:15,510
+Or you go to our favorite IDE. visual studio code, and let's move on to welcome.component.
+16
+
+17
+00:01:15,530 --> 00:01:17,800
+ts. similar to what we would want to add.
+17
+
+18
+00:01:18,000 --> 00:01:19,970
+So let's copy this out.
+18
+
+19
+00:01:20,070 --> 00:01:25,840
+I'll copy this, and create a todo. What I'll do is allow a simple message in here: click here.
+19
+
+20
+00:01:27,090 --> 00:01:39,200
+to get customized welcome page. and let's have a simple button in here right... button.
+20
+
+21
+00:01:39,960 --> 00:01:41,140
+And what do you want to do?
+21
+
+22
+00:01:41,190 --> 00:01:48,010
+We would want to enable the click event, to click. So we are doing and event binding.
+22
+
+23
+00:01:48,060 --> 00:01:53,990
+So we would want to bind to a specific method, and just call this get welcome message.
+23
+
+24
+00:01:53,990 --> 00:02:01,670
+We create this method. let's create this method. I call this:  get welcome.
+24
+
+25
+00:02:01,680 --> 00:02:09,190
+cool! If you would go to the screen, you would see that it would refresh and you have the get welcome
+25
+
+26
+00:02:09,240 --> 00:02:10,790
+a message.
+26
+
+27
+00:02:10,860 --> 00:02:14,860
+Let's add a simple class .button.
+27
+
+28
+00:02:15,070 --> 00:02:21,130
+The bootstrap... and we would want to set this button.
+28
+
+29
+00:02:21,260 --> 00:02:22,460
+Success.
+29
+
+30
+00:02:22,570 --> 00:02:32,090
+It doesn't reflect! It's time for me to relearn my CSS... thinks I should not really have a dot in here.
+30
+
+31
+00:02:32,160 --> 00:02:35,350
+So the message at the place here.
+31
+
+32
+00:02:35,380 --> 00:02:40,740
+Now to get welcome message ...button appears in the form we would want.
+32
+
+33
+00:02:40,820 --> 00:02:43,380
+What you want to do is click on this button right.
+33
+
+34
+00:02:43,380 --> 00:02:45,560
+If I click this button right now what would happen.
+34
+
+35
+00:02:45,890 --> 00:02:47,270
+You know what would happen.
+35
+
+36
+00:02:47,270 --> 00:02:48,760
+It would give us an error.
+36
+
+37
+00:02:49,040 --> 00:02:54,240
+Obviously right! To go to the console, you would see that there's an error.
+37
+
+38
+00:02:54,390 --> 00:02:56,680
+There is no method of that kind present.
+38
+
+39
+00:02:56,970 --> 00:03:00,810
+So getwelcomemessage() is not a function so we should recreate this function.
+39
+
+40
+00:03:00,810 --> 00:03:01,850
+Think about it.
+40
+
+41
+00:03:01,970 --> 00:03:04,660
+Where should I create the getwelcomemessage function?
+41
+
+42
+00:03:04,700 --> 00:03:06,160
+The component is welcome.
+42
+
+43
+00:03:06,260 --> 00:03:08,310
+Component.ts is where we would go.
+43
+
+44
+00:03:08,550 --> 00:03:15,360
+And let's quickly create that function.  getwelcomemessage() is the method that would be
+44
+
+45
+00:03:15,360 --> 00:03:23,220
+invoked when ... console.log() getwelcomemessage().
+45
+
+46
+00:03:23,310 --> 00:03:24,130
+Cool.
+46
+
+47
+00:03:24,410 --> 00:03:25,580
+When I say get welcome message
+47
+
+48
+00:03:25,620 --> 00:03:31,230
+Get welcome message is printed out to the console. let's comment out the other message which is coming
+48
+
+49
+00:03:31,230 --> 00:03:31,640
+in here.
+49
+
+50
+00:03:31,660 --> 00:03:36,570
+The console.log() which you wrote in an earlier step.
+50
+
+51
+00:03:36,670 --> 00:03:40,630
+So the only thing which we see right now is what we get from here.
+51
+
+52
+00:03:40,680 --> 00:03:41,240
+That's good.
+52
+
+53
+00:03:41,370 --> 00:03:47,310
+Now we have a button, we have tied it to a method inside the welcome component. But what we really want
+53
+
+54
+00:03:47,310 --> 00:03:51,030
+to do is we would want to invoke this hello world.
+54
+
+55
+00:03:51,060 --> 00:03:53,280
+That's the thing that we would want to do.
+55
+
+56
+00:03:53,310 --> 00:03:57,370
+How do we invoke the service?
+56
+
+57
+00:03:57,900 --> 00:04:00,690
+As usual we create a new service.
+57
+
+58
+00:04:00,990 --> 00:04:07,370
+This service would call up backend service a backend API.
+58
+
+59
+00:04:07,380 --> 00:04:15,390
+That's the reason why we call it data service, and getting what you get is the welcome message.
+59
+
+60
+00:04:15,720 --> 00:04:18,670
+Let's go back to our favorite Angular CLI.
+60
+
+61
+00:04:18,870 --> 00:04:21,330
+Make sure that you are inside the folder.
+61
+
+62
+00:04:21,570 --> 00:04:27,010
+You can see if I open the present working directory in the root folder of the Angular application.
+62
+
+63
+00:04:27,030 --> 00:04:27,760
+That's cool.
+63
+
+64
+00:04:27,930 --> 00:04:35,540
+I want to generate a service. ng generate service... and I want to have a service...
+64
+
+65
+00:04:35,610 --> 00:04:41,680
+So what I do is I create it in folder structures service/data.
+65
+
+66
+00:04:41,790 --> 00:04:44,060
+So this is where we have all the services.
+66
+
+67
+00:04:44,130 --> 00:04:50,950
+Lets group all the data. So we sit in the data folder and what data does it get ?So the data it would get
+67
+
+68
+00:04:50,970 --> 00:04:55,460
+is welcomeData
+68
+
+69
+00:04:55,540 --> 00:04:59,220
+So I'm saying service/data/welcomeData
+69
+
+70
+00:04:59,290 --> 00:05:02,790
+So we had to create a data service in the folder.
+70
+
+71
+00:05:02,840 --> 00:05:10,510
+So with /data to what would have been PRESS ENTER It would create a couple of files as usual.
+71
+
+72
+00:05:10,700 --> 00:05:14,020
+And it's welcomeData service.
+72
+
+73
+00:05:14,110 --> 00:05:18,190
+Let's take the welcome data service to pick up the welcome data.
+73
+
+74
+00:05:18,260 --> 00:05:24,270
+These file and over here, you can see that it's typical thing which is ready for dependency injection
+74
+
+75
+00:05:24,310 --> 00:05:28,200
+because it has @injectable within the scope so that's cool.
+75
+
+76
+00:05:28,450 --> 00:05:35,830
+We go ahead and create a simple method in here, which would help us in retrieving the data from the backend
+76
+
+77
+00:05:35,830 --> 00:05:36,520
+server.
+77
+
+78
+00:05:36,730 --> 00:05:41,680
+Let's create a method down here, that we can use to work the Hello World Service.
+78
+
+79
+00:05:41,700 --> 00:05:51,820
+I call this execute hello world bean service.
+79
+
+80
+00:05:52,000 --> 00:05:53,230
+Let's not really do anything.
+80
+
+81
+00:05:53,230 --> 00:06:01,550
+It's just log execute hello world bean service.
+81
+
+82
+00:06:01,670 --> 00:06:02,660
+Now what do you want to do?
+82
+
+83
+00:06:02,670 --> 00:06:08,160
+We want to make use of this service in the welcome component.
+83
+
+84
+00:06:08,170 --> 00:06:09,940
+So let's go with the welcome component.
+84
+
+85
+00:06:10,200 --> 00:06:13,010
+And we would want to use the welcome the welcome data.
+85
+
+86
+00:06:13,020 --> 00:06:14,940
+So we see it here how can we do that.
+86
+
+87
+00:06:15,060 --> 00:06:17,430
+You need to use dependency injection.
+87
+
+88
+00:06:17,670 --> 00:06:23,430
+Use your let's reformat this so that we can have multiple things clearly listed.
+88
+
+89
+00:06:23,640 --> 00:06:36,500
+So I will say service... what you'd want to do, is use welcome data service. So let's go and import it in.
+89
+
+90
+00:06:36,510 --> 00:06:40,590
+You see that there is a welcome data service which would be put it at the top.
+90
+
+91
+00:06:40,730 --> 00:06:43,720
+service: WelcomeDataService that's cool!
+91
+
+92
+00:06:44,130 --> 00:06:49,670
+What we want to do here, is we would want to call it i the getWelcomeMessage.
+92
+
+93
+00:06:50,130 --> 00:06:54,660
+this.service.execute
+93
+
+94
+00:06:54,750 --> 00:06:55,730
+HelloWorldBeanService
+94
+
+95
+00:06:55,760 --> 00:06:57,840
+So is that what you would want to do.
+95
+
+96
+00:06:57,860 --> 00:07:02,510
+remove this one because we don't really need it anymore.
+96
+
+97
+00:07:02,710 --> 00:07:06,700
+That's what would happen, if it's going to this application.
+97
+
+98
+00:07:06,700 --> 00:07:11,030
+Click... wait for it to relaunch... get.
+98
+
+99
+00:07:11,080 --> 00:07:14,080
+So it's executing the Hello World Service.
+99
+
+100
+00:07:14,140 --> 00:07:15,640
+It is not really written
+100
+
+101
+00:07:15,640 --> 00:07:22,670
+The logic for it yet. What we do in the next step is focus on the logic for the higher level.
+101
+
+102
+00:07:22,670 --> 00:07:27,110
+Let's see how to call the execute hello world bean service,  in the next step.
+102
+
+103
+00:07:27,130 --> 00:07:28,010
+I'll see you in the next step.

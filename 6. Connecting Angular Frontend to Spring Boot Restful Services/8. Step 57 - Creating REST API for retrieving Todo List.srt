@@ -1,0 +1,654 @@
+0
+1
+00:00:01,400 --> 00:00:05,400
+Welcome back. In the step, I would want to create and save all todo for a user.
+1
+
+2
+00:00:05,600 --> 00:00:14,640
+Get service. One other things I observed when I went to the package structure, is the way we have organized
+2
+
+3
+00:00:14,640 --> 00:00:15,210
+our stuff.
+3
+
+4
+00:00:15,220 --> 00:00:16,880
+It's not really perfect.
+4
+
+5
+00:00:16,960 --> 00:00:22,360
+What I would want to start with, is I would want to start with leaving these two specific packages.
+5
+
+6
+00:00:22,360 --> 00:00:27,160
+So I would want to say this bean, I would want to move to a package called Hello world.
+6
+
+7
+00:00:29,490 --> 00:00:32,520
+.helloworld do control-1 or command-1
+7
+
+8
+00:00:32,520 --> 00:00:39,770
+And I'll say, move hello world into that package, and I'll also do the similar thing with the hello world
+8
+
+9
+00:00:39,770 --> 00:00:40,750
+controller.
+9
+
+10
+00:00:40,820 --> 00:00:42,680
+What I would want to do is move this to
+10
+
+11
+00:00:45,680 --> 00:00:47,230
+the Helloworld controller.
+11
+
+12
+00:00:47,500 --> 00:00:57,620
+I want to move to .helloworld package. So I want to move it.  You'd see that everything is very well organized.
+12
+
+13
+00:00:57,750 --> 00:01:06,340
+So we have all the little pieces in a single package, and we have the last full application in the package.
+13
+
+14
+00:01:06,360 --> 00:01:07,550
+That's good.
+14
+
+15
+00:01:07,560 --> 00:01:11,850
+Just make sure that everything is fine, by just running the services again.
+15
+
+16
+00:01:11,910 --> 00:01:13,160
+So this looks cool.
+16
+
+17
+00:01:13,290 --> 00:01:19,170
+If you go to the home and just do a get welcome message, and it is looking fine so everything else is fine.
+17
+
+18
+00:01:19,170 --> 00:01:25,900
+Let's now focus on creating the retrieve all tools for users. is What we do is create a new class.
+18
+
+19
+00:01:26,160 --> 00:01:30,690
+I call this todo resource, and finish as usual.
+19
+
+20
+00:01:30,690 --> 00:01:38,560
+We would add at the rest controller annotation, press control space and import the disk controller in
+20
+
+21
+00:01:38,560 --> 00:01:39,450
+addition.
+21
+
+22
+00:01:39,620 --> 00:01:47,630
+What do you want to do, as we would want to create a get method to public list of todo's. So you'd want
+22
+
+23
+00:01:47,630 --> 00:01:56,120
+to return a list of todos, get all Todo's and would want to be able to get them for a specific user.
+23
+
+24
+00:01:56,540 --> 00:02:03,750
+It would get all todos for a specific user, and we would want to return all those back.
+24
+
+25
+00:02:03,790 --> 00:02:10,950
+What do you do to start off, is we'll not really talk to a database and all. we'll focus on having a simple
+25
+
+26
+00:02:11,400 --> 00:02:18,990
+in-memory service. At a later point in time, in due course, we'll convert using JPA and hibernate based API.
+26
+
+27
+00:02:19,030 --> 00:02:22,880
+So for now let's get started with very very simple things.
+27
+
+28
+00:02:23,100 --> 00:02:25,830
+Let's focus on one thing at a time.
+28
+
+29
+00:02:26,070 --> 00:02:32,170
+What I'll do is create a new class, called todo. So control-1  over here, create class todo.
+29
+
+30
+00:02:32,390 --> 00:02:41,870
+Let's go out and create it in the .todo package and say finish. What I'll do is also more.
+30
+
+31
+00:02:41,890 --> 00:02:50,110
+The todo service to the .todo package. control-1 move to the .todo package. that's cool, a few compilation errors.
+31
+
+32
+00:02:50,130 --> 00:02:50,660
+that's fine.
+32
+
+33
+00:02:50,680 --> 00:02:52,000
+We'll fix them as we go.
+33
+
+34
+00:02:53,600 --> 00:02:58,520
+Public long id. We want to store an ID should it be public?
+34
+
+35
+00:02:58,520 --> 00:03:05,390
+Actually it should be private, and I would want to store which user that belongs to, let's do private
+35
+
+36
+00:03:05,580 --> 00:03:06,370
+String
+36
+
+37
+00:03:06,620 --> 00:03:07,730
+Username.
+37
+
+38
+00:03:08,130 --> 00:03:12,340
+What is the description of that specific todo? private String description
+38
+
+39
+00:03:13,480 --> 00:03:22,570
+You'd want to store the target date, private Date target date and you'd want to store the completion
+39
+
+40
+00:03:22,660 --> 00:03:31,410
+status is it completed or not? private  boolean isDone. let's import the java.util.date. Be careful,
+40
+
+41
+00:03:31,420 --> 00:03:33,150
+it should be java .util.date
+41
+
+42
+00:03:33,450 --> 00:03:38,490
+Let's quickly create the getters and setters, for all the to dos. So i'll generate the getters and setters
+42
+
+43
+00:03:38,500 --> 00:03:41,450
+and also say select all, and really create getters and setters.
+43
+
+44
+00:03:41,470 --> 00:03:48,000
+So for all this stuff as well. Let's create a constructor as well.  Teh way i generated the getters ans setters
+44
+
+45
+00:03:48,090 --> 00:03:54,150
+if you're new to this, is by select all,  generate getters and setters, and yes, there are other methods as
+45
+
+46
+00:03:54,190 --> 00:03:54,560
+well.
+46
+
+47
+00:03:54,730 --> 00:03:58,540
+So you can do tostring, generate constructor, and all that stuff.
+47
+
+48
+00:03:58,580 --> 00:04:02,710
+I also want you to construct, and I do generate constructor using fields.
+48
+
+49
+00:04:03,150 --> 00:04:11,060
+So alt-shift-s,  and generate constructor,  using fields. So let's generate a constructor.
+49
+
+50
+00:04:11,170 --> 00:04:12,480
+It's created down here.
+50
+
+51
+00:04:12,530 --> 00:04:14,520
+I don't really want it down here.
+51
+
+52
+00:04:14,720 --> 00:04:20,380
+I would want it done here. So quickly it created a bean with a constructor, and also the getters and setters
+52
+
+53
+00:04:20,400 --> 00:04:27,500
+I'll just a little format it ctrl-shift-f, or command-shift-f,  And let's go to the resource and let's
+53
+
+54
+00:04:27,890 --> 00:04:29,730
+do an import of java.util...
+54
+
+55
+00:04:29,810 --> 00:04:33,740
+This is not really compiling because we are not yet returning a list of todos back.
+55
+
+56
+00:04:33,890 --> 00:04:37,350
+What I would want to do is I would want to create a service.
+56
+
+57
+00:04:37,490 --> 00:04:45,990
+So I want private todo... start with a hardcoded value,  so we still do hardcored todo service and call this to
+57
+
+58
+00:04:46,000 --> 00:04:49,710
+do service.
+58
+
+59
+00:04:49,720 --> 00:04:55,740
+Service does not exist yet, so let's create a control-1 create class todo hardcoded service.
+59
+
+60
+00:04:56,020 --> 00:05:03,140
+Let's go out and create in the same package, todo package, that's cool. do a finish.
+60
+
+61
+00:05:03,560 --> 00:05:10,100
+What I would want to do is todo hardcoded service,  I would want to be able to have a static list of those.
+61
+
+62
+00:05:10,120 --> 00:05:24,920
+So I say private static list of todos... todos =  ... you add a list of todos into the the list, do a 
+62
+
+63
+00:05:24,910 --> 00:05:27,070
+list control-1 and import it in.
+63
+
+64
+00:05:27,080 --> 00:05:30,500
+You don't really using import it,  right... in here because it's imported from here.
+64
+
+65
+00:05:30,700 --> 00:05:35,910
+Let's import java.util.List as well. What we'll do is for now, 
+65
+
+66
+00:05:36,010 --> 00:05:38,230
+This would act as our database.
+66
+
+67
+00:05:38,410 --> 00:05:43,270
+So we would put all the things into this, and create method around it.
+67
+
+68
+00:05:43,330 --> 00:05:45,140
+Let's initialize the data in this.
+68
+
+69
+00:05:45,160 --> 00:05:46,820
+So static.
+69
+
+70
+00:05:46,860 --> 00:05:54,070
+So if you create a static initializer block, and add in todos. add it to create a new todo down here.
+70
+
+71
+00:05:54,550 --> 00:06:00,270
+So what else do we need to create a new todo? I need a id for the ID, what I'll do is I'll create a quick
+71
+
+72
+00:06:02,550 --> 00:06:09,530
+private static int idCounter.
+72
+
+73
+00:06:09,660 --> 00:06:11,010
+= 0.
+73
+
+74
+00:06:11,070 --> 00:06:20,270
+And each time for every todo. let's do a ++IdCounter,  so IDs would start with 1.
+74
+
+75
+00:06:20,680 --> 00:06:23,080
+And what's the next parameter? It's  username.
+75
+
+76
+00:06:23,170 --> 00:06:25,770
+For now it's hardcoded to in28minutes.
+76
+
+77
+00:06:27,490 --> 00:06:28,980
+The next one is a description.
+77
+
+78
+00:06:28,990 --> 00:06:33,880
+Let's say we would want to 'learn to dance'.
+78
+
+79
+00:06:33,980 --> 00:06:35,170
+That's the first one.
+79
+
+80
+00:06:35,860 --> 00:06:44,770
+Next one is the date, so new Date(),  and for all the todos,  Let's mark them as false to start off. Let's do you a control-1, for java.
+80
+
+81
+00:06:44,780 --> 00:06:45,900
+util.date,
+81
+
+82
+00:06:46,120 --> 00:06:47,330
+We're gettign it into here
+82
+
+83
+00:06:47,330 --> 00:06:55,700
+.date is what we want, and press a semi-colon. Now we have this present,  decrease the font
+83
+
+84
+00:06:55,700 --> 00:07:01,220
+size a bit so that we can see a little bit more of this stuff . Now that we are typing in a lot of
+84
+
+85
+00:07:01,220 --> 00:07:02,190
+stuff in here.
+85
+
+86
+00:07:02,720 --> 00:07:04,170
+I would want to add three
+86
+
+87
+00:07:04,180 --> 00:07:05,950
+todos: in28mionutes,  learn to dance.
+87
+
+88
+00:07:06,260 --> 00:07:16,730
+I want to learn about microservices,  I would want to learn about Angular. Is that good?
+88
+
+89
+00:07:16,850 --> 00:07:20,620
+Let's start with creating a very simple method to return this list of todos.
+89
+
+90
+00:07:20,630 --> 00:07:20,920
+Right?
+90
+
+91
+00:07:20,930 --> 00:07:22,270
+So what do we need?
+91
+
+92
+00:07:22,320 --> 00:07:24,690
+We would want to retrieve all these todos back.
+92
+
+93
+00:07:24,900 --> 00:07:29,780
+What we'll do is, we'll create a method called Find...list of users,
+93
+
+94
+00:07:32,490 --> 00:07:39,440
+find all the list of todos that
+94
+
+95
+00:07:39,450 --> 00:07:40,570
+you are looking for.
+95
+
+96
+00:07:40,620 --> 00:07:47,040
+Show the list of todos, that I need to say return todos.
+96
+
+97
+00:07:47,270 --> 00:07:50,390
+Now we have the todos being returned back from here.
+97
+
+98
+00:07:50,420 --> 00:07:54,770
+One of the things which we are doing in here, is we are editing the spring data JPA, so that
+98
+
+99
+00:07:54,770 --> 00:07:57,170
+we can easily switch to it later.
+99
+
+100
+00:07:57,170 --> 00:08:03,860
+For now let's go to the resource, and let's make use of the hardcoded todos. Now, the first thing
+100
+
+101
+00:08:03,860 --> 00:08:04,700
+which we need to use.
+101
+
+102
+00:08:04,790 --> 00:08:06,620
+This should be a spring component right?
+102
+
+103
+00:08:06,620 --> 00:08:07,340
+What we would want,
+103
+
+104
+00:08:07,370 --> 00:08:11,290
+We don't want to create instances where we want to bring to manage that.
+104
+
+105
+00:08:11,310 --> 00:08:17,010
+So I would say @component... This is a business service.
+105
+
+106
+00:08:17,040 --> 00:08:23,610
+So a better thing to do, would be to say this is an @servicecontrol. One important service I'll remove
+106
+
+107
+00:08:23,610 --> 00:08:30,640
+the component which we imported earlier. And now let's go back to the resource, and now it's the ADD component.
+107
+
+108
+00:08:30,640 --> 00:08:32,180
+How do I get it in here?
+108
+
+109
+00:08:33,000 --> 00:08:36,310
+At @Autowire
+109
+
+110
+00:08:36,470 --> 00:08:38,670
+So we would want to autowire the service
+110
+
+111
+00:08:38,800 --> 00:08:44,620
+In here, we would want to manage our dependencies, and now back and say Return todo.
+111
+
+112
+00:08:44,650 --> 00:08:47,930
+service.find()
+112
+
+113
+00:08:48,030 --> 00:08:50,260
+Now what do you want do? map to this.
+113
+
+114
+00:08:50,320 --> 00:08:53,100
+We want to map the GET request.
+114
+
+115
+00:08:53,160 --> 00:08:57,930
+So get mapping, and what is that you are that we would want to map to this?
+115
+
+116
+00:08:57,930 --> 00:09:03,420
+We already decided that it /users/{user_name}/todos
+116
+
+117
+00:09:03,420 --> 00:09:07,140
+I'll take that and put it down here.
+117
+
+118
+00:09:07,170 --> 00:09:15,440
+And instead of user_name,  use username, and this string username is a path variable. We see
+118
+
+119
+00:09:15,510 --> 00:09:24,520
+we already looked at it. The way we can use this is @PathVariable, control-1,  import path variable.
+119
+
+120
+00:09:24,530 --> 00:09:33,550
+Now I can import that mapping in. Import it in, and save this. Now, you have a URL.
+120
+
+121
+00:09:33,570 --> 00:09:36,620
+user/username/ todos.
+121
+
+122
+00:09:36,730 --> 00:09:40,220
+Now if you go ahead and if you URL: localhost:8080/users.
+122
+
+123
+00:09:40,320 --> 00:09:42,240
+/in28minutes/todos,
+123
+
+124
+00:09:42,280 --> 00:09:44,750
+You see these two todos present.
+124
+
+125
+00:09:44,830 --> 00:09:50,410
+One of the things is right now, as things stand, we are not really using the username variable.
+125
+
+126
+00:09:50,680 --> 00:09:56,420
+So we choose a username, you put in the service, and all the todos which are present in there. In this
+126
+
+127
+00:09:56,450 --> 00:09:56,960
+quick step,
+127
+
+128
+00:09:56,980 --> 00:10:02,260
+We created a service, we wanted to retrieve all the stored todos, and we wanted to connect it to the front
+128
+
+129
+00:10:02,260 --> 00:10:06,810
+end. So we created a service and we are ready to connect to the back-end.
+129
+
+130
+00:10:06,870 --> 00:10:08,830
+Let's see how we can do that.
+130
+
+131
+00:10:08,830 --> 00:10:10,190
+I'll see you in the next step.

@@ -1,0 +1,389 @@
+0
+1
+00:00:00,740 --> 00:00:07,140
+Welcome back. In the previous steps, we implemented the Http client, and when we click get a message we get you
+1
+
+2
+00:00:07,150 --> 00:00:09,160
+a customized welcome message, hello world changed.
+2
+
+3
+00:00:09,170 --> 00:00:13,590
+That's cool! We're able to get some text back and show it on the front end, and that's wonderful.
+3
+
+4
+00:00:13,820 --> 00:00:15,920
+But what if something goes wrong?
+4
+
+5
+00:00:15,950 --> 00:00:18,720
+What if the server is throwing an exception?
+5
+
+6
+00:00:18,770 --> 00:00:21,790
+What if there's an error when you're calling a specific service?
+6
+
+7
+00:00:21,920 --> 00:00:22,960
+How do you handle that?
+7
+
+8
+00:00:22,970 --> 00:00:24,500
+Let's see what would happen. Right now,
+8
+
+9
+00:00:24,550 --> 00:00:25,870
+There is an error on the server.
+9
+
+10
+00:00:25,950 --> 00:00:30,010
+I'll comment this out and I'll take a shortcut: throw new
+10
+
+11
+00:00:30,010 --> 00:00:33,900
+RuntimeException. That's exceptional.
+11
+
+12
+00:00:35,090 --> 00:00:41,520
+throw new runtime exception and say OK some error has happened.
+12
+
+13
+00:00:43,250 --> 00:00:44,500
+create a message.
+13
+
+14
+00:00:44,500 --> 00:00:49,340
+Right some error happened, contact support at so and so OK.
+14
+
+15
+00:00:49,470 --> 00:00:56,610
+Let's say this was a properly customized error message which is coming up from the server. Let's say this
+15
+
+16
+00:00:56,610 --> 00:00:58,790
+is the thing which is present right now.
+16
+
+17
+00:00:59,040 --> 00:01:01,240
+When I say get welcome message now.
+17
+
+18
+00:01:01,350 --> 00:01:02,410
+What would happen?
+18
+
+19
+00:01:02,460 --> 00:01:04,670
+It gets an earror response.
+19
+
+20
+00:01:04,700 --> 00:01:08,670
+Let's load the page again and another click get welcome message.
+20
+
+21
+00:01:08,670 --> 00:01:09,720
+What would happen?
+21
+
+22
+00:01:09,720 --> 00:01:11,520
+You'd see that there's an error there.
+22
+
+23
+00:01:11,640 --> 00:01:14,820
+So it says get 500 error response.
+23
+
+24
+00:01:15,000 --> 00:01:19,710
+But the user has no signal that some error has happened.
+24
+
+25
+00:01:19,710 --> 00:01:23,250
+You don't expect error. So go to the console and see the fact that there's an error.
+25
+
+26
+00:01:23,370 --> 00:01:23,820
+Right?
+26
+
+27
+00:01:23,910 --> 00:01:26,160
+So you don't want the user to be doing that.
+27
+
+28
+00:01:26,370 --> 00:01:29,870
+You would want the user to be having a visual representation of what's happening.
+28
+
+29
+00:01:29,910 --> 00:01:33,300
+You need to tell the user something really going wrong.
+29
+
+30
+00:01:33,300 --> 00:01:40,470
+How do we do that? well we can do that is by using the Subscribe. Subscribe method the first parameter
+30
+
+31
+00:01:40,590 --> 00:01:43,100
+is the function to handle successful response.
+31
+
+32
+00:01:43,110 --> 00:01:47,620
+You can adding another parameter to tell what should happen when there is an error.
+32
+
+33
+00:01:47,640 --> 00:02:00,690
+at this point. So I can say handle error response, and over here what I can do is I can pass in error.
+33
+
+34
+00:02:03,670 --> 00:02:11,370
+now what i'll do id: this.handle error response it's not really defined in here.
+34
+
+35
+00:02:11,680 --> 00:02:13,680
+So let's do that... handle
+35
+
+36
+00:02:16,720 --> 00:02:20,510
+error response for error.
+36
+
+37
+00:02:20,710 --> 00:02:23,520
+Let's handle that in here.
+37
+
+38
+00:02:24,010 --> 00:02:25,090
+So what we need to do.
+38
+
+39
+00:02:25,220 --> 00:02:29,670
+I'll say this error message from server... is I'm taking a shortcut in here.
+39
+
+40
+00:02:29,890 --> 00:02:34,920
+The ideal way you do that is probably adding error message at the top.
+40
+
+41
+00:02:35,110 --> 00:02:41,230
+So you would go to the welcome component.  have another div at the top, which would be shown over here, the
+41
+
+42
+00:02:41,230 --> 00:02:42,810
+error message is active.
+42
+
+43
+00:02:43,060 --> 00:02:48,190
+So you would have a *ngIf the error message you might have an added variable in here saying
+43
+
+44
+00:02:48,220 --> 00:02:49,450
+error message.
+44
+
+45
+00:02:49,450 --> 00:02:51,540
+And you can populate that for now.
+45
+
+46
+00:02:51,610 --> 00:02:52,730
+Let's just take a shortcut.
+46
+
+47
+00:02:52,750 --> 00:02:57,700
+I'll say this.welcome message from service = error.
+47
+
+48
+00:02:59,570 --> 00:03:02,570
+Let's look at the error object which we printed earlier.
+48
+
+49
+00:03:02,620 --> 00:03:06,400
+I've not saved this yet, so get would give me an error object.
+49
+
+50
+00:03:06,560 --> 00:03:08,270
+So this is the response which we get.
+50
+
+51
+00:03:08,360 --> 00:03:15,410
+If you look at the structure of this, it says error message before doing this, what i'll do is i'll
+51
+
+52
+00:03:15,680 --> 00:03:20,450
+log it... and console.log()
+52
+
+53
+00:03:24,260 --> 00:03:29,270
+and console.log() error message, just to confirm that our reading of
+53
+
+54
+00:03:29,280 --> 00:03:32,690
+The thing is right. Refresh this page.
+54
+
+55
+00:03:32,830 --> 00:03:36,550
+Now I do get a message?
+55
+
+56
+00:03:36,610 --> 00:03:39,250
+So what we are saying is this is the response.
+56
+
+57
+00:03:39,260 --> 00:03:44,050
+This is the response to error, and this is the message that's cool.
+57
+
+58
+00:03:44,050 --> 00:03:46,490
+So we are able to get the message here.
+58
+
+59
+00:03:46,550 --> 00:03:48,790
+We just need to fix a little bit of stuff.
+59
+
+60
+00:03:48,890 --> 00:03:52,060
+So all here should be error.
+60
+
+61
+00:03:52,080 --> 00:03:56,510
+Message. Let's refresh the page.get welcome mesaage
+61
+
+62
+00:03:56,510 --> 00:03:58,070
+Some error has happened.
+62
+
+63
+00:03:58,070 --> 00:04:00,420
+Contact support at so and so.
+63
+
+64
+00:04:00,570 --> 00:04:05,140
+So now when there's an error we are issuing this text out.
+64
+
+65
+00:04:05,150 --> 00:04:07,460
+This is the way you can handle it.
+65
+
+66
+00:04:07,580 --> 00:04:14,090
+What we're doing in here is we are defining a common error response.So we're saying when there's an error.
+66
+
+67
+00:04:14,120 --> 00:04:20,000
+Do this. What we did in here is, we create data under the parameter with the subscribe, then defining how
+67
+
+68
+00:04:20,000 --> 00:04:21,090
+to handle the error.
+68
+
+69
+00:04:21,110 --> 00:04:25,610
+So when there's an error now, what would happen it would call the handle response. Let's comment out
+69
+
+70
+00:04:25,640 --> 00:04:26,840
+the console.log.
+70
+
+71
+00:04:26,840 --> 00:04:28,870
+We don't need these anymore.
+71
+
+72
+00:04:29,120 --> 00:04:35,840
+What is important for us is all the stuff which is presented here.  let's comment  out other things which are present
+72
+
+73
+00:04:35,840 --> 00:04:40,100
+in here as well, so that we don't really have any logs out there.
+73
+
+74
+00:04:40,100 --> 00:04:45,860
+What we have is when there's an error in here. Ideally we should act on it in a different block at the
+74
+
+75
+00:04:46,090 --> 00:04:51,430
+top, but that I would leave it to you as an exercise. For now we have to use the same thing for the success
+75
+
+76
+00:04:51,440 --> 00:04:54,320
+message and the error message as well.
+76
+
+77
+00:04:54,320 --> 00:04:55,870
+I'll see you in the next step.
+77
+
+78
+00:04:55,920 --> 00:04:56,380
+Bye!

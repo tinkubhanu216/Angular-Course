@@ -1,0 +1,349 @@
+0
+1
+00:00:02,610 --> 00:00:09,820
+Welcome back. In the previous step, we started creating our retrieve todo service.
+1
+
+2
+00:00:09,870 --> 00:00:15,260
+And we were able to see the todo description. But however, we were getting a couple of errors in the console.
+2
+
+3
+00:00:15,270 --> 00:00:20,240
+If you look at the console, it said this target date value did not match.
+3
+
+4
+00:00:20,230 --> 00:00:26,520
+And also if you look a little up, then you would see that it's saying cannot read properly the description
+4
+
+5
+00:00:26,520 --> 00:00:33,380
+of undefined. When i click this todo competen.html, it was mapping it to the that description.
+5
+
+6
+00:00:33,510 --> 00:00:37,530
+So you can see that the todo's description is maped to an error.
+6
+
+7
+00:00:37,830 --> 00:00:40,310
+Why is this happening, and what are the fixes for these?
+7
+
+8
+00:00:40,380 --> 00:00:43,140
+Let's look at them in this specific step.
+8
+
+9
+00:00:43,140 --> 00:00:47,620
+Let's look at the second problem. For a todo or description is giving an error.
+9
+
+10
+00:00:47,820 --> 00:00:53,410
+Why would it give me an error? When I actually end up seeing the data in there?
+10
+
+11
+00:00:53,430 --> 00:00:59,640
+The thing is we need to look at how we are loading the data for this todo component. this is the way
+11
+
+12
+00:00:59,640 --> 00:01:02,760
+are loading it is by using a subscribe().
+12
+
+13
+00:01:02,790 --> 00:01:05,760
+So we are asynchronously calling this.
+13
+
+14
+00:01:05,760 --> 00:01:10,420
+So this update method say it's OK when the data is available do this.
+14
+
+15
+00:01:10,620 --> 00:01:14,280
+But our ngOninit() method is completed execution.
+15
+
+16
+00:01:14,280 --> 00:01:19,060
+It would directly start loading up the todo component.html
+16
+
+17
+00:01:19,320 --> 00:01:26,940
+So at that point the object might be null, and that's the reason why to do that description is giving
+17
+
+18
+00:01:26,940 --> 00:01:27,780
+an error.
+18
+
+19
+00:01:27,930 --> 00:01:40,970
+What we do, is create initial todo object. So what we will say this.todo = new Todo
+19
+
+20
+00:01:41,150 --> 00:01:52,050
+take Dummy ID,  and let's have dummy description, and let's say done is false and let's pass new date as
+20
+
+21
+00:01:52,170 --> 00:01:54,790
+the default.
+21
+
+22
+00:01:54,800 --> 00:02:01,980
+Now if I look at the screen right now, when it refreshes on the console, you'll see that there is just
+22
+
+23
+00:02:01,980 --> 00:02:04,220
+one error present.
+23
+
+24
+00:02:04,230 --> 00:02:09,240
+The reason is because even though we don't really see these details, that this todo we'll never be able
+24
+
+25
+00:02:09,240 --> 00:02:09,510
+to see.
+25
+
+26
+00:02:09,510 --> 00:02:16,460
+So if you actually go to todos and click on it, you'd see that actually empty, where you are NOT be
+26
+
+27
+00:02:16,550 --> 00:02:17,060
+able to see.
+27
+
+28
+00:02:17,050 --> 00:02:22,040
+So your user will not be able to see it, unless you are so very very slow.
+28
+
+29
+00:02:22,040 --> 00:02:27,700
+So if user is very very slow, then probably then you would be able to see the specific details.
+29
+
+30
+00:02:27,710 --> 00:02:33,290
+But having this default would ensure that the user would be shown something very quickly.
+30
+
+31
+00:02:33,290 --> 00:02:35,820
+So the user experience will be much better.
+31
+
+32
+00:02:36,140 --> 00:02:37,310
+Let's get to the second problem.
+32
+
+33
+00:02:37,310 --> 00:02:40,000
+The target did this specific thing.
+33
+
+34
+00:02:40,130 --> 00:02:46,820
+What we have the problem, is this is not having the right format. how can we get it to have the right
+34
+
+35
+00:02:46,820 --> 00:02:47,900
+format?
+35
+
+36
+00:02:47,960 --> 00:02:57,600
+We talked about pipes earlier, so I can go to the html, and can I say it's my pipe.
+36
+
+37
+00:02:57,780 --> 00:02:58,840
+Not the description field.
+37
+
+38
+00:02:58,860 --> 00:03:02,500
+Actually the target date  field,  can I sat targetDate | date?
+38
+
+39
+00:03:02,580 --> 00:03:03,370
+Will this work?
+39
+
+40
+00:03:04,460 --> 00:03:05,090
+Oops!
+40
+
+41
+00:03:05,100 --> 00:03:14,310
+It doesn't even compile, because ngModel needs to be mapped to a basic model element. One of the things
+41
+
+42
+00:03:14,550 --> 00:03:19,420
+is this ngModel is actually a combination of two things.
+42
+
+43
+00:03:19,650 --> 00:03:25,710
+What we do now is we'll split this into those two parts to you. And the first one is the proper binding
+43
+
+44
+00:03:25,730 --> 00:03:31,290
+and ngModel =  todo.targetDate. Second one is the event binding.
+44
+
+45
+00:03:31,290 --> 00:03:42,660
+Whenever this specific model changes, set the todo.target date to the changed value, $event.
+45
+
+46
+00:03:42,890 --> 00:03:47,870
+So when we talk about ngModel anywhere, it's actually two things.
+46
+
+47
+00:03:47,900 --> 00:03:51,340
+The first one is property binding, ngModel is equal to this.
+47
+
+48
+00:03:51,410 --> 00:03:55,820
+The second one is the event binding. Whenever you change the target date value.
+48
+
+49
+00:03:55,970 --> 00:04:01,230
+Then set the target date to whatever values returned by the event, and refresh the page.
+49
+
+50
+00:04:02,920 --> 00:04:07,270
+I hope to see the error get gone..
+50
+
+51
+00:04:07,270 --> 00:04:10,690
+So I think the date should be in this specific format.
+51
+
+52
+00:04:10,700 --> 00:04:11,510
+YYYY
+52
+
+53
+00:04:11,770 --> 00:04:20,770
+MM DD. So we would want to convert the value of this into that specific format, so we use a pipe. And what
+53
+
+54
+00:04:20,770 --> 00:04:24,400
+is in this specific date format?
+54
+
+55
+00:04:24,460 --> 00:04:29,920
+And it just use a colon within single quote, put YYYY
+55
+
+56
+00:04:30,160 --> 00:04:34,750
+So what we're doing is converting target date into that format, so that that format can be shown as
+56
+
+57
+00:04:34,750 --> 00:04:35,650
+a date.
+57
+
+58
+00:04:35,680 --> 00:04:36,490
+Cool.
+58
+
+59
+00:04:36,550 --> 00:04:42,130
+Now if we are able to see the description, we are now able to see the target date and our console does
+59
+
+60
+00:04:42,130 --> 00:04:44,880
+not really have any error.
+60
+
+61
+00:04:44,890 --> 00:04:48,760
+Let's look at a few other todos, to make sure that everything is working fine.
+61
+
+62
+00:04:48,760 --> 00:04:51,010
+Home/todo is update.
+62
+
+63
+00:04:51,010 --> 00:04:51,380
+Cool.
+63
+
+64
+00:04:51,430 --> 00:04:54,520
+I'm able to see the details of this update.
+64
+
+65
+00:04:54,550 --> 00:04:59,590
+I'm able to see the detail of this, to show you we can see that there are no errors in the console, so that's
+65
+
+66
+00:04:59,590 --> 00:05:00,090
+cool.
+66
+
+67
+00:05:00,100 --> 00:05:03,010
+So everybody's happy and I'll see you in the next step.
+67
+
+68
+00:05:03,010 --> 00:05:05,620
+Maybe you should focus on saving this data back.
+68
+
+69
+00:05:05,700 --> 00:05:06,700
+I'll see you in the next step.
+69
+
+70
+00:05:06,710 --> 00:05:07,440
+Until then, bye!
